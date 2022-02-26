@@ -24,3 +24,11 @@ Route::post('posyandu/store', 'posyanduController@store')->name('storePosyandu')
 Route::get('posyandu/edit/{id_posyandu}', 'posyanduController@edit')->name('editPosyandu');
 Route::post('posyandu/update', 'posyanduController@update')->name('updatePosyandu');
 Route::get('posyandu/delete/{id_posyandu}', 'posyanduController@destroy')->name('deletePosyandu');
+
+//bayiBalita
+Route::get('bayiBalita', 'bayiBalitaController@index')->name('bayiBalita');
+Route::get('bayiBalita/create', 'bayiBalitaController@create')->name('createBayiBalita');
+Route::post('bayiBalita/store', 'bayiBalitaController@store')->name('storeBayiBalita');
+Route::get('bayiBalita/edit/{id_bb}', 'bayiBalitaController@edit')->name('editBayiBalita');
+Route::post('bayiBalita/update', 'bayiBalitaController@update')->name('updateBayiBalita');
+Route::get('bayiBalita/delete/{id_bb}', 'bayiBalitaController@destroy')->name('deleteBayiBalita');
