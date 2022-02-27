@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route ('dataKader')}}">
                     <i class="fas fa-user"></i>
                     <span>Data Kader</span>
                 </a>

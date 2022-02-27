@@ -32,3 +32,15 @@ Route::post('bayiBalita/store', 'bayiBalitaController@store')->name('storeBayiBa
 Route::get('bayiBalita/edit/{id_bb}', 'bayiBalitaController@edit')->name('editBayiBalita');
 Route::post('bayiBalita/update', 'bayiBalitaController@update')->name('updateBayiBalita');
 Route::get('bayiBalita/delete/{id_bb}', 'bayiBalitaController@destroy')->name('deleteBayiBalita');
+
+//datakader
+Route::get('dataKader', 'dataKaderController@index')->name('dataKader');
+Route::get('dataKader/create', 'dataKaderController@create')->name('createDataKader');
+Route::post('dataKader/store', 'dataKaderController@store')->name('storeDataKader');
+Route::get('dataKader/edit/{id}', 'dataKaderController@edit')->name('editDataKader');
+Route::post('dataKader/update/{id}', 'dataKaderController@update')->name('updateDataKader');
+Route::get('dataKader/delete/{id}', 'dataKaderController@destroy')->name('deleteDataKader');
+
+//dataBidan
+
+//dataUserOrangTua
