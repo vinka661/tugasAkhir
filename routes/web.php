@@ -42,5 +42,10 @@ Route::post('dataKader/update/{id}', 'dataKaderController@update')->name('update
 Route::get('dataKader/delete/{id}', 'dataKaderController@destroy')->name('deleteDataKader');
 
 //dataBidan
-
+Route::get('dataBidan', 'dataBidanController@index')->name('dataBidan');
+Route::get('dataBidan/create', 'dataBidanController@create')->name('createDataBidan');
+Route::post('dataBidan/store', 'dataBidanController@store')->name('storeDataBidan');
+Route::get('dataBidan/edit/{id}', 'dataBidanController@edit')->name('editDataBidan');
+Route::post('dataBidan/update/{id}', 'dataBidanController@update')->name('updateDataBidan');
+Route::get('dataBidan/delete/{id}', 'dataBidanController@destroy')->name('deleteDataBidan');
 //dataUserOrangTua

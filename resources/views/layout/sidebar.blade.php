@@ -42,7 +42,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route ('dataBidan')}}">
                     <i class="fas fa-user-nurse"></i>
                     <span>Data Bidan Desa</span>
                 </a>
