@@ -48,4 +48,11 @@ Route::post('dataBidan/store', 'dataBidanController@store')->name('storeDataBida
 Route::get('dataBidan/edit/{id}', 'dataBidanController@edit')->name('editDataBidan');
 Route::post('dataBidan/update/{id}', 'dataBidanController@update')->name('updateDataBidan');
 Route::get('dataBidan/delete/{id}', 'dataBidanController@destroy')->name('deleteDataBidan');
-//dataUserOrangTua
+
+//dataAllUser
+Route::get('dataUser', 'dataUserController@index')->name('dataUser');
+Route::get('dataUser/create', 'dataUserController@create')->name('createDataUser');
+Route::post('dataUser/store', 'dataUserController@store')->name('storeDataUser');
+Route::get('dataUser/edit/{id}', 'dataUserController@edit')->name('editDataUser');
+Route::post('dataUser/update/{id}', 'dataUserController@update')->name('updateDataUser');
+Route::get('dataUser/delete/{id}', 'dataUserController@destroy')->name('deleteDataUser');

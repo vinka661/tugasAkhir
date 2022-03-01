@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route ('dataUser')}}">
                     <i class="fas fa-user"></i>
                     <span>Data User</span>
                 </a>
@@ -57,6 +57,12 @@
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-book"></i>
                     <span>Data Laporan</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="charts.html">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <span>Log Out</span>
                 </a>
             </li>
             <!-- Heading -->
