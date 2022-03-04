@@ -51,7 +51,7 @@
                   </div>
                   <div class="form-group">
                     <label for="alamat"><strong>Alamat<strong></label><br>
-                    <textarea name="alamat" id="alamat" class="form-control" rows="5" required></textarea>
+                    <textarea name="alamat" id="alamat" class="form-control" rows="5" placeholder="Masukkan Alamat Bayi/Balita" required></textarea>
                   </div>
                   <div class="form-group">
                     <label for="nama_ibu"><strong>Nama Ibu<strong></label>
