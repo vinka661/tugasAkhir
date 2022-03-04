@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 use App\Posyandu;
-use DB;
 use Illuminate\Http\Request;
 
 class posyanduController extends Controller
@@ -20,7 +19,7 @@ class posyanduController extends Controller
 
     public function store(Request $request)
     {
-        DB::table('posyandu')->insert([
+        Posyandu::create([
             'nama_posyandu' => $request->nama_posyandu,
             'alamat' => $request->alamat,
         ]);
@@ -29,22 +28,23 @@ class posyanduController extends Controller
 
     public function edit($id_posyandu)
     {
-        $posyandu = DB::table('posyandu')->where('id_posyandu', $id_posyandu)->get();
+        $posyandu = Posyandu::find($id_posyandu);
         return view('operator.posyandu.edit', ['posyandu' => $posyandu]);
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id_posyandu)
     {
-        DB::table('posyandu')->where('id_posyandu', $request->id_posyandu)->update([
-            'nama_posyandu' => $request->nama_posyandu,
-            'alamat' => $request->alamat,
-        ]);
+        $posyandu = Posyandu::find($id_posyandu);
+        $posyandu->nama_posyandu = $request->nama_posyandu;
+        $posyandu->alamat = $request->alamat;
+        $posyandu->save();
         return redirect('posyandu')->with('success','Data posyandu berhasil diedit');
     }
 
     public function destroy($id_posyandu)
     {
-        DB::table('posyandu')->where('id_posyandu', $id_posyandu)->delete();
+        $posyandu = Posyandu::find($id_posyandu);
+        $posyandu->delete();
         return redirect('posyandu')->with('success','Data posyandu berhasil dihapus');
     }
 }

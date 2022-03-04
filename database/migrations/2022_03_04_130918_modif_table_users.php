@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreatePosyanduTable extends Migration
+class ModifTableUsers extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,7 @@ class CreatePosyanduTable extends Migration
      */
     public function up()
     {
-        Schema::create('posyandu', function (Blueprint $table) {
-            $table->increments('id_posyandu');
-            $table->string('nama_posyandu', 20);
-            $table->string('alamat', 30);
-        });
+        
     }
 
     /**
@@ -27,6 +23,6 @@ class CreatePosyanduTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('posyandu');
+        //
     }
 }

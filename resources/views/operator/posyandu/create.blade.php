@@ -26,11 +26,11 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="nama_posyandu"><strong>Nama Posyandu<strong></label><br></br>
-                    <input type="text" class="form-control" id="nama_posyandu" name="nama_posyandu" placeholder="Nama Posyandu" required>
+                    <input type="text" class="form-control" id="nama_posyandu" name="nama_posyandu" placeholder="Masukkan Nama Posyandu" required>
                   </div>
                   <div class="form-group">
                     <label for="alamat"><strong>Alamat<strong></label><br>
-                    <textarea name="alamat" id="alamat" class="form-control" rows="5" required></textarea>
+                    <textarea name="alamat" id="alamat" class="form-control" rows="5" placeholder="Masukkan Alamat Posyandu" required></textarea>
                   </div>
                 </div>
                 <!-- /.card-body -->

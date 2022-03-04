@@ -22,6 +22,7 @@ class CreateBayiBalitaTable extends Migration
             $table->string('nama_ibu', 30);
             $table->string('nama_ayah', 30);
             $table->string('jenis_kelamin', 9);
+            $table->timestamps();
         });
     }
 

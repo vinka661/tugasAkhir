@@ -22,7 +22,7 @@ Route::get('posyandu', 'posyanduController@index')->name('posyandu');
 Route::get('posyandu/create', 'posyanduController@create')->name('createPosyandu');
 Route::post('posyandu/store', 'posyanduController@store')->name('storePosyandu');
 Route::get('posyandu/edit/{id_posyandu}', 'posyanduController@edit')->name('editPosyandu');
-Route::post('posyandu/update', 'posyanduController@update')->name('updatePosyandu');
+Route::post('posyandu/update/{id_posyandu}', 'posyanduController@update')->name('updatePosyandu');
 Route::get('posyandu/delete/{id_posyandu}', 'posyanduController@destroy')->name('deletePosyandu');
 
 //bayiBalita
