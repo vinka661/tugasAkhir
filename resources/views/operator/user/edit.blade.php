@@ -26,7 +26,7 @@
                     <div class="card-body">
                       <input type="hidden" name="id" value="{{ $user->id }}"> <br/>
                       <div class="form-group">
-                        <label for="namae"><strong>Nama User</strong></label></br>
+                        <label for="name"><strong>Nama User</strong></label></br>
                         <input type="text" class="form-control" id="name" name="name" value="{{ $user->name }}">
                       </div>
                       <div class="form-group">

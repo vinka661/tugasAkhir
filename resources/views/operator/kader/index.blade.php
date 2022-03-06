@@ -4,12 +4,9 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">DATA BIDAN DESA</h1>
+                    <h1 class="h3 mb-2 text-gray-800">DATA KADER</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
-                        <div class="card-header py-3">
-                            <a href="{{ route('createDataBidan') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
-                        </div>
                         @if ($message = Session::get('success'))
                             <div class="alert alert-success">
                                 <p>{{ $message }}</p>
@@ -21,33 +18,24 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Posyandu</th>
-                                            <th>Nama Bidan Desa</th>
-                                            <th>Email</th>
-                                            <th>Password</th>
-                                            <th>Role</th>
-                                            <th>Photo</th>
-                                            <th>Alamat</th>
+                                            <th>Nama Kader</th>
                                             <th>Jenis Kelamin</th>
+                                            <th>Alamat</th>
+                                            <th>Posyandu</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($dataBidan as $key => $data)
+                                        @foreach($kader as $key => $data)
                                         <tr>
                                             <td>{{ ++$key }}</td>
-                                            {{-- <td>{{ $data->posyandu->nama_posyandu }}</td> --}}
-                                            <td>{{ $data->posyandu_id}}</td>
                                             <td>{{ $data->name }}</td>
-                                            <td>{{ $data->email }}</td>
-                                            <td>{{ $data->password }}</td>
-                                            <td>{{ $data->role}}</td>
-                                            <td><img width="150px" src="{{asset('storage/'.$data->photo)}}"></td>
-                                            <td>{{ $data->alamat }}</td>
                                             <td>{{ $data->jenis_kelamin }}</td>
+                                            <td>{{ $data->alamat }}</td>
+                                            <td>{{ $data->posyandu->nama_posyandu}}</td>
                                             <td>
-                                                <a href="{{ route('editDataBidan', $data->id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
-                                                <a href="{{ route('deleteDataBidan', $data->id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a>
+                                                <a href="{{ route('editKader', $data->id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
+                                                <a href="{{ route('deleteKader', $data->id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a>
                                             </td>
                                         </tr>
                                         @endforeach

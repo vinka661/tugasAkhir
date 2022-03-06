@@ -30,7 +30,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('dataKader')}}">
+                <a class="nav-link" href="{{route ('kader')}}">
                     <i class="fas fa-user"></i>
                     <span>Data Kader</span>
                 </a>

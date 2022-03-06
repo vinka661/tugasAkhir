@@ -41,19 +41,9 @@ Route::get('user/edit/{id}', 'userController@edit')->name('editUser');
 Route::post('user/update/{id}', 'userController@update')->name('updateUser');
 Route::get('user/delete/{id}', 'userController@destroy')->name('deleteUser');
 
-//datakader
-Route::get('dataKader', 'dataKaderController@index')->name('dataKader');
-Route::get('dataKader/create', 'dataKaderController@create')->name('createDataKader');
-Route::post('dataKader/store', 'dataKaderController@store')->name('storeDataKader');
-Route::get('dataKader/edit/{id}', 'dataKaderController@edit')->name('editDataKader');
-Route::post('dataKader/update/{id}', 'dataKaderController@update')->name('updateDataKader');
-Route::get('dataKader/delete/{id}', 'dataKaderController@destroy')->name('deleteDataKader');
-
-//dataBidan
-Route::get('dataBidan', 'dataBidanController@index')->name('dataBidan');
-Route::get('dataBidan/create', 'dataBidanController@create')->name('createDataBidan');
-Route::post('dataBidan/store', 'dataBidanController@store')->name('storeDataBidan');
-Route::get('dataBidan/edit/{id}', 'dataBidanController@edit')->name('editDataBidan');
-Route::post('dataBidan/update/{id}', 'dataBidanController@update')->name('updateDataBidan');
-Route::get('dataBidan/delete/{id}', 'dataBidanController@destroy')->name('deleteDataBidan');
+//kader
+Route::get('kader', 'kaderController@index')->name('kader');
+Route::get('kader/edit/{id}', 'kaderController@edit')->name('editKader');
+Route::post('kader/update/{id}', 'kaderController@update')->name('updateKader');
+Route::get('kader/delete/{id}', 'kaderController@destroy')->name('deleteKader');
 
