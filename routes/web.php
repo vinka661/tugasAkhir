@@ -47,3 +47,8 @@ Route::get('kader/edit/{id}', 'kaderController@edit')->name('editKader');
 Route::post('kader/update/{id}', 'kaderController@update')->name('updateKader');
 Route::get('kader/delete/{id}', 'kaderController@destroy')->name('deleteKader');
 
+//bidan desa
+Route::get('bidan', 'bidanController@index')->name('bidan');
+Route::get('bidan/edit/{id}', 'bidanController@edit')->name('editBidan');
+Route::post('bidan/update/{id}', 'bidanController@update')->name('updateBidan');
+Route::get('bidan/delete/{id}', 'bidanController@destroy')->name('deleteBidan');
