@@ -10,8 +10,8 @@ class Posyandu extends Model
     protected $fillable = ['nama_posyandu', 'alamat'];
     protected $primaryKey = 'id_posyandu';
 
-    public function dataUser()
+    public function user()
     {
-        return $this->hasMany('App\DataUser');
+        return $this->hasMany('App\User');
     }
 }

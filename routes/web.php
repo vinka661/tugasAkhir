@@ -33,6 +33,14 @@ Route::get('bayiBalita/edit/{id_bb}', 'bayiBalitaController@edit')->name('editBa
 Route::post('bayiBalita/update/{id_bb}', 'bayiBalitaController@update')->name('updateBayiBalita');
 Route::get('bayiBalita/delete/{id_bb}', 'bayiBalitaController@destroy')->name('deleteBayiBalita');
 
+//user
+Route::get('user', 'userController@index')->name('user');
+Route::get('user/create', 'userController@create')->name('createUser');
+Route::post('user/store', 'userController@store')->name('storeUser');
+Route::get('user/edit/{id}', 'userController@edit')->name('editUser');
+Route::post('user/update/{id}', 'userController@update')->name('updateUser');
+Route::get('user/delete/{id}', 'userController@destroy')->name('deleteUser');
+
 //datakader
 Route::get('dataKader', 'dataKaderController@index')->name('dataKader');
 Route::get('dataKader/create', 'dataKaderController@create')->name('createDataKader');
@@ -49,10 +57,3 @@ Route::get('dataBidan/edit/{id}', 'dataBidanController@edit')->name('editDataBid
 Route::post('dataBidan/update/{id}', 'dataBidanController@update')->name('updateDataBidan');
 Route::get('dataBidan/delete/{id}', 'dataBidanController@destroy')->name('deleteDataBidan');
 
-//dataAllUser
-Route::get('dataUser', 'dataUserController@index')->name('dataUser');
-Route::get('dataUser/create', 'dataUserController@create')->name('createDataUser');
-Route::post('dataUser/store', 'dataUserController@store')->name('storeDataUser');
-Route::get('dataUser/edit/{id}', 'dataUserController@edit')->name('editDataUser');
-Route::post('dataUser/update/{id}', 'dataUserController@update')->name('updateDataUser');
-Route::get('dataUser/delete/{id}', 'dataUserController@destroy')->name('deleteDataUser');

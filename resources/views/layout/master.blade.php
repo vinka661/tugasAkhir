@@ -10,7 +10,9 @@
     <meta name="author" content="">
 
     <title>DIGITASI KMS || POSYANDU</title>
-
+    <!-- Font Awesome Icons -->
+  <!-- <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/favicon2.ico" /> -->
     <!-- Custom fonts for this template-->
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -429,7 +431,7 @@
     <script src="../../vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../js/demo/chart-area-demo.js"></script>
+    <script src="../../js/demo/chart-area-demo.js"></script>
     <script src="../../js/demo/chart-pie-demo.js"></script>
 <!-- jQuery -->
 <script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>

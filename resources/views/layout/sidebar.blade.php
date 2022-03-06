@@ -48,7 +48,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('dataUser')}}">
+                <a class="nav-link" href="{{route ('user')}}">
                     <i class="fas fa-user"></i>
                     <span>Data User</span>
                 </a>
