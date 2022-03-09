@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Posyandu;
+use App\Penyuluhan;
 use Illuminate\Http\Request;
 
 class bidanController extends Controller
@@ -36,5 +37,53 @@ class bidanController extends Controller
         $bidan = User::find($id);
         $bidan->delete();
         return redirect('bidan')->with('success','Data bidan desa berhasil dihapus');
+    }
+
+    public function penyuluhan()
+    {
+        $penyuluhan = Penyuluhan::all();
+        return view('bidan.penyuluhan.index', ['penyuluhan' => $penyuluhan]);
+    }
+
+    public function createPenyuluhan()
+    {
+        $kader = User::where('role', 'Kader')->get();
+        return view('bidan.penyuluhan.create', ['kader' => $kader]);
+    }
+
+    public function storePenyuluhan(Request $request)
+    {
+        Penyuluhan::create([
+            'id' => $request->kader,
+            'hari' => $request->hari,
+            'tanggal' => $request->tanggal,
+            'materi' => $request->materi,
+        ]);
+        return redirect('penyuluhan')->with('success','Jadwal penyuluhan berhasil ditambahkan');
+    }
+
+    public function editPenyuluhan($id_penyuluhan)
+    {
+        $penyuluhan = Penyuluhan::find($id_penyuluhan);
+        $kader = User::where('role', 'Kader')->get();
+        return view('bidan.penyuluhan.edit', ['penyuluhan' => $penyuluhan, 'kader' => $kader]);
+    }
+
+    public function updatePenyuluhan(Request $request, $id_penyuluhan)
+    {
+        $penyuluhan = Penyuluhan::find($id_penyuluhan);
+        $penyuluhan->id = $request->kader;
+        $penyuluhan->hari = $request->hari;
+        $penyuluhan->tanggal = $request->tanggal;
+        $penyuluhan->materi = $request->materi;
+        $penyuluhan->save();
+        return redirect('penyuluhan')->with('success','Jadwal penyuluhan berhasil diedit');
+    }
+
+    public function destroyPenyuluhan($id_penyuluhan)
+    {
+        $penyuluhan = Penyuluhan::find($id_penyuluhan);
+        $penyuluhan->delete();
+        return redirect('penyuluhan')->with('success','Jadwal penyuluhan berhasil dihapus');
     }
 }

@@ -17,6 +17,7 @@
 
 Route::get('/', 'berandaController@beranda')->name('beranda');
 
+//operator
 //posyandu
 Route::get('posyandu', 'posyanduController@index')->name('posyandu');
 Route::get('posyandu/create', 'posyanduController@create')->name('createPosyandu');
@@ -52,3 +53,20 @@ Route::get('bidan', 'bidanController@index')->name('bidan');
 Route::get('bidan/edit/{id}', 'bidanController@edit')->name('editBidan');
 Route::post('bidan/update/{id}', 'bidanController@update')->name('updateBidan');
 Route::get('bidan/delete/{id}', 'bidanController@destroy')->name('deleteBidan');
+
+//kepala PLKB
+//data diri
+Route::get('kepala', 'kepalaController@index')->name('kepala');
+
+//kader
+//timbang
+Route::get('timbang', 'kaderController@timbang')->name('timbang');
+
+//bidan desa
+//jadwal penyuluhan
+Route::get('penyuluhan', 'bidanController@penyuluhan')->name('penyuluhan');
+Route::get('penyuluhan/create', 'bidanController@createPenyuluhan')->name('createPenyuluhan');
+Route::post('penyuluhan/store', 'bidanController@storePenyuluhan')->name('storePenyuluhan');
+Route::get('penyuluhan/edit/{id_penyuluhan}', 'bidanController@editPenyuluhan')->name('editPenyuluhan');
+Route::post('penyuluhan/update/{id_penyuluhan}', 'bidanController@updatePenyuluhan')->name('updatePenyuluhan');
+Route::get('penyuluhan/delete/{id_penyuluhan}', 'bidanController@destroyPenyuluhan')->name('deletePenyuluhan');

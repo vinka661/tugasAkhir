@@ -41,4 +41,14 @@ class User extends Authenticatable
     {
         return $this->belongsTo('App\Posyandu', 'id_posyandu');
     }
+
+    public function timbang()
+    {
+        return $this->hasMany('App\Timbang');
+    }
+
+    public function penyuluhan()
+    {
+        return $this->hasMany('App\Penyuluhan');
+    }
 }

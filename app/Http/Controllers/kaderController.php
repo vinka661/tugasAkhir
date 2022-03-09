@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\User;
 use App\Posyandu;
+use App\Timbang;
+use App\BayiBalita;
 use Illuminate\Http\Request;
 
 class kaderController extends Controller
@@ -36,5 +38,11 @@ class kaderController extends Controller
         $kader = User::find($id);
         $kader->delete();
         return redirect('kader')->with('success','Data kader berhasil dihapus');
+    }
+
+    public function timbang()
+    {
+        $timbang = Timbang::all();
+        return view('kader.timbang.index', ['timbang' => $timbang]);
     }
 }

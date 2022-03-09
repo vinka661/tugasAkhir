@@ -13,14 +13,14 @@ class ModifTableUsers extends Migration
      */
     public function up()
     {
-        Schema::table('users',function (Blueprint $table){
-            $table->string('role', 13);
-            $table->string('photo', 20);
-            $table->string('alamat', 30);
-            $table->string('jenis_kelamin', 9);
-            $table->unsignedInteger('id_posyandu');
-            $table->foreign('id_posyandu')->references('id_posyandu')->on('posyandu');
-        });
+        // Schema::table('users',function (Blueprint $table){
+        //     $table->string('role', 13);
+        //     $table->string('photo', 20);
+        //     $table->string('alamat', 30);
+        //     $table->string('jenis_kelamin', 9);
+        //     $table->unsignedInteger('id_posyandu');
+        //     $table->foreign('id_posyandu')->references('id_posyandu')->on('posyandu');
+        // });
     }
 
     /**
@@ -30,12 +30,12 @@ class ModifTableUsers extends Migration
      */
     public function down()
     {
-        Schema::table('users',function (Blueprint $table){
-            $table->dropColumn('role');
-            $table->dropColumn('photo');
-            $table->dropColumn('alamat');
-            $table->dropColumn('jenis_kelamin');
-            $table->dropColumn('id_posyandu');
-        });
+        // Schema::table('users',function (Blueprint $table){
+        //     $table->dropColumn('role');
+        //     $table->dropColumn('photo');
+        //     $table->dropColumn('alamat');
+        //     $table->dropColumn('jenis_kelamin');
+        //     $table->dropColumn('id_posyandu');
+        // });
     }
 }

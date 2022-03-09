@@ -54,6 +54,24 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{route ('kepala')}}">
+                    <i class="fas fa-user"></i>
+                    <span>Data Diri</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route ('timbang')}}">
+                    <i class="fas fa-user"></i>
+                    <span>Timbang Bayi/Balita</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route ('penyuluhan')}}">
+                    <i class="fas fa-calendar"></i>
+                    <span>Jadwal Penyuluhan</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-book"></i>
                     <span>Data Laporan</span>
