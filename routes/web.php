@@ -70,3 +70,6 @@ Route::post('penyuluhan/store', 'bidanController@storePenyuluhan')->name('storeP
 Route::get('penyuluhan/edit/{id_penyuluhan}', 'bidanController@editPenyuluhan')->name('editPenyuluhan');
 Route::post('penyuluhan/update/{id_penyuluhan}', 'bidanController@updatePenyuluhan')->name('updatePenyuluhan');
 Route::get('penyuluhan/delete/{id_penyuluhan}', 'bidanController@destroyPenyuluhan')->name('deletePenyuluhan');
+
+//Upload Penyuluhan
+Route::get('penyuluhanKader', 'kaderController@penyuluhanKader')->name('penyuluhanKader');

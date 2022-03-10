@@ -72,6 +72,12 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{route ('penyuluhanKader')}}">
+                    <i class="fas fa-users"></i>
+                    <span>Penyuluhan</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="charts.html">
                     <i class="fas fa-book"></i>
                     <span>Data Laporan</span>

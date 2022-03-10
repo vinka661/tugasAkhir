@@ -5,6 +5,7 @@ use App\User;
 use App\Posyandu;
 use App\Timbang;
 use App\BayiBalita;
+use App\Penyuluhan;
 use Illuminate\Http\Request;
 
 class kaderController extends Controller
@@ -44,5 +45,11 @@ class kaderController extends Controller
     {
         $timbang = Timbang::all();
         return view('kader.timbang.index', ['timbang' => $timbang]);
+    }
+
+    public function penyuluhanKader()
+    {
+        $penyuluhanKader = Penyuluhan::all();
+        return view('kader.penyuluhan.index', ['penyuluhanKader' => $penyuluhanKader]);
     }
 }
