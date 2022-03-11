@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\User;
 use App\Posyandu;
 use App\Penyuluhan;
+use App\JadwalPosyandu;
 use Illuminate\Http\Request;
 
 class bidanController extends Controller
@@ -85,5 +86,58 @@ class bidanController extends Controller
         $penyuluhan = Penyuluhan::find($id_penyuluhan);
         $penyuluhan->delete();
         return redirect('penyuluhan')->with('success','Jadwal penyuluhan berhasil dihapus');
+    }
+
+    public function jadwalPosyandu()
+    {
+        $jadwalPosyandu = JadwalPosyandu::all();
+        return view('bidan.jadwalPosyandu.index', ['jadwalPosyandu' => $jadwalPosyandu]);
+    }
+
+    public function createJadwalPosyandu()
+    {
+        $posyandu = Posyandu::all();
+        return view('bidan.jadwalPosyandu.create', compact('posyandu'));
+    }
+
+    public function storeJadwalPosyandu(Request $request)
+    {
+        JadwalPosyandu::create([
+            'id_posyandu' => $request->posyandu,
+            'hari' => $request->hari,
+            'jam' => $request->jam,
+            'tanggal' => $request->tanggal,
+            'agenda' => $request->agenda,
+            'tempat' => $request->tempat,
+        ]);
+        return redirect('jadwalPosyandu')->with('success','Data jadwal posyandu berhasil ditambahkan');
+    }
+
+    public function editJadwalPosyandu($id_jadwal)
+    {
+
+        $jadwalPosyandu = JadwalPosyandu::find($id_jadwal);
+        $posyandu = Posyandu::all();
+        return view('bidan.jadwalPosyandu.edit', ['jadwalPosyandu' => $jadwalPosyandu ,'posyandu' => $posyandu]);
+    }
+
+    public function updateJadwalPosyandu(Request $request, $id_jadwal)
+    {
+        $jadwalPosyandu = JadwalPosyandu::find($id_jadwal);
+        $jadwalPosyandu->id_posyandu = $request->posyandu;
+        $jadwalPosyandu->hari = $request->hari;
+        $jadwalPosyandu->jam = $request->jam;
+        $jadwalPosyandu->tanggal = $request->tanggal;
+        $jadwalPosyandu->agenda = $request->agenda;
+        $jadwalPosyandu->tempat = $request->tempat;
+        $jadwalPosyandu->save();
+        return redirect('jadwalPosyandu')->with('success','Data jadwal posyandu berhasil diedit');
+    }
+
+    public function destroyJadwalPosyandu($id_jadwal)
+    {
+        $jadwalPosyandu = JadwalPosyandu::find($id_jadwal);
+        $jadwalPosyandu->delete();
+        return redirect('jadwalPosyandu')->with('success','Data jadwal posyandu berhasil dihapus');
     }
 }

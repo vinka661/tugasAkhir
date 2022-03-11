@@ -75,3 +75,11 @@ Route::get('penyuluhan/delete/{id_penyuluhan}', 'bidanController@destroyPenyuluh
 Route::get('penyuluhanKader', 'kaderController@penyuluhanKader')->name('penyuluhanKader');
 Route::get('UploadMateripenyuluhan/upload/{id_penyuluhan}', 'kaderController@UploadMateriPenyuluhan')->name('UploadMateriPenyuluhan');
 Route::post('uploadVideo/{id_penyuluhan}', 'kaderController@uploadVideo')->name('uploadVideo');
+
+//jadwal Posyandu
+Route::get('jadwalPosyandu', 'bidanController@jadwalPosyandu')->name('jadwalPosyandu');
+Route::get('jadwalPosyandu/create', 'bidanController@createJadwalPosyandu')->name('createJadwalPosyandu');
+Route::post('jadwalPosyandu/store', 'bidanController@storeJadwalPosyandu')->name('storeJadwalPosyandu');
+Route::get('jadwalPosyandu/edit/{id_jadwal}', 'bidanController@editJadwalPosyandu')->name('editJadwalPosyandu');
+Route::post('jadwalPosyandu/update/{id_jadwal}', 'bidanController@updateJadwalPosyandu')->name('updateJadwalPosyandu');
+Route::get('jadwalPosyandu/delete/{id_jadwal}', 'bidanController@destroyJadwalPosyandu')->name('deleteJadwalPosyandu');

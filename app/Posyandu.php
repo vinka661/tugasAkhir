@@ -14,4 +14,9 @@ class Posyandu extends Model
     {
         return $this->hasMany('App\User');
     }
+
+    public function jadwal_posyandu()
+    {
+        return $this->hasMany('App\JadwalPosyandu');
+    }
 }

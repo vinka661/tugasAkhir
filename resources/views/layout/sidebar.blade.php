@@ -67,8 +67,20 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route ('penyuluhan')}}">
+                    <i class="fas fa-capsules"></i>
+                    <span>Data Vitamin A</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route ('penyuluhan')}}">
                     <i class="fas fa-calendar"></i>
                     <span>Jadwal Penyuluhan</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route ('jadwalPosyandu')}}">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Jadwal Posyandu</span>
                 </a>
             </li>
             <li class="nav-item">
