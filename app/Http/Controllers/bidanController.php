@@ -5,6 +5,8 @@ use App\User;
 use App\Posyandu;
 use App\Penyuluhan;
 use App\JadwalPosyandu;
+use App\BayiBalita;
+use App\VitaminA;
 use Illuminate\Http\Request;
 
 class bidanController extends Controller
@@ -139,5 +141,52 @@ class bidanController extends Controller
         $jadwalPosyandu = JadwalPosyandu::find($id_jadwal);
         $jadwalPosyandu->delete();
         return redirect('jadwalPosyandu')->with('success','Data jadwal posyandu berhasil dihapus');
+    }
+
+    public function vitaminA()
+    {
+        $vitaminA = VitaminA::all();
+        return view('bidan.vitaminA.index', ['vitaminA' => $vitaminA]);
+    }
+
+    public function createVitaminA()
+    {
+        $bayiBalita = BayiBalita::all();
+        return view('bidan.vitaminA.create', compact('bayiBalita'));
+    }
+
+    public function storeVitaminA(Request $request)
+    {
+        VitaminA::create([
+            'id_bb' => $request->bayi,
+            'kapsul_vitaminA' => $request->kapsul_vitaminA,
+            'tanggal_beri_vitaminA' => $request->tanggal_beri_vitaminA,
+        ]);
+        return redirect('vitaminA')->with('success','Data Vitamin A berhasil ditambahkan');
+    }
+
+    public function editVitaminA($id_vitaminA)
+    {
+
+        $vitaminA = VitaminA::find($id_vitaminA);
+        $bayiBalita = BayiBalita::all();
+        return view('bidan.vitaminA.edit', ['vitaminA' => $vitaminA ,'bayiBalita' => $bayiBalita]);
+    }
+
+    public function updateVitaminA(Request $request, $id_vitaminA)
+    {
+        $vitaminA = VitaminA::find($id_vitaminA);
+        $vitaminA->id_bb= $request->bayi;
+        $vitaminA->kapsul_vitaminA = $request->kapsul_vitaminA;
+        $vitaminA->tanggal_beri_vitaminA = $request->tanggal_beri_vitaminA;
+        $vitaminA->save();
+        return redirect('vitaminA')->with('success','Data Vitamin A berhasil diedit');
+    }
+
+    public function destroyVitaminA($id_vitaminA)
+    {
+        $vitaminA = VitaminA::find($id_vitaminA);
+        $vitaminA->delete();
+        return redirect('vitaminA')->with('success','Data Vitamin A berhasil dihapus');
     }
 }

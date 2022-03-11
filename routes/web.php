@@ -83,3 +83,11 @@ Route::post('jadwalPosyandu/store', 'bidanController@storeJadwalPosyandu')->name
 Route::get('jadwalPosyandu/edit/{id_jadwal}', 'bidanController@editJadwalPosyandu')->name('editJadwalPosyandu');
 Route::post('jadwalPosyandu/update/{id_jadwal}', 'bidanController@updateJadwalPosyandu')->name('updateJadwalPosyandu');
 Route::get('jadwalPosyandu/delete/{id_jadwal}', 'bidanController@destroyJadwalPosyandu')->name('deleteJadwalPosyandu');
+
+//Vitamin A
+Route::get('vitaminA', 'bidanController@vitaminA')->name('vitaminA');
+Route::get('vitaminA/create', 'bidanController@createVitaminA')->name('createVitaminA');
+Route::post('vitaminA/store', 'bidanController@storeVitaminA')->name('storeVitaminA');
+Route::get('vitaminA/edit/{id_vitaminA}', 'bidanController@editVitaminA')->name('editVitaminA');
+Route::post('vitaminA/update/{id_vitaminA}', 'bidanController@updateVitaminA')->name('updateVitaminA');
+Route::get('vitaminA/delete/{id_vitaminA}', 'bidanController@destroyVitaminA')->name('deleteVitaminA');
