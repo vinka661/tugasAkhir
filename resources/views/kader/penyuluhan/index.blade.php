@@ -13,13 +13,6 @@
                             </div>
                         @endif 
                         <div class="card-body">
-                          
-                                            {{-- <td>
-                                                <a href="{{ route('editPenyuluhan', $data->id_penyuluhan) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
-                                                <a href="{{ route('deletePenyuluhan', $data->id_penyuluhan) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a>
-                                            </td>
-                                        </tr> --}}
-                                      
                             <div class="card" style="width: 60rem;">
                                 @foreach($penyuluhanKader as $key => $data)
                                 <div class="card-body">
@@ -28,7 +21,7 @@
                                   <p class="card-text"><i class="fas fa-book-medical"></i> Materi : {{ $data->materi }}</p>
                                 </div>
                                 <div class="col card-header text-right">
-                                <a href="#" class="btn btn-primary"><i class="fas fa-file-upload"></i> Upload Materi </a>
+                                <a href="{{ route('UploadMateriPenyuluhan', $data->id_penyuluhan) }}" class="btn btn-primary"><i class="fas fa-file-upload"></i> Upload Materi </a>
                                 </div>
                               </div>
                               @endforeach

@@ -52,4 +52,40 @@ class kaderController extends Controller
         $penyuluhanKader = Penyuluhan::all();
         return view('kader.penyuluhan.index', ['penyuluhanKader' => $penyuluhanKader]);
     }
+
+    public function UploadMateriPenyuluhan($id_penyuluhan)
+    {
+        $penyuluhan = Penyuluhan::find($id_penyuluhan);
+        $kader = User::where('role', 'Kader')->get();
+        return view('kader.penyuluhan.upload', ['penyuluhan' => $penyuluhan, 'kader' => $kader]);
+    }
+
+    public function updateMateriPenyuluhan(Request $request, $id_penyuluhan)
+    {
+        $penyuluhan = Penyuluhan::find($id_penyuluhan);
+        $penyuluhan->id = $request->kader;
+        $penyuluhan->hari = $request->hari;
+        $penyuluhan->tanggal = $request->tanggal;
+        $penyuluhan->materi = $request->materi;
+        $penyuluhan->save();
+        return redirect('penyuluhan')->with('success','Jadwal penyuluhan berhasil diedit');
+    }
+
+    public function uploadVideo(Request $request,$id_penyuluhan)
+   {
+      $penyuluhan = Penyuluhan::find($id_penyuluhan);
+      $this->validate($request, [
+         'title' => 'required|string|max:255',
+         'video' => 'required|file|mimetypes:video/mp4',
+        ]);
+        $video = new Video;
+        $video->title = $request->title;
+        if ($request->hasFile('video'))
+        {
+            $path = $request->file('video')->store('videos', ['disk' =>      'my_files']);
+            $video->video = $path;
+        }
+        $video->save();
+        
+  }
 }
