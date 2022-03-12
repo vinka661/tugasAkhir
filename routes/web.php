@@ -91,3 +91,11 @@ Route::post('vitaminA/store', 'bidanController@storeVitaminA')->name('storeVitam
 Route::get('vitaminA/edit/{id_vitaminA}', 'bidanController@editVitaminA')->name('editVitaminA');
 Route::post('vitaminA/update/{id_vitaminA}', 'bidanController@updateVitaminA')->name('updateVitaminA');
 Route::get('vitaminA/delete/{id_vitaminA}', 'bidanController@destroyVitaminA')->name('deleteVitaminA');
+
+//Jenis Vaksin Imunisasi
+Route::get('jenisVaksinImunisasi', 'bidanController@jenisVaksinImunisasi')->name('jenisVaksinImunisasi');
+Route::get('jenisVaksinImunisasi/create', 'bidanController@createJenisVaksinImunisasi')->name('createJenisVaksinImunisasi');
+Route::post('jenisVaksinImunisasi/store', 'bidanController@storeJenisVaksinImunisasi')->name('storeJenisVaksinImunisasi');
+Route::get('jenisVaksinImunisasi/edit/{id_vaksin_imunisasi}', 'bidanController@editJenisVaksinImunisasi')->name('editJenisVaksinImunisasi');
+Route::post('jenisVaksinImunisasi/update/{id_vaksin_imunisasi}', 'bidanController@updateJenisVaksinImunisasi')->name('updateJenisVaksinImunisasi');
+Route::get('jenisVaksinImunisasi/delete/{id_vaksin_imunisasi}', 'bidanController@destroyJenisVaksinImunisasi')->name('deleteJenisVaksinImunisasi');

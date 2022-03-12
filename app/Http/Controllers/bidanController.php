@@ -7,6 +7,7 @@ use App\Penyuluhan;
 use App\JadwalPosyandu;
 use App\BayiBalita;
 use App\VitaminA;
+use App\JenisVaksinImunisasi;
 use Illuminate\Http\Request;
 
 class bidanController extends Controller
@@ -188,5 +189,50 @@ class bidanController extends Controller
         $vitaminA = VitaminA::find($id_vitaminA);
         $vitaminA->delete();
         return redirect('vitaminA')->with('success','Data Vitamin A berhasil dihapus');
+    }
+
+    public function jenisVaksinImunisasi()
+    {
+        $jenisVaksinImunisasi = JenisVaksinImunisasi::all();
+        return view('bidan.jenisVaksinImunisasi.index', ['jenisVaksinImunisasi' => $jenisVaksinImunisasi]);
+    }
+
+    public function createJenisVaksinImunisasi()
+    {
+        
+        return view('bidan.jenisVaksinImunisasi.create');
+    }
+
+    public function storeJenisVaksinImunisasi(Request $request)
+    {
+        JenisVaksinImunisasi::create([
+            'id_vaksin_imunisasi' => $request->id_vaksin_imunisasi,
+            'nama_vaksin' => $request->nama_vaksin,
+            
+        ]);
+        return redirect('jenisVaksinImunisasi')->with('success','Data jenis vaksin imunisasi berhasil ditambahkan');
+    }
+
+    public function editJenisVaksinImunisasi($id_vaksin_imunisasi)
+    {
+
+        $jenisVaksinImunisasi = JenisVaksinImunisasi::find($id_vaksin_imunisasi);
+        return view('bidan.jenisVaksinImunisasi.edit', ['jenisVaksinImunisasi' => $jenisVaksinImunisasi ]);
+    }
+
+    public function updateJenisVaksinImunisasi(Request $request, $id_vaksin_imunisasi)
+    {
+        $jenisVaksinImunisasi = JenisVaksinImunisasi::find($id_vaksin_imunisasi);
+        $jenisVaksinImunisasi->id_vaksin_imunisasi= $request->id_vaksin_imunisasi;
+        $jenisVaksinImunisasi->nama_vaksin = $request->nama_vaksin;
+        $jenisVaksinImunisasi->save();
+        return redirect('jenisVaksinImunisasi')->with('success','Data jenis vaksin imunisasi berhasil diedit');
+    }
+
+    public function destroyJenisVaksinImunisasi($id_vaksin_imunisasi)
+    {
+        $jenisVaksinImunisasi = JenisVaksinImunisasi::find($id_vaksin_imunisasi);
+        $jenisVaksinImunisasi->delete();
+        return redirect('jenisVaksinImunisasi')->with('success','Data jenis vaksin imunisasi berhasil dihapus');
     }
 }

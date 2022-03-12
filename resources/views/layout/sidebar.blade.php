@@ -72,6 +72,18 @@
                 </a>
             </li>
             <li class="nav-item">
+                <a class="nav-link" href="{{route ('jenisVaksinImunisasi')}}">
+                    <i class="fas fa-vials"></i>
+                    <span>Jenis Vaksin Imunisasi</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{{route ('vitaminA')}}">
+                    <i class="fas fa-syringe"></i>
+                    <span>Imunisasi</span>
+                </a>
+            </li>
+            <li class="nav-item">
                 <a class="nav-link" href="{{route ('penyuluhan')}}">
                     <i class="fas fa-calendar"></i>
                     <span>Jadwal Penyuluhan</span>
