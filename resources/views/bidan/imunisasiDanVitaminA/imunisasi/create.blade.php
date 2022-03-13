@@ -21,7 +21,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-              <form role="form" action="{{ route('storeVitaminA') }}" method="POST">
+              <form role="form" action="{{ route('storeImunisasi') }}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
@@ -33,19 +33,23 @@
                     </select>
                   </div>
                   <div class="form-group">
-                    <label for="kapsul_vitaminA"><strong>Kapsul VitaminA<strong></label>
-                    <input type="text" class="form-control" id="kapsul_vitaminA" name="kapsul_vitaminA" placeholder="Masukkan Kapsul Vitamin A" required>
+                    <label for="imunisasi"><strong>Jenis Vaksin Imunisasi</strong></label>
+                    <select class="form-control select2bs4" name="imunisasi" id="imunisasi" style="width: 100%;" required><br>
+                      @foreach ($jenisVaksinImunisasi as $item)
+                        <option value="{{ $item->id_vaksin_imunisasi }}">{{ $item->nama_vaksin }}</option>
+                      @endforeach
+                    </select>
                   </div>
                   <div class="form-group">
-                    <label for="tanggal_beri_vitaminA"><strong>Tanggal Beri VitaminA<strong></label><br>
-                    <input type="date" class="form-control"  name="tanggal_beri_vitaminA" id="datepicker" placeholder="Masukkan Tanggal Beri Vitamin A">
+                    <label for="tanggal_beri_imunisasi"><strong>Tanggal Beri VitaminA<strong></label><br>
+                    <input type="date" class="form-control"  name="tanggal_beri_imunisasi" id="datepicker" placeholder="Masukkan Tanggal Vaksin">
                   </div>
                 </div>
                 <!-- /.card-body -->
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                  <a href="{{ route('vitaminA') }}" class="btn btn-default">Cancel</a>
+                  <a href="{{ route('imunisasiDanvitaminA') }}" class="btn btn-default">Cancel</a>
                 </div>
               </form>
             </div>

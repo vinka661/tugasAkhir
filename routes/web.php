@@ -85,12 +85,19 @@ Route::post('jadwalPosyandu/update/{id_jadwal}', 'bidanController@updateJadwalPo
 Route::get('jadwalPosyandu/delete/{id_jadwal}', 'bidanController@destroyJadwalPosyandu')->name('deleteJadwalPosyandu');
 
 //Vitamin A
-Route::get('vitaminA', 'bidanController@vitaminA')->name('vitaminA');
+Route::get('imunisasiDanvitaminA', 'bidanController@vitaminA')->name('imunisasiDanvitaminA');
 Route::get('vitaminA/create', 'bidanController@createVitaminA')->name('createVitaminA');
 Route::post('vitaminA/store', 'bidanController@storeVitaminA')->name('storeVitaminA');
 Route::get('vitaminA/edit/{id_vitaminA}', 'bidanController@editVitaminA')->name('editVitaminA');
 Route::post('vitaminA/update/{id_vitaminA}', 'bidanController@updateVitaminA')->name('updateVitaminA');
 Route::get('vitaminA/delete/{id_vitaminA}', 'bidanController@destroyVitaminA')->name('deleteVitaminA');
+
+//Data Imunisasi Vaksin
+Route::get('imunisasi/create', 'bidanController@createImunisasi')->name('createImunisasi');
+Route::post('imunisasi/store', 'bidanController@storeImunisasi')->name('storeImunisasi');
+Route::get('imunisasi/edit/{id_imunisasi}', 'bidanController@editImunisasi')->name('editImunisasi');
+Route::post('imunisasi/update/{id_imunisasi}', 'bidanController@updateImunisasi')->name('updateImunisasi');
+Route::get('imunisasi/delete/{id_imunisasi}', 'bidanController@destroyImunisasi')->name('deleteImunisasi');
 
 //Jenis Vaksin Imunisasi
 Route::get('jenisVaksinImunisasi', 'bidanController@jenisVaksinImunisasi')->name('jenisVaksinImunisasi');

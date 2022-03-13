@@ -66,23 +66,24 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('vitaminA')}}">
-                    <i class="fas fa-capsules"></i>
-                    <span>Data Vitamin A</span>
-                </a>
-            </li>
-            <li class="nav-item">
                 <a class="nav-link" href="{{route ('jenisVaksinImunisasi')}}">
                     <i class="fas fa-vials"></i>
                     <span>Jenis Vaksin Imunisasi</span>
                 </a>
             </li>
+
             <li class="nav-item">
+                <a class="nav-link" href="{{route ('imunisasiDanvitaminA')}}">
+                    <i class="fas fa-briefcase-medical"></i>
+                    <span>Data Imunisasi&VitaminA</span>
+                </a>
+            </li>
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route ('vitaminA')}}">
                     <i class="fas fa-syringe"></i>
                     <span>Imunisasi</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link" href="{{route ('penyuluhan')}}">
                     <i class="fas fa-calendar"></i>

@@ -14,7 +14,7 @@ class CreateJadwalPosyanduTable extends Migration
     public function up()
     {
         Schema::create('jadwal_posyandu', function (Blueprint $table) {
-            $table->bigIncrements('id_jadwal');
+            $table->increments('id_jadwal');
             $table->string('hari', 6);
             $table->time('jam');
             $table->date('tanggal');

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVitaminTable extends Migration
+class CreateImunisasiTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateVitaminTable extends Migration
      */
     public function up()
     {
-        Schema::create('vitamin', function (Blueprint $table) {
-            $table->increments('id_vitaminA');
-            $table->string('kapsul_vitaminA', 30);
-            $table->date('tanggal_beri_vitaminA');
+        Schema::create('imunisasi', function (Blueprint $table) {
+            $table->increments('id_imunisasi');
+            $table->date('tanggal_beri_imunisasi');
             $table->unsignedInteger('id_bb');
+            $table->unsignedInteger('id_vaksin_imunisasi');
             $table->timestamps();
             $table->foreign('id_bb')->references('id_bb')->on('bayi_balita');
+            $table->foreign('id_vaksin_imunisasi')->references('id_vaksin_imunisasi')->on('jenis_vaksin');
         });
     }
 
@@ -30,6 +31,6 @@ class CreateVitaminTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vitamin');
+        Schema::dropIfExists('imunisasi');
     }
 }

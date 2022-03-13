@@ -14,7 +14,7 @@ class CreateJenisVaksinTable extends Migration
     public function up()
     {
         Schema::create('jenis_vaksin', function (Blueprint $table) {
-            $table->bigIncrements('id_vaksin_imunisasi');
+            $table->increments('id_vaksin_imunisasi');
             $table->string('nama_vaksin', 30);
             $table->timestamps();
         });

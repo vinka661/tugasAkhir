@@ -19,4 +19,9 @@ class BayiBalita extends Model
     {
         return $this->hasMany('App\VitaminA');
     }
+
+    public function imunisasi()
+    {
+        return $this->hasMany('App\Imunisasi');
+    }
 }

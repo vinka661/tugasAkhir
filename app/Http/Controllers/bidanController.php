@@ -8,6 +8,7 @@ use App\JadwalPosyandu;
 use App\BayiBalita;
 use App\VitaminA;
 use App\JenisVaksinImunisasi;
+use App\Imunisasi;
 use Illuminate\Http\Request;
 
 class bidanController extends Controller
@@ -146,14 +147,15 @@ class bidanController extends Controller
 
     public function vitaminA()
     {
+        $imunisasi = Imunisasi::all();
         $vitaminA = VitaminA::all();
-        return view('bidan.vitaminA.index', ['vitaminA' => $vitaminA]);
+        return view('bidan.imunisasiDanvitaminA.index', ['vitaminA' => $vitaminA,'imunisasi' => $imunisasi]);
     }
 
     public function createVitaminA()
     {
         $bayiBalita = BayiBalita::all();
-        return view('bidan.vitaminA.create', compact('bayiBalita'));
+        return view('bidan.imunisasiDanvitaminA.vitaminA.create', compact('bayiBalita'));
     }
 
     public function storeVitaminA(Request $request)
@@ -163,7 +165,7 @@ class bidanController extends Controller
             'kapsul_vitaminA' => $request->kapsul_vitaminA,
             'tanggal_beri_vitaminA' => $request->tanggal_beri_vitaminA,
         ]);
-        return redirect('vitaminA')->with('success','Data Vitamin A berhasil ditambahkan');
+        return redirect('imunisasiDanvitaminA')->with('success','Data Vitamin A berhasil ditambahkan');
     }
 
     public function editVitaminA($id_vitaminA)
@@ -171,7 +173,7 @@ class bidanController extends Controller
 
         $vitaminA = VitaminA::find($id_vitaminA);
         $bayiBalita = BayiBalita::all();
-        return view('bidan.vitaminA.edit', ['vitaminA' => $vitaminA ,'bayiBalita' => $bayiBalita]);
+        return view('bidan.imunisasiDanvitaminA.vitaminA.edit', ['vitaminA' => $vitaminA ,'bayiBalita' => $bayiBalita]);
     }
 
     public function updateVitaminA(Request $request, $id_vitaminA)
@@ -181,14 +183,14 @@ class bidanController extends Controller
         $vitaminA->kapsul_vitaminA = $request->kapsul_vitaminA;
         $vitaminA->tanggal_beri_vitaminA = $request->tanggal_beri_vitaminA;
         $vitaminA->save();
-        return redirect('vitaminA')->with('success','Data Vitamin A berhasil diedit');
+        return redirect('imunisasiDanvitaminA')->with('success','Data Vitamin A berhasil diedit');
     }
 
     public function destroyVitaminA($id_vitaminA)
     {
         $vitaminA = VitaminA::find($id_vitaminA);
         $vitaminA->delete();
-        return redirect('vitaminA')->with('success','Data Vitamin A berhasil dihapus');
+        return redirect('imunisasiDanvitaminA')->with('success','Data Vitamin A berhasil dihapus');
     }
 
     public function jenisVaksinImunisasi()
@@ -234,5 +236,48 @@ class bidanController extends Controller
         $jenisVaksinImunisasi = JenisVaksinImunisasi::find($id_vaksin_imunisasi);
         $jenisVaksinImunisasi->delete();
         return redirect('jenisVaksinImunisasi')->with('success','Data jenis vaksin imunisasi berhasil dihapus');
+    }
+
+    public function createImunisasi()
+    {
+        $bayiBalita = BayiBalita::all();
+        $jenisVaksinImunisasi = JenisVaksinImunisasi::all();
+        return view('bidan.imunisasiDanvitaminA.imunisasi.create', compact('bayiBalita','jenisVaksinImunisasi'));
+    }
+
+    public function storeImunisasi(Request $request)
+    {
+        Imunisasi::create([
+            'id_bb' => $request->bayi,
+            'id_vaksin_imunisasi' => $request->imunisasi,
+            'tanggal_beri_imunisasi' => $request->tanggal_beri_imunisasi,
+        ]);
+        return redirect('imunisasiDanvitaminA')->with('success1','Data Vaksin Imunisasi berhasil ditambahkan');
+    }
+
+    public function editImunisasi($id_imunisasi)
+    {
+
+        $imunisasi = Imunisasi::find($id_imunisasi);
+        $bayiBalita = BayiBalita::all();
+        $jenisVaksinImunisasi = JenisVaksinImunisasi::all();
+        return view('bidan.imunisasiDanvitaminA.imunisasi.edit', ['imunisasi' => $imunisasi ,'bayiBalita' => $bayiBalita,'jenisVaksinImunisasi' => $jenisVaksinImunisasi]);
+    }
+
+    public function updateImunisasi(Request $request, $id_imunisasi)
+    {
+        $imunisasi = Imunisasi::find($id_imunisasi);
+        $imunisasi->id_bb= $request->bayi;
+        $imunisasi->id_vaksin_imunisasi = $request->imunisasi;
+        $imunisasi->tanggal_beri_imunisasi = $request->tanggal_beri_imunisasi;
+        $imunisasi->save();
+        return redirect('imunisasiDanvitaminA')->with('success1','Data Vaksin Imunisasi berhasil diedit');
+    }
+
+    public function destroyImunisasi($id_imunisasi)
+    {
+        $imunisasi = Imunisasi::find($id_imunisasi);
+        $imunisasi->delete();
+        return redirect('imunisasiDanvitaminA')->with('success1','Data Vaksin Imunisasi berhasil dihapus');
     }
 }

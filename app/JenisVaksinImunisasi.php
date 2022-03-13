@@ -9,4 +9,9 @@ class JenisVaksinImunisasi extends Model
     public $table = "jenis_vaksin";
     protected $fillable = ['nama_vaksin'];
     protected $primaryKey = 'id_vaksin_imunisasi';
+
+    public function imunisasi()
+    {
+        return $this->hasMany('App\Imunisasi');
+    }
 }
