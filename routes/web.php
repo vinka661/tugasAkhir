@@ -14,8 +14,11 @@
 // Route::get('/', function () {
 //     return view('welcome');
 // });
+//dashboard
 
-Route::get('/', 'berandaController@beranda')->name('beranda');
+Auth::routes();
+Route::get('/', 'dashboardController@dashboard')->name('dashboard');
+Route::get('beranda', 'berandaController@beranda')->name('beranda');
 
 //operator
 //posyandu
@@ -106,3 +109,7 @@ Route::post('jenisVaksinImunisasi/store', 'bidanController@storeJenisVaksinImuni
 Route::get('jenisVaksinImunisasi/edit/{id_vaksin_imunisasi}', 'bidanController@editJenisVaksinImunisasi')->name('editJenisVaksinImunisasi');
 Route::post('jenisVaksinImunisasi/update/{id_vaksin_imunisasi}', 'bidanController@updateJenisVaksinImunisasi')->name('updateJenisVaksinImunisasi');
 Route::get('jenisVaksinImunisasi/delete/{id_vaksin_imunisasi}', 'bidanController@destroyJenisVaksinImunisasi')->name('deleteJenisVaksinImunisasi');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

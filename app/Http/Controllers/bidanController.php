@@ -13,6 +13,11 @@ use Illuminate\Http\Request;
 
 class bidanController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $bidan = User::where('role', 'Bidan Desa')->get();

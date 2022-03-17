@@ -21,9 +21,10 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama bayi/Balita</th>
-                                            <th>Jenis Vaksin Imunisasi</th>
-                                            <th>Tanggal Beri Vaksin Imunisasi</th>
+                                            <th>Nama Bayi</th>
+                                            <th>Umur (bln)</th>
+                                            <th>Vaksin</th>
+                                            <th>Tanggal Pemberian</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -32,6 +33,7 @@
                                         <tr>
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $data->bayi_balita->nama_bayi}}</td>
+                                            <td>{{ $data->bayi_balita->umur}}</td>
                                             <td>{{ $data->jenis_vaksin->nama_vaksin}}</td>
                                             <td>{{ $data->tanggal_beri_imunisasi }}</td>
                                             <td>
@@ -70,9 +72,10 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama bayi/Balita</th>
-                                            <th>Kapsul VitaminA</th>
-                                            <th>Tanggal Beri VitaminA</th>
+                                            <th>Nama Bayi</th>
+                                            <th>Umur (bln)</th>
+                                            <th>Kapsul</th>
+                                            <th>Tanggal Pemberian</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
@@ -81,6 +84,7 @@
                                         <tr>
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $data->bayi_balita->nama_bayi}}</td>
+                                            <td>{{ $data->bayi_balita->umur}}</td>
                                             <td>{{ $data->kapsul_vitaminA }}</td>
                                             <td>{{ $data->tanggal_beri_vitaminA }}</td>
                                             <td>

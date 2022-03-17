@@ -4,9 +4,19 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Gate;
 
 class userController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function($request, $next) {
+            if(Gate::allows('operator-plkb')) return $next($request);
+            abort(403, 'Anda tidak memiliki cukup hak akses');
+        });   
+    }
+
     public function index()
     {
         $user = User::all();

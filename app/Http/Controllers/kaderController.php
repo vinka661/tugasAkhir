@@ -10,6 +10,11 @@ use Illuminate\Http\Request;
 
 class kaderController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $kader = User::where('role', 'Kader')->get();

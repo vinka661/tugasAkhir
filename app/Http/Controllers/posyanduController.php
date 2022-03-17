@@ -3,9 +3,19 @@
 namespace App\Http\Controllers;
 use App\Posyandu;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Gate;
 
 class posyanduController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware(function($request, $next) {
+            if(Gate::allows('operator-plkb')) return $next($request);
+            abort(403, 'Anda tidak memiliki cukup hak akses');
+        });   
+    }
+
     public function index()
     {
         $posyandu = Posyandu::all();
