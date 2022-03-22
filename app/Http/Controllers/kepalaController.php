@@ -16,4 +16,10 @@ class kepalaController extends Controller
         $kepala = User::where('role', 'Kepala PLKB')->get();
         return view('operator.kepala.index', ['kepala' => $kepala]);
     }
+
+    public function show($id)
+    {
+        $kepala = User::where('name', '=', $id)->first();
+        return view('kepala.dataDiri.index', ['kepala' => $kepala]);
+    }
 }

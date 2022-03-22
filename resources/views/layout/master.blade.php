@@ -11,8 +11,8 @@
 
     <title>DIGITASI KMS || POSYANDU</title>
     <!-- Font Awesome Icons -->
-  <!-- <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="../../assets/favicon2.ico" /> -->
+  <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/favicon2.ico" />
     <!-- Custom fonts for this template-->
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
@@ -32,7 +32,9 @@
 
     <!-- Page Wrapper -->
     <div id="wrapper">
-
+    @php
+        $id = str_replace('@mail.com', '', Auth::user()->email);;
+    @endphp
         <!-- Sidebar -->
         @include('layout.sidebar')
         <!-- End of Sidebar -->
@@ -441,7 +443,7 @@
 <!-- Bootstrap 4 -->
 <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<!-- <script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script> -->
+<script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script> -->
 <!-- Select2 -->
 <script src="{{ url('assets/plugins/select2/js/select2.full.min.js') }}"></script>
 <!-- Page script -->

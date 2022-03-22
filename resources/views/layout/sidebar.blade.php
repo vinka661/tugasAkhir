@@ -55,7 +55,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route ('laporan')}}">
                     <i class="fas fa-book"></i>
                     <span>Data Laporan</span>
                 </a>
@@ -83,7 +83,7 @@
                  
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('kepala')}}">
+                <a class="nav-link" href="{{route ('dataKepala', $id)}}">
                     <i class="fas fa-user"></i>
                     <span>Data Diri</span>
                 </a>

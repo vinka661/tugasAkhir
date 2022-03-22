@@ -57,9 +57,12 @@ Route::get('bidan/edit/{id}', 'bidanController@edit')->name('editBidan');
 Route::post('bidan/update/{id}', 'bidanController@update')->name('updateBidan');
 Route::get('bidan/delete/{id}', 'bidanController@destroy')->name('deleteBidan');
 
+//Laporan
+Route::get('laporan', 'laporanController@index')->name('laporan');
+
 //kepala PLKB
 //data diri
-Route::get('kepala', 'kepalaController@index')->name('kepala');
+Route::get('kepala/dataDiri/{id}', 'kepalaController@show')->name('dataKepala');
 
 //kader
 //timbang
