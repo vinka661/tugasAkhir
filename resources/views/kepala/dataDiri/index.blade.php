@@ -47,7 +47,9 @@
                       </dl>
                   </div>
                 </div>
+                <div class="col  text-right">
                 <a href="" class="btn btn-primary">Edit</a>
+                </div>
               </div>
               <!-- /.card-body -->
             </div>

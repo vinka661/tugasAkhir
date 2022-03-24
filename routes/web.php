@@ -18,7 +18,10 @@
 
 Auth::routes();
 Route::get('/', 'dashboardController@dashboard')->name('dashboard');
-Route::get('beranda', 'berandaController@beranda')->name('beranda');
+// Route::get('beranda', 'berandaController@beranda')->name('beranda');
+
+//dashboard
+Route::get('berandaOperator', 'dashboardController@dashboardOperator')->name('berandaOperator');
 
 //operator
 //posyandu

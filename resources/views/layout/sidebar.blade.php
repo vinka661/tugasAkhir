@@ -2,10 +2,10 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon ">
+                    <i class="fas fa-laptop-medical"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Sistem Digitasi</div>
             </a>
 
             <!-- Divider -->
@@ -14,7 +14,7 @@
             <!-- Nav Item - Dashboard -->
             @can('operator-plkb')
             <li class="nav-item active">
-                <a class="nav-link" href="{{route ('beranda')}}">
+                <a class="nav-link" href="{{route ('berandaOperator')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -106,7 +106,7 @@
             @endcan
             @can('ibu-bayi')
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('kepala')}}">
+                <a class="nav-link" href="{{route ('dataKepala', $id)}}">
                     <i class="fas fa-user"></i>
                     <span>Data Diri</span>
                 </a>
@@ -158,7 +158,7 @@
                  
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('kepala')}}">
+                <a class="nav-link" href="{{route ('dataKepala', $id)}}">
                     <i class="fas fa-user"></i>
                     <span>Data Diri</span>
                 </a>
@@ -210,7 +210,7 @@
                  
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('kepala')}}">
+                <a class="nav-link" href="{{route ('dataKepala', $id)}}">
                     <i class="fas fa-user"></i>
                     <span>Data Diri</span>
                 </a>
