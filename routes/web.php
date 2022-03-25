@@ -120,6 +120,9 @@ Route::get('jenisVaksinImunisasi/delete/{id_vaksin_imunisasi}', 'bidanController
 //jadwal posyandu halaman ibu bayi
 Route::get('jadwalPosyanduibuBayi', 'ibuBayiController@jadwalPosyandu')->name('jadwalPosyanduBayi');
 
+//Konsultasi
+Route::get('konsultasi', 'bidanController@konsultasi')->name('konsultasi');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

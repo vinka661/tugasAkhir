@@ -9,6 +9,7 @@ use App\BayiBalita;
 use App\VitaminA;
 use App\JenisVaksinImunisasi;
 use App\Imunisasi;
+use App\Konsultasi;
 use Illuminate\Http\Request;
 
 class bidanController extends Controller
@@ -284,5 +285,12 @@ class bidanController extends Controller
         $imunisasi = Imunisasi::find($id_imunisasi);
         $imunisasi->delete();
         return redirect('imunisasiDanvitaminA')->with('success1','Data Vaksin Imunisasi berhasil dihapus');
+    }
+
+    public function konsultasi()
+    {
+        $konsultasi = Konsultasi::all();
+        $user = User::all();
+        return view('bidan.konsultasi.index', ['konsultasi' => $konsultasi,'user' => $user]);
     }
 }

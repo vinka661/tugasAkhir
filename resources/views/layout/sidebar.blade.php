@@ -228,7 +228,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{route ('konsultasi')}}">
                     <i class="fas fa-user"></i>
                     <span>Konsultasi Online</span>
                 </a>
