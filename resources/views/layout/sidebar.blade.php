@@ -5,7 +5,7 @@
                 <div class="sidebar-brand-icon ">
                     <i class="fas fa-laptop-medical"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Sistem Digitasi</div>
+                <div class="sidebar-brand-text mx-3">SIMDIG KMS</div>
             </a>
 
             <!-- Divider -->
@@ -72,7 +72,7 @@
             @endcan
             @can('kepala-plkb')
             <li class="nav-item active">
-                <a class="nav-link" href="{{route ('beranda')}}">
+                <a class="nav-link" href="{{route ('berandaOperator')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -89,7 +89,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="charts.html">
+                <a class="nav-link" href="{{route ('laporan')}}">
                     <i class="fas fa-book"></i>
                     <span>Data Laporan</span>
                 </a>
@@ -124,7 +124,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{route ('jadwalPosyanduBayi')}}">
                     <i class="fas fa-calendar-alt"></i>
                     <span>Jadwal Posyandu</span>
                 </a>
@@ -147,7 +147,7 @@
             @endcan
             @can('kader')
             <li class="nav-item active">
-                <a class="nav-link" href="{{route ('beranda')}}">
+                <a class="nav-link" href="{{route ('berandaKader')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -199,7 +199,7 @@
             @endcan
             @can('bidan-desa')
             <li class="nav-item active">
-                <a class="nav-link" href="{{route ('beranda')}}">
+                <a class="nav-link" href="{{route ('berandaBidan')}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>

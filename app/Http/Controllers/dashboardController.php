@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 use App\Posyandu;
 use App\User;
+use App\BayiBalita;
 use DB;
+
 use Illuminate\Http\Request;
 
 class dashboardController extends Controller
@@ -31,5 +33,18 @@ class dashboardController extends Controller
             ->where('role', '=', 'Bidan Desa')
             ->count();
         return view('dashboard.operator', compact('posyandu','kader','ibubayi','bidan'));
+    }
+
+    public function dashboardKaderdanBidan()
+    {
+        $bayiBalita = BayiBalita::get();
+        $gizibaik = DB::table('timbang')
+            ->where('status_gizi', '=', 'Baik')
+            ->count();
+        $bgm = DB::table('timbang')
+            ->where('status_gizi', '=', 'bgm')
+            ->count();
+       
+        return view('dashboard.kaderBidan', compact('bayiBalita','gizibaik','bgm'));
     }
 }

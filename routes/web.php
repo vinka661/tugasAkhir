@@ -18,11 +18,12 @@
 
 Auth::routes();
 Route::get('/', 'dashboardController@dashboard')->name('dashboard');
-// Route::get('beranda', 'berandaController@beranda')->name('beranda');
+Route::get('beranda', 'berandaController@beranda')->name('beranda');
 
 //dashboard
 Route::get('berandaOperator', 'dashboardController@dashboardOperator')->name('berandaOperator');
-
+Route::get('berandakader', 'dashboardController@dashboardKaderdanBidan')->name('berandaKader');
+Route::get('berandaBidan', 'dashboardController@dashboardKaderdanBidan')->name('berandaBidan');
 //operator
 //posyandu
 Route::get('posyandu', 'posyanduController@index')->name('posyandu');
@@ -115,6 +116,9 @@ Route::post('jenisVaksinImunisasi/store', 'bidanController@storeJenisVaksinImuni
 Route::get('jenisVaksinImunisasi/edit/{id_vaksin_imunisasi}', 'bidanController@editJenisVaksinImunisasi')->name('editJenisVaksinImunisasi');
 Route::post('jenisVaksinImunisasi/update/{id_vaksin_imunisasi}', 'bidanController@updateJenisVaksinImunisasi')->name('updateJenisVaksinImunisasi');
 Route::get('jenisVaksinImunisasi/delete/{id_vaksin_imunisasi}', 'bidanController@destroyJenisVaksinImunisasi')->name('deleteJenisVaksinImunisasi');
+
+//jadwal posyandu halaman ibu bayi
+Route::get('jadwalPosyanduibuBayi', 'ibuBayiController@jadwalPosyandu')->name('jadwalPosyanduBayi');
 
 Auth::routes();
 
