@@ -127,8 +127,10 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//halaman fontend
+//halaman frontend
 Route::get('/index', 'GuestController@index')->name('index');
 Route::get('/about', 'GuestController@about')->name('about');
 Route::get('/jadwal', 'GuestController@jadwal')->name('jadwal');
 Route::get('/penyuluhan', 'GuestController@penyuluhan')->name('penyuluhan');
+
+// Route::get('login', [LoginController::class, 'login'])->name('login');

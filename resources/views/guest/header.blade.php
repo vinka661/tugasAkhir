@@ -48,7 +48,7 @@
                                 </div>
                                 <div class="header-nav-info-wrap header-nav-info-wrap-2">
                                     <div class="hero-buttons">
-                                        <a href="about.html" class="site-btn red" >Registrasi</a>
+                                        <a href="about.html" class="site-btn red" >Login</a>
                                     </div>
                                   
                                 </div>

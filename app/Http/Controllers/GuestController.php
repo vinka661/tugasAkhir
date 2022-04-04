@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\JadwalPosyandu;
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -18,7 +18,8 @@ class GuestController extends Controller
 
     public function jadwal()
     {
-        return view('guest.jadwal');
+        $jadwalPosyandu = JadwalPosyandu::all();
+        return view('guest.jadwal', ['jadwalPosyandu' => $jadwalPosyandu]);
     }
 
     public function penyuluhan()

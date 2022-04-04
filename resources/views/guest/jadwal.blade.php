@@ -103,102 +103,26 @@
     <section class="service-area-4 pt-120 pb-120">
         <div class="container">
             <div class="row mt-none-30">
+                @foreach($jadwalPosyandu as $key => $data)
                 <div class="col-xl-4 col-lg-6 col-md-12 mt-30">
                     <div class="single-service-box-4">
                         <div class="thumb">
                             <img src="assets/images/service/med.jpg" alt="">
-                            <span class="count">01</span>
+                            <span class="count">{{ ++$key }}</span>
                         </div>
                         <div class="content">
-                            <h4 class="title">Diagnostics Solution</h4>
+                            <h4 class="title">{{ $data->posyandu->nama_posyandu}}</h4>
                             <div class="service-box-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur
-                                    adipi sicing elit, sed do eiusmod.</p>
+                                <p><i class="fas fa-calendar-day"></i> Hari :  {{ $data->hari }}</p>
+                                <p><i class="fas fa-clock"></i> Pukul : {{ $data->jam }}</p>
+                                <p><i class="fas fa-calendar-alt"></i> Tanggal : {{ $data->tanggal }}</p>
+                                <p><i class="fas fa-calendar-check"></i> Agenda : {{ $data->agenda }}</p>
                             </div>
-                            <span class="authore-name"><i class="fal fa-user"></i> Rosalina D. Willaim, Keliam Browni</span>
+                            <span class="authore-name"><i class="fas fa-clinic-medical"></i> Tempat : {{ $data->tempat }}</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-6 col-md-12 mt-30">
-                    <div class="single-service-box-4">
-                        <div class="thumb">
-                            <img src="assets/images/service/med.jpg" alt="">
-                            <span class="count">02</span>
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Therapeutic Mattress</h4>
-                            <div class="service-box-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur
-                                    adipi sicing elit, sed do eiusmod.</p>
-                            </div>
-                            <span class="authore-name"><i class="fal fa-user"></i> Rosalina D. Willaim, Keliam Browni</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-12 mt-30">
-                    <div class="single-service-box-4">
-                        <div class="thumb">
-                            <img src="assets/images/service/med.jpg" alt="">
-                            <span class="count">03</span>
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Laboratory Mice</h4>
-                            <div class="service-box-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur
-                                    adipi sicing elit, sed do eiusmod.</p>
-                            </div>
-                            <span class="authore-name"><i class="fal fa-user"></i> Rosalina D. Willaim, Keliam Browni</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-12 mt-30">
-                    <div class="single-service-box-4">
-                        <div class="thumb">
-                            <img src="assets/images/service/med.jpg" alt="">
-                            <span class="count">04</span>
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Surgery Center</h4>
-                            <div class="service-box-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur
-                                    adipi sicing elit, sed do eiusmod.</p>
-                            </div>
-                            <span class="authore-name"><i class="fal fa-user"></i> Rosalina D. Willaim, Keliam Browni</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-12 mt-30">
-                    <div class="single-service-box-4">
-                        <div class="thumb">
-                            <img src="assets/images/service/med.jpg" alt="">
-                            <span class="count">05</span>
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Cardiology Consultants</h4>
-                            <div class="service-box-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur
-                                    adipi sicing elit, sed do eiusmod.</p>
-                            </div>
-                            <span class="authore-name"><i class="fal fa-user"></i> Rosalina D. Willaim, Keliam Browni</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-12 mt-30">
-                    <div class="single-service-box-4">
-                        <div class="thumb">
-                            <img src="assets/images/service/med.jpg" alt="">
-                            <span class="count">06</span>
-                        </div>
-                        <div class="content">
-                            <h4 class="title">Dental Care Consult</h4>
-                            <div class="service-box-text">
-                                <p>Lorem ipsum dolor sit amet, consectetur
-                                    adipi sicing elit, sed do eiusmod.</p>
-                            </div>
-                            <span class="authore-name"><i class="fal fa-user"></i> Rosalina D. Willaim, Keliam Browni</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </section>
