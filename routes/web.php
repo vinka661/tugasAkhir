@@ -131,6 +131,6 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/index', 'GuestController@index')->name('index');
 Route::get('/about', 'GuestController@about')->name('about');
 Route::get('/jadwal', 'GuestController@jadwal')->name('jadwal');
-Route::get('/penyuluhan', 'GuestController@penyuluhan')->name('penyuluhan');
+Route::get('/penyuluhanGuest', 'GuestController@penyuluhan')->name('penyuluhanGuest');
 
 // Route::get('login', [LoginController::class, 'login'])->name('login');

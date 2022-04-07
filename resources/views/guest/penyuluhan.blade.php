@@ -99,6 +99,7 @@
     <div class="blog-area bg-2 pt-120 pb-120">
         <div class="container">
             <div class="row mt-none-30">
+                @foreach($penyuluhan as $key => $data)
                 <div class="col-xl-6 col-lg-6 col-sm-12 mt-30">
                     <div class="single-news-box">
                         <div class="thumb">
@@ -106,136 +107,21 @@
                         </div>
                         <div class="content">
                             <div class="news-meta-date">
-                                <span>23</span>
-                                Mar
+                                <span>{{ ++$key }}</span>
                             </div>
                             <div class="news-meta">
                                 <ul>
-                                    <li><a href="#0"><i class="fal fa-user"></i> Rosali D.</a></li>
-                                    <li><a href="#0"><i class="fal fa-calendar-alt"></i> 24th Feb 2020</a></li>
+                                    <li><a href="#0"><i class="fal fa-calendar-day"></i> {{ $data->hari }}</a></li>
+                                    <li><a href="#0"><i class="fal fa-calendar-alt"></i> {{ $data->tanggal }}</a></li>
                                 </ul>
                             </div>
-                            <h4 class="title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incididunt
-                                    .</a></h4>
-                            <a href="blog-details.html" class="inline-btn">Read More</a>
+                            <h4 class="title"><a href="">{{ $data->materi }}</a></h4>
+                            <a href="" class="inline-btn"><i class="fal fa-video"></i> Lihat Video</a>
                             <span class="count">01</span>
                         </div>
                     </div>
                 </div>
-                <div class="col-xl-6 col-lg-6 col-sm-12 mt-30">
-                    <div class="single-news-box">
-                        <div class="thumb">
-                            <img src="assets/images/blog/b2.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="news-meta-date">
-                                <span>23</span>
-                                Mar
-                            </div>
-                            <div class="news-meta">
-                                <ul>
-                                    <li><a href="#0"><i class="fal fa-user"></i> Rosali D.</a></li>
-                                    <li><a href="#0"><i class="fal fa-calendar-alt"></i> 24th Feb 2020</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incididunt
-                                    .</a></h4>
-                            <a href="blog-details.html" class="inline-btn">Read More</a>
-                            <span class="count">01</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-sm-12 mt-30">
-                    <div class="single-news-box">
-                        <div class="thumb">
-                            <img src="assets/images/blog/b3.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="news-meta-date">
-                                <span>23</span>
-                                Mar
-                            </div>
-                            <div class="news-meta">
-                                <ul>
-                                    <li><a href="#0"><i class="fal fa-user"></i> Rosali D.</a></li>
-                                    <li><a href="#0"><i class="fal fa-calendar-alt"></i> 24th Feb 2020</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incididunt
-                                    .</a></h4>
-                            <a href="blog-details.html" class="inline-btn">Read More</a>
-                            <span class="count">01</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-sm-12 mt-30">
-                    <div class="single-news-box">
-                        <div class="thumb">
-                            <img src="assets/images/blog/b4.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="news-meta-date">
-                                <span>23</span>
-                                Mar
-                            </div>
-                            <div class="news-meta">
-                                <ul>
-                                    <li><a href="#0"><i class="fal fa-user"></i> Rosali D.</a></li>
-                                    <li><a href="#0"><i class="fal fa-calendar-alt"></i> 24th Feb 2020</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incididunt
-                                    .</a></h4>
-                            <a href="blog-details.html" class="inline-btn">Read More</a>
-                            <span class="count">01</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-sm-12 mt-30">
-                    <div class="single-news-box">
-                        <div class="thumb">
-                            <img src="assets/images/blog/b5.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="news-meta-date">
-                                <span>23</span>
-                                Mar
-                            </div>
-                            <div class="news-meta">
-                                <ul>
-                                    <li><a href="#0"><i class="fal fa-user"></i> Rosali D.</a></li>
-                                    <li><a href="#0"><i class="fal fa-calendar-alt"></i> 24th Feb 2020</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incididunt
-                                    .</a></h4>
-                            <a href="blog-details.html" class="inline-btn">Read More</a>
-                            <span class="count">01</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6 col-sm-12 mt-30">
-                    <div class="single-news-box">
-                        <div class="thumb">
-                            <img src="assets/images/blog/b6.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="news-meta-date">
-                                <span>23</span>
-                                Mar
-                            </div>
-                            <div class="news-meta">
-                                <ul>
-                                    <li><a href="#0"><i class="fal fa-user"></i> Rosali D.</a></li>
-                                    <li><a href="#0"><i class="fal fa-calendar-alt"></i> 24th Feb 2020</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="title"><a href="blog-details.html">Lorem ipsum dolor sit amet, consectetur adipisic elit, sed do eiusmod tempor incididunt .</a></h4>
-                            <a href="blog-details.html" class="inline-btn">Read More</a>
-                            <span class="count">01</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
                 <div class="col-lg-12">
                     <div class="basic-pagination basic-pagination-2 mt-40">
                         <ul>

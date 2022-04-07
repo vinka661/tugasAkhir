@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\JadwalPosyandu;
+use App\Penyuluhan;
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -24,6 +25,7 @@ class GuestController extends Controller
 
     public function penyuluhan()
     {
-        return view('guest.penyuluhan');
+        $penyuluhan = Penyuluhan::all();
+        return view('guest.penyuluhan', ['penyuluhan' => $penyuluhan]);
     }
 }

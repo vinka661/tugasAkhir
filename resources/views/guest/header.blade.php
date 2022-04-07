@@ -39,7 +39,7 @@
                                                 <li><a href="">Informasi</a>
                                                     <ul class="sub-menu">
                                                         <li><a href="{{route ('jadwal')}}">Jadwal Posyandu</a></li>
-                                                        <li><a href="{{route ('penyuluhan')}}">Materi Penyuluhan</a></li>
+                                                        <li><a href="{{route ('penyuluhanGuest')}}">Materi Penyuluhan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
