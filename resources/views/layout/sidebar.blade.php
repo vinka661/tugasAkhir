@@ -118,21 +118,9 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('konsultasiIbu') }}">
                     <i class="fas fa-user"></i>
                     <span>Konsultasi Online</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route ('jadwalPosyanduBayi')}}">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Jadwal Posyandu</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="">
-                    <i class="fas fa-users"></i>
-                    <span>Penyuluhan</span>
                 </a>
             </li>
             <li class="nav-item">

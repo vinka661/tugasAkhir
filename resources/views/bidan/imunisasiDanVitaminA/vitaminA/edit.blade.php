@@ -34,8 +34,17 @@
                         </select>
                       </div>
                       <div class="form-group">
-                        <label for="kapsul_vitaminA"><strong>Kapsul VitaminA<strong></label>
-                        <input type="text" class="form-control" id="kapsul_vitaminA" name="kapsul_vitaminA" value="{{ $vitaminA->kapsul_vitaminA}}">
+                        <label for="kapsul_vitaminA">Kapsul Vitamin A</label>
+                        <div class="d-flex">
+                            <div class="custom-control custom-radio mr-3">
+                                <input class="custom-control-input" type="radio" id="biru" name="kapsul_vitaminA" value="Biru" {{ $vitaminA->kapsul_vitaminA == 'Biru' ? 'checked' : ''}}>
+                                <label for="biru" class="custom-control-label">Biru</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input class="custom-control-input" type="radio" id="merah" name="kapsul_vitaminA" value="Merah" {{ $vitaminA->kapsul_vitaminA == 'Merah' ? 'checked' : ''}}>
+                                <label for="merah" class="custom-control-label">Merah</label>
+                            </div>
+                        </div>
                       </div>
                       <div class="form-group">
                         <label for="tanggal_beri_vitaminA"><strong>Tanggal Beri VitaminA<strong></label><br>

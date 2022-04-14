@@ -67,6 +67,8 @@ Route::get('laporan', 'laporanController@index')->name('laporan');
 //kepala PLKB
 //data diri
 Route::get('kepala/dataDiri/{id}', 'kepalaController@show')->name('dataKepala');
+Route::get('kepala/dataDiri/edit/{id}', 'kepalaController@editData')->name('editDataKepala');
+Route::post('kepala/dataDiri/update/{id}', 'kepalaController@updateData')->name('updateDataKepala');
 
 //kader
 //timbang
@@ -119,6 +121,9 @@ Route::get('jenisVaksinImunisasi/delete/{id_vaksin_imunisasi}', 'bidanController
 
 //jadwal posyandu halaman ibu bayi
 Route::get('jadwalPosyanduibuBayi', 'ibuBayiController@jadwalPosyandu')->name('jadwalPosyanduBayi');
+Route::get('konsultasiIbu', 'ibuBayiController@konsultasi')->name('konsultasiIbu');
+Route::get('konsultasiIbu/createKonsultasi', 'ibuBayiController@createKonsultasi')->name('createKonsultasi');
+Route::post('konsultasiIbu/storeKonsultasi', 'ibuBayiController@storeKonsultasi')->name('storeKonsultasi');
 
 //Konsultasi
 Route::get('konsultasi', 'bidanController@konsultasi')->name('konsultasi');

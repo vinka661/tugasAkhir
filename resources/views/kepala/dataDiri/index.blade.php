@@ -32,7 +32,7 @@
                   </div>
                   <div class="col-lg-10">
                     <dl class="row">
-                      <dt class="col-sm-4">Nama</dt>
+                      <dt class="col-sm-4">Nama Lengkap</dt>
                       <dd class="col-sm-8">{{ $kepala->name }}</dd>
                       <dt class="col-sm-4">Jenis Kelamin</dt>
                       <dd class="col-sm-8">                    
@@ -48,7 +48,7 @@
                   </div>
                 </div>
                 <div class="col  text-right">
-                <a href="" class="btn btn-primary">Edit</a>
+                <a href="{{ route('editDataKepala', $kepala->id) }}" class="btn btn-primary">Edit</a>
                 </div>
               </div>
               <!-- /.card-body -->
