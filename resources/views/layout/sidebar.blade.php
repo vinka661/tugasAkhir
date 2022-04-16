@@ -164,7 +164,10 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('penyuluhanKader')}}">
+                @php
+                  $id = str_replace('@mail.com', '', Auth::user()->email);;
+                @endphp
+                <a class="nav-link" href="{{ url('penyuluhanKader/'. $id) }}">
                     <i class="fas fa-users"></i>
                     <span>Penyuluhan</span>
                 </a>

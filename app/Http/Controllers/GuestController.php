@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\JadwalPosyandu;
 use App\Penyuluhan;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class GuestController extends Controller
@@ -19,7 +20,8 @@ class GuestController extends Controller
 
     public function jadwal()
     {
-        $jadwalPosyandu = JadwalPosyandu::all();
+        $date = Carbon::now()->isoFormat('Y-MM-D');
+        $jadwalPosyandu = JadwalPosyandu::where('tanggal', '>=', $date)->orderBy('tanggal', 'asc')->get();
         return view('guest.jadwal', ['jadwalPosyandu' => $jadwalPosyandu]);
     }
 

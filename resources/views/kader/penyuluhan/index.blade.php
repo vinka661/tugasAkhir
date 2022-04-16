@@ -6,7 +6,6 @@
                     <!-- Page Heading -->
                     <h1 class="h3 mb-2 text-gray-800">JADWAL PENYULUHAN</h1>
                     <!-- DataTales Example -->
-                   
                         @if ($message = Session::get('success'))
                             <div class="alert alert-success">
                                 <p>{{ $message }}</p>

@@ -6,6 +6,7 @@ use App\Posyandu;
 use App\Timbang;
 use App\BayiBalita;
 use App\Penyuluhan;
+use DB;
 use Illuminate\Http\Request;
 
 class kaderController extends Controller
@@ -52,10 +53,14 @@ class kaderController extends Controller
         return view('kader.timbang.index', ['timbang' => $timbang]);
     }
 
-    public function penyuluhanKader()
+    public function penyuluhanKader($id)
     {
-        $penyuluhanKader = Penyuluhan::all();
-        return view('kader.penyuluhan.index', ['penyuluhanKader' => $penyuluhanKader]);
+        $penyuluhanKader = DB::table('penyuluhan as pl')
+                            ->join('users as us', 'us.id', '=', 'pl.id')
+                            ->select('pl.hari', 'pl.tanggal', 'pl.materi')
+                            ->where('us.id', '=', $id)
+                            ->get();
+        return view('kader.penyuluhan.index')->with('penyuluhanKader', $penyuluhanKader);
     }
 
     public function UploadMateriPenyuluhan($id_penyuluhan)
@@ -79,18 +84,9 @@ class kaderController extends Controller
     public function uploadVideo(Request $request,$id_penyuluhan)
    {
       $penyuluhan = Penyuluhan::find($id_penyuluhan);
-      $this->validate($request, [
-         'title' => 'required|string|max:255',
-         'video' => 'required|file|mimetypes:video/mp4',
-        ]);
-        $video = new Video;
-        $video->title = $request->title;
-        if ($request->hasFile('video'))
-        {
-            $path = $request->file('video')->store('videos', ['disk' =>      'my_files']);
-            $video->video = $path;
-        }
-        $video->save();
+      $penyuluhan->video = $request->video;
+      $penyuluhan->save();
+      return redirect('penyuluhanKader')->with('success','Link video materi penyuluhan berhasil ditambahkan');
         
   }
 }

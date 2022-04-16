@@ -84,7 +84,7 @@ Route::post('penyuluhan/update/{id_penyuluhan}', 'bidanController@updatePenyuluh
 Route::get('penyuluhan/delete/{id_penyuluhan}', 'bidanController@destroyPenyuluhan')->name('deletePenyuluhan');
 
 //Upload Penyuluhan
-Route::get('penyuluhanKader', 'kaderController@penyuluhanKader')->name('penyuluhanKader');
+Route::get('penyuluhanKader/{id}', 'kaderController@penyuluhanKader');
 Route::get('UploadMateripenyuluhan/upload/{id_penyuluhan}', 'kaderController@UploadMateriPenyuluhan')->name('UploadMateriPenyuluhan');
 Route::post('uploadVideo/{id_penyuluhan}', 'kaderController@uploadVideo')->name('uploadVideo');
 
@@ -137,5 +137,4 @@ Route::get('/index', 'GuestController@index')->name('index');
 Route::get('/about', 'GuestController@about')->name('about');
 Route::get('/jadwal', 'GuestController@jadwal')->name('jadwal');
 Route::get('/penyuluhanGuest', 'GuestController@penyuluhan')->name('penyuluhanGuest');
-
-// Route::get('login', [LoginController::class, 'login'])->name('login');
+Route::get('/login', 'loginController@index')->name('login');

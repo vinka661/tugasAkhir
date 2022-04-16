@@ -32,7 +32,7 @@
                                             <td>{{ $data->nama_vaksin}}</td>
                                             <td>
                                                 <a href="{{ route('editJenisVaksinImunisasi', $data->id_vaksin_imunisasi) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
-                                                <a href="{{ route('deleteJenisVaksinImunisasi', $data->id_vaksin_imunisasi) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a>
+                                                <!-- <a href="{{ route('deleteJenisVaksinImunisasi', $data->id_vaksin_imunisasi) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a> -->
                                               </td>
                                         </tr>
                                         @endforeach
