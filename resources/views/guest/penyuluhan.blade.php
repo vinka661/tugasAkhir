@@ -116,7 +116,7 @@
                                 </ul>
                             </div>
                             <h4 class="title"><a href="">{{ $data->materi }}</a></h4>
-                            <a href="" class="inline-btn"><i class="fal fa-video"></i> Lihat Video</a>
+                            <a href="{{ $data->video }}" class="inline-btn"><i class="fal fa-video"></i> Lihat Video</a>
                             <span class="count">01</span>
                         </div>
                     </div>

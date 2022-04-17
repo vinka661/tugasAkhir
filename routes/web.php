@@ -84,7 +84,7 @@ Route::post('penyuluhan/update/{id_penyuluhan}', 'bidanController@updatePenyuluh
 Route::get('penyuluhan/delete/{id_penyuluhan}', 'bidanController@destroyPenyuluhan')->name('deletePenyuluhan');
 
 //Upload Penyuluhan
-Route::get('penyuluhanKader/{id}', 'kaderController@penyuluhanKader');
+Route::get('penyuluhanKader', 'kaderController@penyuluhanKader')->name('penyuluhanKader');
 Route::get('UploadMateripenyuluhan/upload/{id_penyuluhan}', 'kaderController@UploadMateriPenyuluhan')->name('UploadMateriPenyuluhan');
 Route::post('uploadVideo/{id_penyuluhan}', 'kaderController@uploadVideo')->name('uploadVideo');
 

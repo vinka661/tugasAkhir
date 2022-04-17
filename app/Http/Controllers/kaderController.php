@@ -53,14 +53,10 @@ class kaderController extends Controller
         return view('kader.timbang.index', ['timbang' => $timbang]);
     }
 
-    public function penyuluhanKader($id)
+    public function penyuluhanKader()
     {
-        $penyuluhanKader = DB::table('penyuluhan as pl')
-                            ->join('users as us', 'us.id', '=', 'pl.id')
-                            ->select('pl.hari', 'pl.tanggal', 'pl.materi')
-                            ->where('us.id', '=', $id)
-                            ->get();
-        return view('kader.penyuluhan.index')->with('penyuluhanKader', $penyuluhanKader);
+        $penyuluhanKader = Penyuluhan::all();
+        return view('kader.penyuluhan.index', ['penyuluhanKader' => $penyuluhanKader]);
     }
 
     public function UploadMateriPenyuluhan($id_penyuluhan)
