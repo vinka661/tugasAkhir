@@ -83,7 +83,7 @@
                  
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('dataKepala', $id)}}">
+                <a class="nav-link" href="{{ route('user.profile', Auth::user()->id) }}">
                     <i class="fas fa-user"></i>
                     <span>Data Diri</span>
                 </a>
@@ -106,7 +106,7 @@
             @endcan
             @can('ibu-bayi')
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('dataKepala', $id)}}">
+                <a class="nav-link" href="{{ route('user.profile', Auth::user()->id) }}">
                     <i class="fas fa-user"></i>
                     <span>Data Diri</span>
                 </a>
@@ -146,7 +146,7 @@
                  
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('dataKepala', $id)}}">
+                <a class="nav-link" href="{{ route('user.profile', Auth::user()->id) }}">
                     <i class="fas fa-user"></i>
                     <span>Data Diri</span>
                 </a>
@@ -198,7 +198,7 @@
                  
             </div>
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('dataKepala', $id)}}">
+                <a class="nav-link" href="{{ route('user.profile', Auth::user()->id) }}">
                     <i class="fas fa-user"></i>
                     <span>Data Diri</span>
                 </a>

@@ -66,9 +66,17 @@ Route::get('laporan', 'laporanController@index')->name('laporan');
 
 //kepala PLKB
 //data diri
-Route::get('kepala/dataDiri/{id}', 'kepalaController@show')->name('dataKepala');
-Route::get('kepala/dataDiri/edit/{id}', 'kepalaController@editData')->name('editDataKepala');
-Route::post('kepala/dataDiri/update/{id}', 'kepalaController@updateData')->name('updateDataKepala');
+// Route::get('kepala/dataDiri/{id}', 'kepalaController@show')->name('dataKepala');
+// Route::get('kepala/dataDiri/edit/{id}', 'kepalaController@editData')->name('editDataKepala');
+// Route::post('kepala/dataDiri/update/{id}', 'kepalaController@updateData')->name('updateDataKepala');
+
+// data diri profile
+Route::post('/edit-profil','profileController@editprofil')->name('profile');
+Route::group(["middleware" => "auth"], function() {
+    Route::get('/user/profile/{user}', 'profileController@indexprofil')->name('user.profile');
+    Route::get('/user/profile/edit/{user}', 'profileController@editProfile')->name('user.profile.edit');
+    Route::post('/user/profile/update/{user}', 'profileController@updateProfile')->name('user.profile.update');
+});
 
 //kader
 //timbang
@@ -132,7 +140,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-//halaman frontend
+//halaman user tanpa login
 Route::get('/index', 'GuestController@index')->name('index');
 Route::get('/about', 'GuestController@about')->name('about');
 Route::get('/jadwal', 'GuestController@jadwal')->name('jadwal');
