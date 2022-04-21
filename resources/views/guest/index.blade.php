@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    
+
     <title>SIMDIG || KMS </title>
 
     <!--====== Favicon ======-->
@@ -33,47 +33,47 @@
 </head>
 
 <body>
-        <!-- preloader  -->
-        <div id="preloader">
-            <div id="ctn-preloader" class="ctn-preloader">
-                <div class="animation-preloader">
-                    <div class="spinner"></div>
-                    <div class="txt-loading">
-                        <span data-text-preloader="P" class="letters-loading">
-                            P
-                        </span>
-                        <span data-text-preloader="L" class="letters-loading">
-                            L
-                        </span>
-                        <span data-text-preloader="K" class="letters-loading">
-                            K
-                        </span>
-                        <span data-text-preloader="B" class="letters-loading">
-                            B
-                        </span>
-                    </div>
+    <!-- preloader  -->
+    <div id="preloader">
+        <div id="ctn-preloader" class="ctn-preloader">
+            <div class="animation-preloader">
+                <div class="spinner"></div>
+                <div class="txt-loading">
+                    <span data-text-preloader="P" class="letters-loading">
+                        P
+                    </span>
+                    <span data-text-preloader="L" class="letters-loading">
+                        L
+                    </span>
+                    <span data-text-preloader="K" class="letters-loading">
+                        K
+                    </span>
+                    <span data-text-preloader="B" class="letters-loading">
+                        B
+                    </span>
                 </div>
-                <div class="loader">
-                    <div class="row">
-                        <div class="col-3 loader-section section-left">
-                            <div class="bg"></div>
-                        </div>
-                        <div class="col-3 loader-section section-left">
-                            <div class="bg"></div>
-                        </div>
-                        <div class="col-3 loader-section section-right">
-                            <div class="bg"></div>
-                        </div>
-                        <div class="col-3 loader-section section-right">
-                            <div class="bg"></div>
-                        </div>
+            </div>
+            <div class="loader">
+                <div class="row">
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-left">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
+                    </div>
+                    <div class="col-3 loader-section section-right">
+                        <div class="bg"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- preloader end -->
+    </div>
+    <!-- preloader end -->
 
-        @include('guest.header')
+    @include('guest.header')
 
     <!-- hero area start -->
     <section class="hero-slider-area hero-slider-area-2 owl-carousel">
@@ -82,12 +82,16 @@
                 <div class="row">
                     <div class="col-lg-6 my-auto">
                         <div class="hero-content">
-                            <h1 class="title" data-animation="fadeInUp" data-delay=".3s" data-duration=".5s">Sistem Informasi Digitasi KMS  <br>
-                            <h3 class="sub-title" data-animation="fadeInUp" data-delay=".1s" data-duration=".3s">Untuk Memonitoring Gizi Bayi Balita.</h3>
-                            <h5 class="sub-title" data-animation="fadeInUp" data-delay=".1s" data-duration=".3s">(PLKB Kecamatan Winongan Kabupate Pasuruan)</h5>
+                            <h1 class="title" data-animation="fadeInUp" data-delay=".3s" data-duration=".5s">
+                                Sistem Informasi Digitasi KMS <br>
+                                <h3 class="sub-title" data-animation="fadeInUp" data-delay=".1s"
+                                    data-duration=".3s">Untuk Memonitoring Gizi Bayi Balita.</h3>
+                                <h5 class="sub-title" data-animation="fadeInUp" data-delay=".1s"
+                                    data-duration=".3s">(PLKB Kecamatan Winongan Kabupate Pasuruan)</h5>
                             </h1>
                             <div class="hero-buttons">
-                                <a href="{{ route('login') }}" class="site-btn" data-animation="fadeInUp" data-delay=".9s" data-duration=".7s">Login</a>
+                                <a href="{{ route('login') }}" class="site-btn" data-animation="fadeInUp"
+                                    data-delay=".9s" data-duration=".7s">Login</a>
                             </div>
                         </div>
                     </div>
@@ -104,12 +108,16 @@
                 <div class="row">
                     <div class="col-lg-6 my-auto">
                         <div class="hero-content">
-                            <h1 class="title" data-animation="fadeInUp" data-delay=".3s" data-duration=".5s">Sistem Infromasi Digitasi KMS  <br>
-                            <h4 class="sub-title" data-animation="fadeInUp" data-delay=".1s" data-duration=".3s">Untuk Memonitoring Gizi Bayi Balita.</h4>
-                            <h5 class="sub-title" data-animation="fadeInUp" data-delay=".1s" data-duration=".3s">(PLKB Kecamatan Winongan Kabupate Pasuruan)</h5>
+                            <h1 class="title" data-animation="fadeInUp" data-delay=".3s" data-duration=".5s">
+                                Sistem Infromasi Digitasi KMS <br>
+                                <h4 class="sub-title" data-animation="fadeInUp" data-delay=".1s"
+                                    data-duration=".3s">Untuk Memonitoring Gizi Bayi Balita.</h4>
+                                <h5 class="sub-title" data-animation="fadeInUp" data-delay=".1s"
+                                    data-duration=".3s">(PLKB Kecamatan Winongan Kabupate Pasuruan)</h5>
                             </h1>
                             <div class="hero-buttons">
-                                <a href="service-details.html" class="site-btn" data-animation="fadeInUp" data-delay=".9s" data-duration=".7s">Login</a>
+                                <a href="service-details.html" class="site-btn" data-animation="fadeInUp"
+                                    data-delay=".9s" data-duration=".7s">Login</a>
                             </div>
                         </div>
                     </div>
@@ -174,7 +182,7 @@
                 <div class="col-lg-6 col-md-8 col-sm-10 text-center">
                     <div class="section-heading mb-70">
                         <h2 class="section-title shape">Features</h2>
-                        
+
                     </div>
                 </div>
             </div>
@@ -224,18 +232,21 @@
                     <div class="about-content about-content-3">
                         <div class="section-heading mb-35">
                             <h4 class="sub-title">About Us</h4>
-                            <h2 class="section-title">Penyuluh Lapangan Keluarga Berencana 
-                            (PLKB)</h2>
+                            <h2 class="section-title">Penyuluh Lapangan Keluarga Berencana
+                                (PLKB)</h2>
                             <p>Penyuluh Lapangan Keluarga Berencana (PLKB) yang berlokasi di Jalan Raya Winongan Lor ,
-                                Kecamatan Winongan, Kabupaten pasuruan merupakan suatu lembaga pemerintahan yang diberikan 
+                                Kecamatan Winongan, Kabupaten pasuruan merupakan suatu lembaga pemerintahan yang
+                                diberikan
                                 tugas, tanggungjawab, wewenang, dan hak secara penuh oleh pejabat yang berwenang untuk
-                                melaksanakan kegiatan penyuluhan, pelayanan, evaluasi dan pengembangan KB nasional. 
-                                Selain menangani pengembangan KB nasional, PLKB juga membawahi organisasi kesehatan seperti posyandu (Pos Pelayanan Terpadu).
-                                Posyandu merupakan salah satu bentuk Upaya Kesehatan Bersumberdaya Masyarakat (UKBM) yang dilaksanakan oleh, dari dan bersama masyarakat, 
+                                melaksanakan kegiatan penyuluhan, pelayanan, evaluasi dan pengembangan KB nasional.
+                                Selain menangani pengembangan KB nasional, PLKB juga membawahi organisasi kesehatan
+                                seperti posyandu (Pos Pelayanan Terpadu).
+                                Posyandu merupakan salah satu bentuk Upaya Kesehatan Bersumberdaya Masyarakat (UKBM)
+                                yang dilaksanakan oleh, dari dan bersama masyarakat,
                                 untuk memberdayakan dan memberikan kemudahan kepada masyarakat guna memperoleh
                                 pelayanan kesehatan bagi ibu, bayi dan anak balita.</p>
                         </div>
-                        <a href="{{route ('about')}}" class="site-btn transparent">Learn More</a>
+                        <a href="{{ route('about') }}" class="site-btn transparent">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -259,7 +270,8 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-50 text-center">
                     <div class="single-department single-department-2">
                         <div class="thumb-wrap">
-                            <div class="shape"><img src="assets/images/icons/process-icon-shape-01.png" alt=""></div>
+                            <div class="shape"><img src="assets/images/icons/process-icon-shape-01.png" alt="">
+                            </div>
                             <div class="thumb">
                                 <img src="assets/images/icons/process-icon-01.png" alt="">
                                 <span class="count">01</span>
@@ -274,7 +286,8 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-50 text-center">
                     <div class="single-department single-department-2 small-box">
                         <div class="thumb-wrap">
-                            <div class="shape"><img src="assets/images/icons/process-icon-shape-02.png" alt=""></div>
+                            <div class="shape"><img src="assets/images/icons/process-icon-shape-02.png" alt="">
+                            </div>
                             <div class="thumb">
                                 <img src="assets/images/icons/process-icon-02.png" alt="">
                                 <span class="count">02</span>
@@ -289,7 +302,8 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-50 text-center">
                     <div class="single-department single-department-2">
                         <div class="thumb-wrap extra-margin">
-                            <div class="shape"><img src="assets/images/icons/process-icon-shape-03.png" alt=""></div>
+                            <div class="shape"><img src="assets/images/icons/process-icon-shape-03.png"
+                                    alt=""></div>
                             <div class="thumb">
                                 <img src="assets/images/icons/process-icon-03.png" alt="">
                                 <span class="count">03</span>
@@ -304,7 +318,8 @@
                 <div class="col-xl-3 col-lg-6 col-md-6 col-sm-12 mt-50 text-center">
                     <div class="single-department single-department-2 small-box">
                         <div class="thumb-wrap">
-                            <div class="shape"><img src="assets/images/icons/process-icon-shape-04.png" alt=""></div>
+                            <div class="shape"><img src="assets/images/icons/process-icon-shape-04.png"
+                                    alt=""></div>
                             <div class="thumb">
                                 <img src="assets/images/icons/process-icon-04.png" alt="">
                                 <span class="count">04</span>
@@ -357,14 +372,115 @@
                     </div>
                 </div>
             </div>
-            
+
         </div>
     </section>
     <!-- pricing area end -->
 
-   
+ <!-- gallery area start -->
+ <div class="gallery-area bg-2 pt-100 pb-100">
+    <div class="gallery-active">
+        <div class="singel-gallery-item">
+            <div class="thumb">
+                <img src="assets/images/gallery/1.jpeg" alt="">
+            </div>
+            <div class="content">
+                <h4 class="sub-title">PLKB</h4>
+                <h2 class="title">Kegiatan</h2>
+                <a href="assets/images/gallery/1.jpeg" data-rel="lightcase:myCollection" class="icon">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+        <div class="singel-gallery-item">
+            <div class="thumb">
+                <img src="assets/images/gallery/2.jpg" alt="">
+            </div>
+            <div class="content">
+                <h4 class="sub-title">PLKB</h4>
+                <h2 class="title">Kegiatan</h2>
+                <a href="assets/images/gallery/2.jpg" data-rel="lightcase:myCollection" class="icon">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+        <div class="singel-gallery-item">
+            <div class="thumb">
+                <img src="assets/images/gallery/3.jpeg" alt="">
+            </div>
+            <div class="content">
+                <h4 class="sub-title">PLKB</h4>
+                <h2 class="title">Kegiatan</h2>
+                <a href="assets/images/gallery/3.jpeg" data-rel="lightcase:myCollection" class="icon">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+        <div class="singel-gallery-item">
+            <div class="thumb">
+                <img src="assets/images/gallery/4.jpeg" alt="">
+            </div>
+            <div class="content">
+                <h4 class="sub-title">PLKB</h4>
+                <h2 class="title">Kegiatan</h2>
+                <a href="assets/images/gallery/4.jpeg" data-rel="lightcase:myCollection" class="icon">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+        <div class="singel-gallery-item">
+            <div class="thumb">
+                <img src="assets/images/gallery/5.jpg" alt="">
+            </div>
+            <div class="content">
+                <h4 class="sub-title">PLKB</h4>
+                <h2 class="title">Kegiatan</h2>
+                <a href="assets/images/gallery/5.jpg" data-rel="lightcase:myCollection" class="icon">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+        <div class="singel-gallery-item">
+            <div class="thumb">
+                <img src="assets/images/gallery/6.jpg" alt="">
+            </div>
+            <div class="content">
+                <h4 class="sub-title">PLKB</h4>
+                <h2 class="title">Kegiatan</h2>
+                <a href="assets/images/gallery/6.jpg" data-rel="lightcase:myCollection" class="icon">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+        <div class="singel-gallery-item">
+            <div class="thumb">
+                <img src="assets/images/gallery/7.jpg" alt="">
+            </div>
+            <div class="content">
+                <h4 class="sub-title">PLKB</h4>
+                <h2 class="title">Kegiatan</h2>
+                <a href="assets/images/gallery/7.jpg" data-rel="lightcase:myCollection" class="icon">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+        <div class="singel-gallery-item">
+            <div class="thumb">
+                <img src="assets/images/gallery/8.jpeg" alt="">
+            </div>
+            <div class="content">
+                <h4 class="sub-title">PLKB</h4>
+                <h2 class="title">Kegiatan</h2>
+                <a href="assets/images/gallery/8.jpeg" data-rel="lightcase:myCollection" class="icon">
+                    <i class="fa fa-plus"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- gallery area end -->
 
-    <!-- testimonial area start -->
+    {{-- <!-- testimonial area start -->
     <div class="testimonial-area pt-140 pb-100 bg_img" data-background="assets/images/bg/testimonial-bg.jpeg">
         <div class="container">
             <div class="row justify-content-end">
@@ -376,8 +492,8 @@
                             </div>
                             <div class="content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                    elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua. Ut enim ad minim veniam.</p>
                                 <h4 class="title">Rosalina D. William</h4>
                                 <h5 class="sub-title">Founder, Coxer Co.</h5>
                             </div>
@@ -388,8 +504,8 @@
                             </div>
                             <div class="content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                    elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua. Ut enim ad minim veniam.</p>
                                 <h4 class="title">Kilixer D. Brawni</h4>
                                 <h5 class="sub-title">Founder, Coxer Co.</h5>
                             </div>
@@ -400,8 +516,8 @@
                             </div>
                             <div class="content">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing
-                                elit, sed do eiusmod tempor incididunt ut labore et
-                                dolore magna aliqua. Ut enim ad minim veniam.</p>
+                                    elit, sed do eiusmod tempor incididunt ut labore et
+                                    dolore magna aliqua. Ut enim ad minim veniam.</p>
                                 <h4 class="title">Miranda H. Halimix</h4>
                                 <h5 class="sub-title">Founder, Coxer Co.</h5>
                             </div>
@@ -411,7 +527,7 @@
             </div>
         </div>
     </div>
-    <!-- testimonial area end -->
+    <!-- testimonial area end --> --}}
 
     <!-- news area start -->
     <section class="news-area bg-2 pt-110 pb-110">
@@ -427,75 +543,33 @@
                 </div>
             </div>
             <div class="row mt-none-30">
-                <div class="col-xl-4 col-lg-6 col-md-12 mt-30">
-                    <div class="single-news-box">
-                        <div class="thumb">
-                            <img src="assets/images/blog/01.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="news-meta-date">
-                                <span>23</span>
-                                Mar
+                @foreach ($penyuluhan as $key => $data)
+                    <div class="col-xl-6 col-lg-6 col-sm-12 mt-30">
+                        <div class="single-news-box">
+                            <div class="thumb">
+                                <img src="assets/images/service/med.jpg" alt="">
                             </div>
-                            <div class="news-meta">
-                                <ul>
-                                    <li><a href="#0"><i class="fal fa-user"></i> Rosali D.</a></li>
-                                    <li><a href="#0"><i class="fal fa-calendar-alt"></i> 24th Feb 2020</a></li>
-                                </ul>
+                            <div class="content">
+                                <div class="news-meta-date">
+                                    <span>{{ ++$key }}</span>
+                                </div>
+                                <div class="news-meta">
+                                    <ul>
+                                        <li><a href="#0"><i class="fal fa-calendar-day"></i> {{ $data->hari }}</a>
+                                        </li>
+                                        <li><a href="#0"><i class="fal fa-calendar-alt"></i> {{ $data->tanggal }}</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <h4 class="title"><a href="">{{ $data->materi }}</a></h4>
+                                <a href="{{ $data->video }}" class="inline-btn"><i class="fal fa-video"></i>
+                                    Lihat Video</a>
+                                <span class="count">01</span>
                             </div>
-                            <h4 class="title"><a href="blog-details.html">The Medical Department Is
-                                    Comprised Of Medical.</a></h4>
-                            <a href="blog-details.html" class="inline-btn">Read More</a>
-                            <span class="count">01</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-12 mt-30">
-                    <div class="single-news-box">
-                        <div class="thumb">
-                            <img src="assets/images/blog/02.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="news-meta-date">
-                                <span>10</span>
-                                Feb
-                            </div>
-                            <div class="news-meta">
-                                <ul>
-                                    <li><a href="#0"><i class="fal fa-user"></i> Rosali D.</a></li>
-                                    <li><a href="#0"><i class="fal fa-calendar-alt"></i> 24th Feb 2020</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="title"><a href="blog-details.html">With In-depth Experience In
-                                    Broad Range Of Disease.</a></h4>
-                            <a href="blog-details.html" class="inline-btn">Read More</a>
-                            <span class="count">02</span>
                         </div>
                     </div>
-                </div>
-                <div class="col-xl-4 col-lg-6 col-md-12 mt-30">
-                    <div class="single-news-box">
-                        <div class="thumb">
-                            <img src="assets/images/blog/03.jpg" alt="">
-                        </div>
-                        <div class="content">
-                            <div class="news-meta-date">
-                                <span>04</span>
-                                Mar
-                            </div>
-                            <div class="news-meta">
-                                <ul>
-                                    <li><a href="#0"><i class="fal fa-user"></i> Rosali D.</a></li>
-                                    <li><a href="#0"><i class="fal fa-calendar-alt"></i> 24th Feb 2020</a></li>
-                                </ul>
-                            </div>
-                            <h4 class="title"><a href="blog-details.html">Experience In A Broad Range
-                                    of disease states.</a></h4>
-                            <a href="blog-details.html" class="inline-btn">Read More</a>
-                            <span class="count">03</span>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </section>

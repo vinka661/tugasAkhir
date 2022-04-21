@@ -5,12 +5,15 @@ use App\JadwalPosyandu;
 use App\Penyuluhan;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class GuestController extends Controller
 {
     public function index()
     {
-        return view('guest.index');
+        $penyuluhan = penyuluhan::orderBy('hari','ASC')->take(2)->get(); 
+        return view('guest.index', ['penyuluhan' => $penyuluhan]);
     }
 
     public function about()
