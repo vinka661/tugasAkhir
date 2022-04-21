@@ -293,4 +293,29 @@ class bidanController extends Controller
         $user = User::all();
         return view('bidan.konsultasi.index', ['konsultasi' => $konsultasi,'user' => $user]);
     }
+
+    public function balasKonsultasi($id_kosultasi)
+    {
+
+        $konsultasi = Konsultasi::find($id_kosultasi);
+        $user = User::all();;
+        return view('bidan.konsultasi.balas', ['konsultasi' => $konsultasi,'user' => $user]);
+    }
+
+    public function updateKonsultasi(Request $request, $id_kosultasi)
+    {
+        $konsultasi = Konsultasi::find($id_kosultasi);
+        // $konsultasi->id= $request->ibu;
+        // $konsultasi->konsul = $request->konsul;
+        $konsultasi->solusi = $request->solusi;
+        $konsultasi->save();
+        return redirect('konsultasi')->with('success1','Konsultasi berhasil di balas');
+    }
+
+    public function destroyKonsultasi($id_kosultasi)
+    {
+        $konsultasi = Konsultasi::find($id_kosultasi);
+        $konsultasi->delete();
+        return redirect('konsultasi')->with('success1','Konsultasi berhasil dihapus');
+    }
 }

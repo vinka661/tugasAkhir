@@ -8,7 +8,7 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         
-                        @if ($message = Session::get('success'))
+                        @if ($message = Session::get('success1'))
                             <div class="alert alert-success">
                                 <p>{{ $message }}</p>
                             </div>
@@ -33,8 +33,8 @@
                                             <td>{{ $data->konsul }}</td>
                                             <td><i>{{ $data->solusi }}</i></td>
                                             <td>
-                                                <a href=""><button  class="btn btn-warning btn-sm"><i class="fas fa-comment"></i> Balas</button></a>
-                                                <a href=""><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a>
+                                                <a href="{{ route('balasKonsultasi', $data->id_kosultasi) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-comment"></i> Balas</button></a>
+                                                <a href="{{ route('deleteKonsultasi', $data->id_kosultasi) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a>
                                             </td>
                                         </tr>
                                         @endforeach

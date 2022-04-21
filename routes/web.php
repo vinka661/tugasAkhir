@@ -133,8 +133,11 @@ Route::get('konsultasiIbu', 'ibuBayiController@konsultasi')->name('konsultasiIbu
 Route::get('konsultasiIbu/createKonsultasi', 'ibuBayiController@createKonsultasi')->name('createKonsultasi');
 Route::post('konsultasiIbu/storeKonsultasi', 'ibuBayiController@storeKonsultasi')->name('storeKonsultasi');
 
-//Konsultasi
+//Konsultasi bidan
 Route::get('konsultasi', 'bidanController@konsultasi')->name('konsultasi');
+Route::get('konsultasi/balas/{id_kosultasi}', 'bidanController@balasKonsultasi')->name('balasKonsultasi');
+Route::post('konsultasi/updatebalas/{id_kosultasi}', 'bidanController@updateKonsultasi')->name('updateKonsultasi');
+Route::get('konsultasi/delete/{id_kosultasi}', 'bidanController@destroyKonsultasi')->name('deleteKonsultasi');
 
 Auth::routes();
 
