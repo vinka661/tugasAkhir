@@ -28,7 +28,11 @@
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" href="assets/css/default.css">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/responsive.css"><link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
+
 
 </head>
 
@@ -120,7 +124,7 @@
                             <label for="pass">Password <span>**</span></label>
                             <input id="password" type="password"
                                 class="form-control form-control-user @error('password') is-invalid @enderror"
-                                name="password" placeholder="Password" required autocomplete="current-password">
+                                name="password" placeholder="Password" required autocomplete="current-password" data-toggle="password">
 
                             @error('password')
                                 <span class="invalid-feedback" role="alert">
@@ -144,6 +148,9 @@
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            $("#password").password('toggle');
+        </script>
     </section>
     <!-- login Area End-->
     <!-- footer area start -->
