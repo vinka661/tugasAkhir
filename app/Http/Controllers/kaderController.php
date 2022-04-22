@@ -8,6 +8,7 @@ use App\BayiBalita;
 use App\Penyuluhan;
 use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class kaderController extends Controller
 {
@@ -55,7 +56,8 @@ class kaderController extends Controller
 
     public function penyuluhanKader()
     {
-        $penyuluhanKader = Penyuluhan::all();
+        // $penyuluhanKader = Penyuluhan::all();
+        $penyuluhanKader = Penyuluhan::with('user')->get();
         return view('kader.penyuluhan.index', ['penyuluhanKader' => $penyuluhanKader]);
     }
 
