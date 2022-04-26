@@ -5,6 +5,7 @@ use App\JadwalPosyandu;
 use App\Konsultasi;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ibuBayiController extends Controller
 {
@@ -16,9 +17,8 @@ class ibuBayiController extends Controller
 
     public function konsultasi()
     {
-        $user = User::all();
-        $konsultasi = Konsultasi::all();
-        return view('ibuBayi.konsultasi.index');
+        $konsultasi = konsultasi::with('user')->get();
+        return view('ibuBayi.konsultasi.index', ['konsultasi' => $konsultasi]);
     }
 
     public function createKonsultasi()
