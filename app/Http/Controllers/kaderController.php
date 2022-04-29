@@ -48,6 +48,74 @@ class kaderController extends Controller
         return redirect('kader')->with('success','Data kader berhasil dihapus');
     }
 
+// Data bayi dan data timbang 
+    public function bayiTimbangIndex()
+    {
+        $bayiBalita = BayiBalita::all();
+        return view('kader.timbang.index', ['bayiBalita' => $bayiBalita]);
+    }
+
+    public function detailTimbangBayi($id_bb)
+    {
+        $bayiBalita = BayiBalita::find($id_bb);
+        $timbang = Timbang::where('id_bb', '=', $id_bb)->get();
+        return view('kader.timbang.detail', ['bayiBalita' => $bayiBalita, 'timbang' => $timbang ]);
+    }
+
+
+    public function createTimbang(BayiBalita $bayiBalita)
+    {
+        $timbang = Timbang::all();
+        $bayiBalita = BayiBalita::all();
+        $user = User::all();
+        return view('kader.timbang.create', ['timbang' => $timbang, 'bayiBalita' => $bayiBalita, 'user' => $user]);
+    }
+
+    public function storeTimbang(Request $request)
+    {
+        
+        Timbang::create([
+            'id' => $request->id,
+            'id_bb' => $request->id_bb,
+            'tgl_timbang' => $request->tgl_timbang,
+            'berat_badan' => $request->berat_badan,
+            'tinggi_badan' => $request->tinggi_badan,
+            'lingkar_kepala' => $request->lingkar_kepala,
+            'status_gizi' => $request->status_gizi,
+            
+        ]);
+        return redirect()->route('detailTimbangBayi', ['id_bb' => $request->id_bb])->with('success','Data Timbang BayiBalita Berhasil Ditambahkan');
+    }
+
+    public function editTimbang($id_timbang)
+    {
+        $timbang = Timbang::find($id_timbang);
+        $bayiBalita = BayiBalita::all();
+        $user = User::all();
+        return view('kader.timbang.edit', ['timbang' => $timbang, 'bayiBalita' => $bayiBalita, 'user' => $user]);
+    }
+
+    public function updateTimbang(Request $request, $id_timbang)
+    {
+        $timbang = Timbang::find($id_timbang);
+        $timbang->id = $request->id;
+        $timbang->id_bb = $request->id_bb;
+        $timbang->tgl_timbang = $request->tgl_timbang;
+        $timbang->berat_badan = $request->berat_badan;
+        $timbang->lingkar_kepala = $request->lingkar_kepala;
+        $timbang->status_gizi = $request->status_gizi;
+        $timbang->save();
+        return redirect()->route('detailTimbangBayi', ['id_bb' => $request->id_bb])->with('success','Data Timbang Berhasil Diedit');
+    }
+
+    public function destroyTimbang($id)
+    {
+        $timbang = Timbang::find($id);
+        $bayiBalita = BayiBalita::all();
+        $timbang->delete();
+        return redirect()->route('detailTimbangBayi', ['id_bb' => $timbang->id_bb])->with('success','Data Timbang Berhasil Dihapus');
+    }
+
     public function timbang()
     {
         $timbang = Timbang::all();

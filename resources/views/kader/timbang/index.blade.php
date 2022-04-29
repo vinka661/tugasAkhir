@@ -4,11 +4,11 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">DATA TIMBANG BAYI/BALITA</h1>
+                    <h1 class="h3 mb-2 text-gray-800">DATA TIMBANG BAYI BALITA</h1>
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href=""><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
+                            <a href="{{ route('createBayiBalita') }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data</button></a>
                         </div>
                         @if ($message = Session::get('success'))
                             <div class="alert alert-success">
@@ -21,31 +21,32 @@
                                     <thead>
                                         <tr>
                                             <th>No</th>
-                                            <th>Nama Kader</th>
-                                            <th>Nama Bayi</th>
-                                            <th>Tanggal Timbang</th>
-                                            <th>BB</th>
-                                            <th>TB</th>
-                                            <th>LK</th>
-                                            <th>Status Gizi</th>
+                                            <th>Nama</th>
+                                            <th>TTL</th>
+                                            <th>Jenis Kelamin</th>
+                                            <th>Umur (bln)</th>
+                                            <th>Alamat</th>
+                                            <th>Nama Ibu</th>
+                                            <th>Nama Ayah</th>
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @foreach($timbang as $key => $data)
+                                        @foreach($bayiBalita as $key => $data)
                                         <tr>
                                             <td>{{ ++$key }}</td>
-                                            <td>{{ $data->user->name }}</td>
-                                            <td>{{ $data->bayi_balita->nama_bayi }}</td>
-                                            <td>{{ $data->tgl_timbang }}</td>
-                                            <td>{{ $data->berat_badan}}</td>
-                                            <td>{{ $data->tinggi_badan}}</td>
-                                            <td>{{ $data->lingkar_kepala}}</td>
-                                            <td>{{ $data->status_gizi}}</td>
+                                            <td>{{ $data->nama_bayi }}</td>
+                                            <td>{{ $data->ttl }}</td>
+                                            <td>{{ $data->jenis_kelamin }}</td>
+                                            <td>{{ $data->umur }}</td>
+                                            <td>{{ $data->alamat }}</td>
+                                            <td>{{ $data->nama_ibu }}</td>
+                                            <td>{{ $data->nama_ayah }}</td>
                                             <td>
-                                                <a href=""><button  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
-                                                <a href=""><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a>
-                                            </td>
+                                                <a href="{{ route('editBayiBalita', $data->id_bb) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
+                                                <a href="{{ route('deleteBayiBalita', $data->id_bb) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a>
+                                                <a href="{{ route('detailTimbangBayi', $data->id_bb) }}"><button  class="btn  btn-success btn-sm"><i class="fas fa-weight"></i></i>Timbang Bayi</button></a>
+                                              </td>
                                         </tr>
                                         @endforeach
                                     </tbody>

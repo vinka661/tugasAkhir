@@ -152,17 +152,17 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{route ('bayiBalita')}}">
+                <a class="nav-link" href="{{route ('timbangbayiBalita')}}">
                     <i class="fas fa-baby"></i>
-                    <span>Data Bayi/Balita</span>
+                    <span>Data Timbang Bayi/Balita</span>
                 </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
                 <a class="nav-link" href="{{route ('timbang')}}">
                     <i class="fas fa-user"></i>
                     <span>Timbang Bayi/Balita</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
                 <a class="nav-link" href="{{route ('penyuluhanKader')}}">
                     <i class="fas fa-users"></i>

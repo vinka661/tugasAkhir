@@ -41,6 +41,18 @@ Route::get('bayiBalita/edit/{id_bb}', 'bayiBalitaController@edit')->name('editBa
 Route::post('bayiBalita/update/{id_bb}', 'bayiBalitaController@update')->name('updateBayiBalita');
 Route::get('bayiBalita/delete/{id_bb}', 'bayiBalitaController@destroy')->name('deleteBayiBalita');
 
+//timbangbayibalita
+Route::get('timbangbayiBalita', 'kaderController@bayiTimbangIndex')->name('timbangbayiBalita');
+Route::get('timbang/detailtimbangbayiBalita/{id_bb}', 'kaderController@detailTimbangBayi')->name('detailTimbangBayi');
+Route::get('timbang/createTimbang/{bayiBalita?}', 'kaderController@createTimbang')->name('createTimbang');
+Route::post('timbang/Timbang', 'kaderController@storeTimbang')->name('storeTimbang');
+Route::get('timbang/edit/{id_timbang}', 'kaderController@editTimbang')->name('editTimbang');
+Route::post('timbang/update/{id_timbang}', 'kaderController@updateTimbang')->name('updateTimbang');
+Route::get('timbang/delete/{id_timbang}', 'kaderController@destroyTimbang')->name('deleteTimbang');
+
+//timbang 
+Route::get('timbang', 'kaderController@timbang')->name('timbang');
+
 //user
 Route::get('user', 'userController@index')->name('user');
 Route::get('user/create', 'userController@create')->name('createUser');
@@ -78,9 +90,6 @@ Route::group(["middleware" => "auth"], function() {
     Route::post('/user/profile/update/{user}', 'profileController@updateProfile')->name('user.profile.update');
 });
 
-//kader
-//timbang
-Route::get('timbang', 'kaderController@timbang')->name('timbang');
 
 //bidan desa
 //jadwal penyuluhan
