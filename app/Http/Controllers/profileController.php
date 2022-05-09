@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 use Auth;
 use Validator;
 use App\User;
+use App\BayiBalita;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
+use DB;
 
 class profileController extends Controller
 {
@@ -17,6 +19,15 @@ class profileController extends Controller
     public function indexprofil()
     {
     	return view('profile.index', array('user' => Auth::user()) );
+    }
+
+    public function indexprofilIbu()
+    {
+        $namabayi = DB::table('bayi_balita')
+                    ->join('users', 'users.id', '=', 'bayi_balita.id')
+                    ->get();
+        $namabayi = BayiBalita::with('user')->get();
+    	return view('profile.profileIbu', array('user' => Auth::user()),  compact( "namabayi"), ['namabayi' => $namabayi]);
     }
 
     public function editProfile($id) {
@@ -105,6 +116,78 @@ class profileController extends Controller
 	    		$user1->save();
     }
     return redirect(route("user.profile", $user->id))->with(["success" => "User berhasil diupdate!"]);
+}
+
+public function editProfileIbu($id) {
+    $user = User::find($id);
+    return view('profile.editProfileIbu', compact( "user"));
+}
+
+public function updateProfileIbu(Request $request, $id) {
+    // $this->validate($request, [
+    //     "name" => "required|string",
+    //     "password" => "required",
+    //     "photo" => "required|mimes:jpeg,jpg,png",
+    //     "alamat" => "required|string",
+    //     "jenis_kelamin" => "required"
+    // ]);
+
+    // $user = User::find($id);
+
+    // if($request->hasFile('avatar')) {
+    // 		$photo = $request->file('avatar');
+    // 		$filename = time() . '.' . $photo->getClientOriginalExtension();
+    // 		Image::make($photo)->resize(300, 300)->save( public_path('/img/upload/avatar/' . $filename ) );
+
+    // 		$user = Auth::user();
+    // 		$user->photo = $filename;
+    // 		$user->save();
+        
+
+    //     // Jika user mengganti passwornya password 
+
+    //     if ($user->password != $request->password) {
+    //         $user->update([
+    //             "name" => $request->name,
+    //             "password" => Hash::make($request->password),
+    //             "photo" => $filename,
+    //             "alamat" => $request->alamat,
+    //             "jenis_kelamin" => $request->jenis_kelamin
+    //         ]);
+    //     } else {
+    //         // Jika user tidak mengganti passwordnya
+
+    //         $user->update([
+    //             "name" => $request->name,
+    //             "password" => $request->password,
+    //             "photo" => $filename,
+    //             "alamat" => $request->alamat,
+    //             "jenis_kelamin" => $request->jenis_kelamin
+    //         ]);
+    //     }
+    // }
+
+    // return redirect(route("user.profile", $user->id))->with(["success" => "User berhasil diupdate!"]);
+    $img = 'photo';
+    $user = User::find($id);
+    $user->id = $request->id;
+    $user->name = $request->name;
+    $user->jenis_kelamin = $request->jenis_kelamin;
+    $user->alamat = $request->alamat;
+    $user->save();
+
+    $user1 = User::find($id);
+
+    if($request->hasFile('avatar')) {
+            $photo = $request->file('avatar');
+            $filename = time() . '.' . $photo->getClientOriginalExtension();
+            Image::make($photo)->resize(300, 300)->save( public_path('/img/upload/avatar/' . $filename ) );
+
+            $user1 = Auth::user();
+            $user1->photo = $filename;
+            $user1->save();
+}
+return redirect(route("userIbu.profile", $user->id))->with(["success" => "User berhasil diupdate!"]);
 }
 
 }

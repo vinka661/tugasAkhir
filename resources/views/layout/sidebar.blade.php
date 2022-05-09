@@ -106,13 +106,13 @@
             @endcan
             @can('ibu-bayi')
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('user.profile', Auth::user()->id) }}">
+                <a class="nav-link" href="{{ route('userIbu.profile', Auth::user()->id) }}">
                     <i class="fas fa-user"></i>
                     <span>Data Diri</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{ route('hasil') }}">
                     <i class="fas fa-chart-bar"></i>
                     <span>Hasil Perkembangan</span>
                 </a>

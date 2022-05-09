@@ -40,7 +40,7 @@
                                             <td>{{ $data->jenis_kelamin }}</td>
                                             <td>{{ $data->umur }}</td>
                                             <td>{{ $data->alamat }}</td>
-                                            <td>{{ $data->nama_ibu }}</td>
+                                            <td>{{ $data->user->name }}</td>
                                             <td>{{ $data->nama_ayah }}</td>
                                             <td>
                                                 <a href="{{ route('editBayiBalita', $data->id_bb) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a>

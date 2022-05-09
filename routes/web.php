@@ -88,6 +88,10 @@ Route::group(["middleware" => "auth"], function() {
     Route::get('/user/profile/{user}', 'profileController@indexprofil')->name('user.profile');
     Route::get('/user/profile/edit/{user}', 'profileController@editProfile')->name('user.profile.edit');
     Route::post('/user/profile/update/{user}', 'profileController@updateProfile')->name('user.profile.update');
+    //ibu
+    Route::get('/user/profileIbu/{user}', 'profileController@indexprofilIbu')->name('userIbu.profile');
+    Route::get('/user/profileIbu/edit/{user}', 'profileController@editProfileIbu')->name('userIbu.profile.edit');
+    Route::post('/user/profileIbu/update/{user}', 'profileController@updateProfileIbu')->name('userIbu.profile.update');
 });
 
 
@@ -147,6 +151,11 @@ Route::get('konsultasi', 'bidanController@konsultasi')->name('konsultasi');
 Route::get('konsultasi/balas/{id_kosultasi}', 'bidanController@balasKonsultasi')->name('balasKonsultasi');
 Route::post('konsultasi/updatebalas/{id_kosultasi}', 'bidanController@updateKonsultasi')->name('updateKonsultasi');
 Route::get('konsultasi/delete/{id_kosultasi}', 'bidanController@destroyKonsultasi')->name('deleteKonsultasi');
+
+
+//Hasil Perkembangan
+Route::get('hasilPerkembangan', 'ibuBayiController@hasilPerkembangan')->name('hasil');
+
 
 Auth::routes();
 

@@ -19,10 +19,11 @@ class CreateBayiBalitaTable extends Migration
             $table->date('ttl');
             $table->string('umur', 2);
             $table->string('alamat', 30);
-            $table->string('nama_ibu', 30);
             $table->string('nama_ayah', 30);
             $table->string('jenis_kelamin', 9);
+            $table->unsignedInteger('id');
             $table->timestamps();
+            $table->foreign('id')->references('id')->on('users');
         });
     }
 

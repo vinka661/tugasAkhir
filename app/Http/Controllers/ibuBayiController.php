@@ -34,4 +34,13 @@ class ibuBayiController extends Controller
         ]);
         return redirect('konsultasiIbu')->with('success','Data konsultasi online berhasil ditambahkan');
     }
+
+    public function hasilPerkembangan()
+    {
+        // $timbang = Timbang::all();
+        // return view('ibuBayi.jadwalPosyandu.index', ['jadwalPosyanduBayi' => $jadwalPosyanduBayi]);
+        return view('ibuBayi.hasilPerkembangan.index');
+    }
+
+
 }

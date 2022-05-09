@@ -53,9 +53,17 @@
                     <label for="alamat"><strong>Alamat<strong></label><br>
                     <textarea name="alamat" id="alamat" class="form-control" rows="5" placeholder="Masukkan Alamat Bayi/Balita" required></textarea>
                   </div>
-                  <div class="form-group">
+                  {{-- <div class="form-group">
                     <label for="nama_ibu"><strong>Nama Ibu<strong></label>
                     <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" placeholder="Masukkan Nama Ibu" required>
+                  </div> --}}
+                  <div class="form-group">
+                    <label for="ibu"><strong>Nama Ibu</strong></label>
+                    <select class="form-control select2bs4" name="ibu" id="ibu" style="width: 100%;" required><br>
+                      @foreach ($ibu as $item)
+                        <option value="{{ $item->id }}">{{ $item->name }}</option>
+                      @endforeach
+                    </select>
                   </div>
                   <div class="form-group">
                     <label for="nama_ayah"><strong>Nama Ayah<strong></label>

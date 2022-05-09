@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class BayiBalita extends Model
 {
     public $table = "bayi_balita";
-    protected $fillable = ['nama_bayi', 'ttl', 'umur', 'alamat', 'nama_ibu', 'nama_ayah', 'jenis_kelamin'];
+    protected $fillable = ['nama_bayi', 'ttl', 'umur', 'alamat', 'id' , 'nama_ayah', 'jenis_kelamin'];
     protected $primaryKey = 'id_bb';
 
     public function timbang()
@@ -23,5 +23,10 @@ class BayiBalita extends Model
     public function imunisasi()
     {
         return $this->hasMany('App\Imunisasi');
+    }
+
+    public function user()
+    {
+        return $this->belongsTo('App\User', 'id');
     }
 }

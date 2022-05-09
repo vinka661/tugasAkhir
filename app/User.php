@@ -57,6 +57,11 @@ class User extends Authenticatable
         return $this->hasMany('App\Konsultasi');
     }
 
+    public function bayi_balita()
+    {
+        return $this->hasMany('App\BayiBalita', 'id_bb');
+    }
+
     public function uploadFile(Request $request,$oke)
     {
             $result ='';

@@ -67,7 +67,8 @@ class kaderController extends Controller
     {
         $timbang = Timbang::all();
         $bayiBalita = BayiBalita::all();
-        $user = User::all();
+        // $user = User::all();
+        $user = User::where('role', 'Kader')->get();
         return view('kader.timbang.create', ['timbang' => $timbang, 'bayiBalita' => $bayiBalita, 'user' => $user]);
     }
 
@@ -91,7 +92,8 @@ class kaderController extends Controller
     {
         $timbang = Timbang::find($id_timbang);
         $bayiBalita = BayiBalita::all();
-        $user = User::all();
+        // $user = User::all();
+        $user = User::where('role', 'Kader')->get();
         return view('kader.timbang.edit', ['timbang' => $timbang, 'bayiBalita' => $bayiBalita, 'user' => $user]);
     }
 
