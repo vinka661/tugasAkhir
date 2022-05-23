@@ -21,7 +21,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-              <form role="form" action="{{ route('storeBayiBalita') }}" method="POST">
+              <form role="form" action="{{ route('storeBB') }}" method="POST">
                 @csrf
                 <div class="card-body">
                   <div class="form-group">
@@ -45,10 +45,10 @@
                         </div>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <!-- <div class="form-group">
                     <label for="umur">Umur (bln)</label>
-                    <input type="number" class="form-control" id="umur" name="umur" placeholder="Masukkan Umur (bln)" required>
-                  </div>
+                    <input type="number" class="form-control" id="umur" name="umur" placeholder="Masukkan Umur (bln)">
+                  </div> -->
                   <div class="form-group">
                     <label for="alamat"><strong>Alamat<strong></label><br>
                     <textarea name="alamat" id="alamat" class="form-control" rows="5" placeholder="Masukkan Alamat Bayi/Balita" required></textarea>
@@ -66,7 +66,7 @@
 
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                  <a href="{{ route('bayiBalita') }}" class="btn btn-default">Cancel</a>
+                  <a href="{{ route('timbangbayiBalita') }}" class="btn btn-default">Cancel</a>
                 </div>
               </form>
             </div>

@@ -44,7 +44,7 @@ class User extends Authenticatable
 
     public function timbang()
     {
-        return $this->hasMany('App\Timbang');
+        return $this->hasMany('App\Timbang', 'id_timbang');
     }
 
     public function penyuluhan()

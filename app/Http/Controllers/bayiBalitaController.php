@@ -29,10 +29,10 @@ class bayiBalitaController extends Controller
         BayiBalita::create([
             'nama_bayi' => $request->nama_bayi,
             'ttl' => $request->ttl,
-            'jenis_kelamin' => $request->jenis_kelamin,
+            'jk' => $request->jenis_kelamin,
             'umur' => $request->umur,
             'alamat' => $request->alamat,
-            'id' => $request->ibu,
+            'nama_ibu' => $request->nama_ibu,
             'nama_ayah' => $request->nama_ayah,
         ]);
         return redirect('bayiBalita')->with('success','Data bayi/balita berhasil ditambahkan');
@@ -50,10 +50,10 @@ class bayiBalitaController extends Controller
         $bayiBalita = BayiBalita::find($id_bb);
         $bayiBalita->nama_bayi = $request->nama_bayi;
         $bayiBalita->ttl = $request->ttl;
-        $bayiBalita->jenis_kelamin = $request->jenis_kelamin;
+        $bayiBalita->jk = $request->jenis_kelamin;
         $bayiBalita->umur = $request->umur;
         $bayiBalita->alamat = $request->alamat;
-        $bayiBalita->id = $request->ibu;
+        $bayiBalita->nama_ibu = $request->nama_ibu;
         $bayiBalita->nama_ayah = $request->nama_ayah;
         $bayiBalita->save();
         return redirect('bayiBalita')->with('success','Data bayi/balita berhasil diedit');

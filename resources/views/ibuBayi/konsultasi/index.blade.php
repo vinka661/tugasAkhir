@@ -44,7 +44,13 @@
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                             data-bs-parent="#accordionExample">
-                            <div class="accordion-body"> <strong>{{ $data->solusi }}</div>
+                            <div class="accordion-body"><strong>SOLUSI : 
+                                @if ($data->solusi == NULL)
+                                    (belum ada tanggapan)
+                                @else
+                                    {{ $data->solusi }}
+                                @endif
+                            </div>
                         </div>
                     </div>
                 @endif

@@ -40,7 +40,13 @@
                                             <td>{{ $data->tgl_timbang }}</td>
                                             <td>{{ $data->berat_badan}}</td>
                                             <td>{{ $data->tinggi_badan}}</td>
-                                            <td>{{ $data->lingkar_kepala}}</td>
+                                            <td>
+                                                @if ($data->lingkar_kepala == NULL)
+                                                    kosong
+                                                @else
+                                                    {{ $data->lingkar_kepala }}
+                                                @endif
+                                            </td>
                                             <td>{{ $data->status_gizi}}</td>
                                             <td>
                                                 <a href=""><button  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a>

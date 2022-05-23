@@ -21,7 +21,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="card card-primary card-outline">
-                <form role="form" action="{{ route('updateBayiBalita', $bayiBalita->id_bb) }}" method="POST">
+                <form role="form" action="{{ route('updateBB', $bayiBalita->id_bb) }}" method="POST">
                     @csrf
                     <div class="card-body">
                       <input type="hidden" name="id_bb" value="{{ $bayiBalita->id_bb }}"> <br/>
@@ -47,10 +47,6 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="umur">Umur</label>
-                        <input type="number" class="form-control" id="umur" name="umur" value="{{ $bayiBalita->umur }}">
-                      </div>
-                      <div class="form-group">
                         <label for="alamat"><strong>Alamat<strong></label><br>
                           <textarea name="alamat" id="alamat" class="form-control"  value="{{ $bayiBalita->alamat }}">{{ $bayiBalita->alamat }}</textarea>
                       </div>
@@ -67,7 +63,7 @@
     
                     <div class="card-footer">
                       <button type="submit" class="btn btn-primary mr-1">Submit</button>
-                      <a href="{{ route('bayiBalita') }}" class="btn btn-default">Cancel</a>
+                      <a href="{{ route('timbangbayiBalita') }}" class="btn btn-default">Cancel</a>
                     </div>
                   </form>
             </div>

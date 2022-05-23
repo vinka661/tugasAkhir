@@ -61,16 +61,16 @@
                                         <div class="form-group">
                                             <label for="lingkar_kepala"><strong>lingkar Kepala<strong></label><br>
                                             <input type="text" class="form-control" id="lingkar_kepala"
-                                                name="lingkar_kepala" placeholder="Masukkan lingkar Kepala" required>
+                                                name="lingkar_kepala" placeholder="Masukkan lingkar Kepala">
                                         </div>
-                                        <div class="form-group">
+                                        <!-- <div class="form-group">
                                             <label for="status_gizi"><strong>Status Gizi<strong></label><br>
                                             <select class="form-control select2bs4" name="status_gizi" id="status_gizi"
                                                 style="width: 100%;" required></br>
                                                 <option value="Baik">Baik</option>
                                                 <option value="BGM">BGM</option>
                                             </select>
-                                        </div>
+                                        </div> -->
                                     </div>
                                     <!-- /.card-body -->
                                     <div class="card-footer">

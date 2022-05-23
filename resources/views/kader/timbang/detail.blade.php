@@ -31,7 +31,7 @@
                                         <div class="form-group">
                                             <label for="jenis_kelamin"><strong>Jenis Kelamin</strong></label>
                                             <input type="text" class="form-control" required="jenis_kelamin" id="jenis_kelamintanggal"
-                                                name="jenis_kelamin" value="{{ $bayiBalita->jenis_kelamin }}" disabled>
+                                                name="jenis_kelamin" value="{{ $bayiBalita->jk }}" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label for="umur"><strong>Umur (Bulan)</strong></label>
@@ -82,7 +82,13 @@
                                         <td>{{ $data->tgl_timbang }}</td>
                                         <td>{{ $data->berat_badan}}</td>
                                         <td>{{ $data->tinggi_badan}}</td>
-                                        <td>{{ $data->lingkar_kepala}}</td>
+                                        <td>
+                                            @if ($data->lingkar_kepala == NULL)
+                                                -
+                                            @else
+                                                {{ $data->lingkar_kepala }}
+                                            @endif
+                                        </td>
                                         <td>{{ $data->status_gizi}}</td>
                                         <td>
                                             <a href="{{ route('editTimbang', $data->id_timbang) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a>

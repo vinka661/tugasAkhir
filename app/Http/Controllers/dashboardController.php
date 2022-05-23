@@ -5,7 +5,7 @@ use App\Posyandu;
 use App\User;
 use App\BayiBalita;
 use DB;
-
+// use Chart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -18,7 +18,14 @@ class dashboardController extends Controller
 
     public function dashboard()
     {
-        
+        // $chart1 = Chart::title([
+        //     'text' => 'Grafik Status Gizi Anak',
+        // ])
+        // ->chart([
+        //     'type'     => 'column', // pie , columnt ect
+        //     'renderTo' => 'chart1', // render the chart into your div with id
+        // ]);
+
         if (Auth::user()->role == 'Kepala PLKB') { // Role Kepala
             $posyandu = Posyandu::get();
             $kader = DB::table('users')
@@ -68,6 +75,7 @@ class dashboardController extends Controller
         elseif (Auth::user()->role == 'Ibu Bayi') { // Role ibu bayi
             return view('layout.master');
         }
+
     }
     
     public function dashboardOperator()

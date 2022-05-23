@@ -41,15 +41,6 @@ Route::get('bayiBalita/edit/{id_bb}', 'bayiBalitaController@edit')->name('editBa
 Route::post('bayiBalita/update/{id_bb}', 'bayiBalitaController@update')->name('updateBayiBalita');
 Route::get('bayiBalita/delete/{id_bb}', 'bayiBalitaController@destroy')->name('deleteBayiBalita');
 
-//timbangbayibalita
-Route::get('timbangbayiBalita', 'kaderController@bayiTimbangIndex')->name('timbangbayiBalita');
-Route::get('timbang/detailtimbangbayiBalita/{id_bb}', 'kaderController@detailTimbangBayi')->name('detailTimbangBayi');
-Route::get('timbang/createTimbang/{bayiBalita?}', 'kaderController@createTimbang')->name('createTimbang');
-Route::post('timbang/Timbang', 'kaderController@storeTimbang')->name('storeTimbang');
-Route::get('timbang/edit/{id_timbang}', 'kaderController@editTimbang')->name('editTimbang');
-Route::post('timbang/update/{id_timbang}', 'kaderController@updateTimbang')->name('updateTimbang');
-Route::get('timbang/delete/{id_timbang}', 'kaderController@destroyTimbang')->name('deleteTimbang');
-
 //timbang 
 Route::get('timbang', 'kaderController@timbang')->name('timbang');
 
@@ -77,15 +68,11 @@ Route::get('bidan/delete/{id}', 'bidanController@destroy')->name('deleteBidan');
 Route::get('laporan', 'laporanController@index')->name('laporan');
 
 //kepala PLKB
-//data diri
-// Route::get('kepala/dataDiri/{id}', 'kepalaController@show')->name('dataKepala');
-// Route::get('kepala/dataDiri/edit/{id}', 'kepalaController@editData')->name('editDataKepala');
-// Route::post('kepala/dataDiri/update/{id}', 'kepalaController@updateData')->name('updateDataKepala');
-
 // data diri profile
 Route::post('/edit-profil','profileController@editprofil')->name('profile');
 Route::group(["middleware" => "auth"], function() {
     Route::get('/user/profile/{user}', 'profileController@indexprofil')->name('user.profile');
+    Route::get('/user/penyuluhanKader/{user}', 'kaderController@penyuluhanKader')->name('user.penyuluhanKader');
     Route::get('/user/profile/edit/{user}', 'profileController@editProfile')->name('user.profile.edit');
     Route::post('/user/profile/update/{user}', 'profileController@updateProfile')->name('user.profile.update');
     //ibu
@@ -154,8 +141,24 @@ Route::get('konsultasi/delete/{id_kosultasi}', 'bidanController@destroyKonsultas
 
 
 //Hasil Perkembangan
-Route::get('hasilPerkembangan', 'ibuBayiController@hasilPerkembangan')->name('hasil');
+Route::get('hasilPerkembangan', 'ibuBayiController@hasilPerkembangan')->name('hasilPerkembangan');
 
+//kader
+//data bayi/balita
+Route::get('timbangbayiBalita', 'kaderController@bayiTimbangIndex')->name('timbangbayiBalita');
+Route::get('kader/createBB', 'kaderController@createBB')->name('createBB');
+Route::post('kader/storeBB', 'kaderController@storeBB')->name('storeBB');
+Route::get('kader/editBB/{id_bb}', 'kaderController@editBB')->name('editBB');
+Route::post('kader/updateBB/{id_bb}', 'kaderController@updateBB')->name('updateBB');
+Route::get('kader/deleteBB/{id_bb}', 'kaderController@destroyBB')->name('deleteBB');
+
+//data timbang
+Route::get('timbang/detailtimbangbayiBalita/{id_bb}', 'kaderController@detailTimbangBayi')->name('detailTimbangBayi');
+Route::get('timbang/createTimbang/{bayiBalita?}', 'kaderController@createTimbang')->name('createTimbang');
+Route::post('timbang/Timbang', 'kaderController@storeTimbang')->name('storeTimbang');
+Route::get('timbang/edit/{id_timbang}', 'kaderController@editTimbang')->name('editTimbang');
+Route::post('timbang/update/{id_timbang}', 'kaderController@updateTimbang')->name('updateTimbang');
+Route::get('timbang/delete/{id_timbang}', 'kaderController@destroyTimbang')->name('deleteTimbang');
 
 Auth::routes();
 
@@ -167,3 +170,8 @@ Route::get('/about', 'GuestController@about')->name('about');
 Route::get('/jadwal', 'GuestController@jadwal')->name('jadwal');
 Route::get('/penyuluhanGuest', 'GuestController@penyuluhan')->name('penyuluhanGuest');
 Route::get('/login', 'loginController@index')->name('login');
+
+Route::get('user/profile/{id}', 'profileController@profileIbu')->name('profileIbu');
+Route::group(["middleware" => "auth"], function() {
+    Route::get('/user/hasilPerkembangan/{user}', 'ibuBayiController@hasilPerkembangan')->name('user.hasilPerkembangan');
+});

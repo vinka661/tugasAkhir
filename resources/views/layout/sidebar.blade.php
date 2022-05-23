@@ -112,7 +112,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('hasil') }}">
+                <a class="nav-link" href="{{ route ('hasilPerkembangan') }}">
                     <i class="fas fa-chart-bar"></i>
                     <span>Hasil Perkembangan</span>
                 </a>
@@ -157,12 +157,6 @@
                     <span>Data Timbang Bayi/Balita</span>
                 </a>
             </li>
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="{{route ('timbang')}}">
-                    <i class="fas fa-user"></i>
-                    <span>Timbang Bayi/Balita</span>
-                </a>
-            </li> --}}
             <li class="nav-item">
                 <a class="nav-link" href="{{route ('penyuluhanKader')}}">
                     <i class="fas fa-users"></i>

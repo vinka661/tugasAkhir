@@ -88,11 +88,11 @@
             <div class="row">
                 <div class="col-lg-12 text-center">
                     <div class="breadcrumb-content">
-                        <h2 class="title">login Page</h2>
+                        <h2 class="title">Login Page</h2>
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li>|</li>
-                            <li>login</li>
+                            <li>Login</li>
                         </ul>
                         <h1 class="back-title">login</h1>
                     </div>
@@ -131,18 +131,21 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                            <div class="login-action mb-20 fix">
-                                <span class="log-rem f-left">
-                                    <input type="checkbox" class="form-checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                                    <label for="remember">Remember me!</label>
-                                </span>
-                                <span class="forgot-login f-right">
+                            <div class="login-action mb-30 fix f-right">
+                                @if (Route::has('password.request'))
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                @endif
+                                <!-- <span class="forgot-login f-right">
                                     <a href="#">Lost your password?</a>
-                                </span>
+                                </span> -->
                             </div>
                             <button type="submit" class="site-btn red w-100">Login</button>
                             <div class="or-divide"><span>or</span></div>
-                            <button class="site-btn w-100">Register Now</button>
+                            <button class="site-btn w-100"> 
+                                <a href="{{ route('register') }}">{{ __('Register') }}</a>
+                            </button>
                         </form>
                     </div>
                 </div>

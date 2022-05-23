@@ -22,8 +22,9 @@
                             <p class="card-text"><i class="fas fa-book-medical"></i> Materi : {{ $data->materi }}</p>
                         </div>
                         <div class="col card-header text-right">
-                            <a href="{{ route('UploadMateriPenyuluhan', $data->id_penyuluhan) }}"
-                                class="btn btn-primary"><i class="fas fa-file-upload"></i> Upload Materi </a>
+                            <a href="{{ route('UploadMateriPenyuluhan', $data->id_penyuluhan) }}">
+                                <button class="btn btn-primary"><i class="fas fa-file-upload"></i> Upload Materi</button> 
+                            </a>
                         </div>
                     </div>
                 @endif

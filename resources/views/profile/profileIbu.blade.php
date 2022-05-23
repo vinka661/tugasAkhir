@@ -12,10 +12,10 @@
                                 </div>
 
                                 @if (Auth::user()->photo == null)
-                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin"
+                                    <img src="{{ url('../assets/dist/img/avatar6.png') }}" alt="Admin"
                                         class="rounded-circle p-1 bg-primary" width="170">
                                 @else
-                                    <img src="{{ url('img/upload/avatar/' . $user->photo) }}" alt="Admin"
+                                    <img src="{{ Auth::user()->photo }}" alt="Admin"
                                         class="rounded-circle p-1 bg-primary" width="170">
                                 @endif
 
@@ -36,7 +36,7 @@
                 <div class="col-lg-8">
                     <div class="card">
                         <div class="card-body">
-                            @foreach($namabayi as $key => $data)
+                        @foreach($namabayi as $key => $data)
                             @if ($data->user->id == Auth::user()->id)
                             <div class="row mb-3">
                                 <div class="col-sm-3">
@@ -57,10 +57,12 @@
                                     <h6 class="mb-0">Jenis Kelamin</h6>
                                 </div>
                                 <dd class="col-sm-8">
-                                    @if ($user->jenis_kelamin == 'L')
+                                    @if ($user->jenis_kelamin == 'Laki-laki')
                                         Laki - Laki
-                                    @else
+                                    @elseif($user->jenis_kelamin == 'Perempuan')
                                         Perempuan
+                                    @else
+                                        -
                                     @endif
                                 </dd>
                             </div>
@@ -77,7 +79,13 @@
                                     <h6 class="mb-0">Alamat</h6>
                                 </div>
                                 <div class="col-sm-9 text-secondary">
-                                    <dd class="col-sm-8">{{ $user->alamat }}</dd>
+                                    <dd class="col-sm-8">
+                                        @if ($user->alamat == NULL)
+                                            -
+                                        @else
+                                            {{ $user->alamat }}
+                                        @endif
+                                    </dd>
                                 </div>
                             </div>
                             <div class="col  text-right">
