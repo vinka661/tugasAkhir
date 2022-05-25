@@ -9,10 +9,13 @@
     "license": "MIT",
     "require": {
         "php": "^7.2.5|^8.0",
+        "barryvdh/laravel-dompdf": "^1.0",
         "fideloper/proxy": "^4.4",
+        "intervention/image": "dev-master",
         "laravel/framework": "^6.20",
         "laravel/tinker": "^2.5",
-        "intervention/image": "dev-master"
+        "maatwebsite/excel": "^3.1",
+        "muhamadrezaar/highcharts": "^2.0"
     },
     "require-dev": {
         "facade/ignition": "^1.16.4",

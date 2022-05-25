@@ -66,6 +66,8 @@ Route::get('bidan/delete/{id}', 'bidanController@destroy')->name('deleteBidan');
 
 //Laporan
 Route::get('laporan', 'laporanController@index')->name('laporan');
+Route::get('laporan/cetak_pdf', 'laporanController@cetak_pdf')->name('cetak_pdf');
+Route::get('laporan/cetak_excel', 'laporanController@exportLaporan')->name('exportLaporan');
 
 //kepala PLKB
 // data diri profile
@@ -175,3 +177,4 @@ Route::get('user/profile/{id}', 'profileController@profileIbu')->name('profileIb
 Route::group(["middleware" => "auth"], function() {
     Route::get('/user/hasilPerkembangan/{user}', 'ibuBayiController@hasilPerkembangan')->name('user.hasilPerkembangan');
 });
+

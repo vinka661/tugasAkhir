@@ -15,17 +15,15 @@
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/favicon2.ico" />
     <!-- Custom fonts for this template-->
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
+      <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- Custom styles for this page -->
-    <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../../css/sb-admin-2.css" rel="stylesheet">
+        <!-- Custom styles for this page -->
+        <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Select2 -->
-    <link rel="stylesheet" href="{{ url('assets/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ url('assets/plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ url('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 </head>
 
 <body id="page-top">
@@ -33,7 +31,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
     @php
-        $id = str_replace('@mail.com', '', Auth::user()->email);;
+        $id = str_replace('@gmail.com', '', Auth::user()->email);;
     @endphp
         <!-- Sidebar -->
         @include('layout.sidebar')
@@ -156,12 +154,26 @@
                                 <!-- Card Header - Dropdown -->
                                 <div
                                     class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Perkembangan Gizi Bayi/Balita Tahun @php echo date("Y"); @endphp</h6>
+                                    <h6 class="m-0 font-weight-bold text-primary">Perekmbangan Gizi Bayi Balita</h6>
+                                    {{-- <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+                                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                            aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div> --}}
                                 </div>
                                 <!-- Card Body -->
                                 <div class="card-body">
                                     <div class="chart-area">
-                                        <canvas id="myAreaChart" style="height: 420px;"></canvas>
+                                        <canvas id="myAreaChart"></canvas>
                                     </div>
                                 </div>
                             </div>
@@ -238,15 +250,15 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Logout!</h5>
                     <button class="close" type="button" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-body">Anda yakin ingin keluar?</div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{ route('login') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    <a class="btn btn-primary" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+                    <button class="btn btn-secondary" data-dismiss="modal">Cancel</button>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                         @csrf
                     </form>
@@ -255,6 +267,7 @@
         </div>
     </div>
 
+    <!-- Bootstrap core JavaScript-->
     <!-- Bootstrap core JavaScript-->
     <script src="../../vendor/jquery/jquery.min.js"></script>
     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -271,12 +284,13 @@
     <!-- Page level custom scripts -->
     <script src="../../js/demo/chart-area-demo.js"></script>
     <script src="../../js/demo/chart-pie-demo.js"></script>
-<!-- jQuery -->
+
+    <!-- jQuery -->
 <script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script> -->
+<!-- <script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script> -->
 <!-- Select2 -->
 <script src="{{ url('assets/plugins/select2/js/select2.full.min.js') }}"></script>
 <!-- Page script -->
@@ -291,12 +305,30 @@
     })
   })
   </script>
-  <!-- Page level plugins -->
-  <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script>
+        function myFunction(){
+            var button = document.getElementById("bfinish");
+            var button1 = document.getElementById('bupdate');
+            var ket = document.getElementById('ket_progres');
+            var tgl = document.getElementById('datepicker');
+            
+                ket.disabled = true;
+                tgl.disabled = true;
+                button.disabled = true;
+                button1.disabled = true;
+        }
+            // button1.disabled = true;
+            // x.disabled = true;
+    </script>
+  
+     <!-- Page level plugins -->
+     <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
     <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
     <script src="../../js/demo/datatables-demo.js"></script>
+
+
 </body>
 
 </html>

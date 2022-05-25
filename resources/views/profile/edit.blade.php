@@ -1,7 +1,7 @@
 @extends('layout.master')
 @section('konten')
     @php
-    $id = str_replace('@mail.com', '', Auth::user()->email);
+    $id = str_replace('@gmail.com', '', Auth::user()->email);
     @endphp
     <div class="content-wrapper">
         <!-- Main content -->

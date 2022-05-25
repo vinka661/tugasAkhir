@@ -14,18 +14,16 @@
   <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/favicon2.ico" />
     <!-- Custom fonts for this template-->
-    <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
+    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+      <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="../../../css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- Custom styles for this page -->
-    <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../../css/sb-admin-2.css" rel="stylesheet">
+        <!-- Custom styles for this page -->
+        <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Select2 -->
-    <link rel="stylesheet" href="{{ url('assets/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ url('assets/plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ url('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 </head>
 
 <body id="page-top">
@@ -33,10 +31,10 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
     @php
-        $id = str_replace('@mail.com', '', Auth::user()->email);;
+        $id = str_replace('@gmail.com', '', Auth::user()->email);;
     @endphp
         <!-- Sidebar -->
-        @include('layout.sidebar')
+     @include('layout.sidebar')
         <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
@@ -174,10 +172,13 @@
                                     </div>
                                 </div>
                                 <!-- Card Body -->
-                                <div class="card-body">
-                                    <div class="chart-area">
-                                        <canvas id="myAreaChart"></canvas>
+                                <div class="col-md-12">
+                                    <div class="chart">
+                                        <!-- Sales Chart Canvas -->
+                                        <div id="chart1" style="height: 420px;"></div>
+                                        {!! $chart1 !!}
                                     </div>
+                                    <!-- /.chart-responsive -->
                                 </div>
                             </div>
                         </div>
@@ -350,7 +351,7 @@
                                 <div class="card-body">
                                     <div class="text-center">
                                         <img class="img-fluid px-3 px-sm-4 mt-3 mb-4" style="width: 25rem;"
-                                            src="../../../../../img/undraw_posting_photo.svg" alt="...">
+                                            src="../img/undraw_posting_photo.svg" alt="...">
                                     </div>
                                     <p>Add some quality, svg illustrations to your project courtesy of <a
                                             target="_blank" rel="nofollow" href="https://undraw.co/">unDraw</a>, a
@@ -381,14 +382,15 @@
                 </div> --}}
                 <!-- /.container-fluid -->
 
-            </div>
+         
             <!-- End of Main Content -->
 
             <!-- Footer -->
             @include('layout.footer')
+
             <!-- End of Footer -->
 
-        </div>
+       
         <!-- End of Content Wrapper -->
 
     </div>
@@ -400,50 +402,31 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="{{ route('login') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+    {{-- @include('layout.logoutModal') --}}
 
     <!-- Bootstrap core JavaScript-->
-    <script src="../../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../vendor/jquery/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
-    <script src="../../../vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-    <script src="../../../js/sb-admin-2.min.js"></script>
+    <script src="../../js/sb-admin-2.min.js"></script>
 
     <!-- Page level plugins -->
-    <script src="../../../vendor/chart.js/Chart.min.js"></script>
+    <script src="../../vendor/chart.js/Chart.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../../../js/demo/chart-area-demo.js"></script>
-    <script src="../../../js/demo/chart-pie-demo.js"></script>
-<!-- jQuery -->
+    <script src="../../js/demo/chart-area-demo.js"></script>
+    <script src="../../js/demo/chart-pie-demo.js"></script>
+
+    <!-- jQuery -->
 <script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>
 <!-- Bootstrap 4 -->
 <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 <!-- AdminLTE App -->
-<script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script> -->
+<!-- <script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script> -->
 <!-- Select2 -->
 <script src="{{ url('assets/plugins/select2/js/select2.full.min.js') }}"></script>
 <!-- Page script -->
@@ -458,12 +441,30 @@
     })
   })
   </script>
-  <!-- Page level plugins -->
-  <script src="../../../vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="../../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+    <script>
+        function myFunction(){
+            var button = document.getElementById("bfinish");
+            var button1 = document.getElementById('bupdate');
+            var ket = document.getElementById('ket_progres');
+            var tgl = document.getElementById('datepicker');
+            
+                ket.disabled = true;
+                tgl.disabled = true;
+                button.disabled = true;
+                button1.disabled = true;
+        }
+            // button1.disabled = true;
+            // x.disabled = true;
+    </script>
+  
+     <!-- Page level plugins -->
+     <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+    <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="../../../js/demo/datatables-demo.js"></script>
+    <script src="../../js/demo/datatables-demo.js"></script>
+
+
 </body>
 
 </html>

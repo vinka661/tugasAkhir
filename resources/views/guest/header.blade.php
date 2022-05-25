@@ -1,7 +1,7 @@
-    <!-- header start -->
-    <header id="sticky-header" class="site-header-3">
+<!-- header start -->
+<header id="sticky-header" class="site-header-3">
         <a href="index.html" class="site-logo site-logo-2 site-logo-3">
-            <img src="../assets/images/logo/bkkbn.png" alt="">
+            <img src="assets/images/logo/bkkbn.png" alt="">
         </a>
         <div class="site-header-3-right">
             <div class="header-top-area header-top-area-2">
@@ -34,7 +34,7 @@
                                             <ul>
                                                 <li><a href="{{route ('index')}}">Home</a>
                                                 </li>
-                                                <li><a href="{{route ('about')}}">About Us</a>
+                                                <li><a href="{{route ('about')}}">About Us</a>   
                                                 </li>
                                                 <li><a href="">Informasi</a>
                                                     <ul class="sub-menu">
@@ -47,10 +47,21 @@
                                     </div>
                                 </div>
                                 <div class="header-nav-info-wrap header-nav-info-wrap-2">
-                                    <div class="hero-buttons">
-                                        <a href="{{route ('login')}}" class="site-btn red" >Login</a>
+                                    <div class="nav-info-btns">
+                                        {{-- <button class="shop-btn">
+                                            <i class="fal fa-bars"></i>
+                                        </button> --}}
+                                        {{-- <button class="hamburger-menu-trigger">
+                                            <i class="fal fa-bars"></i>
+                                        </button> --}}
                                     </div>
-                                  
+                                    <div class="search-form">
+                                        <form action="index.html">
+                                            <input type="search" placeholder="Search with keyword">
+                                            <button type="submit"><i class="fal fa-search"></i></button>
+                                        </form>
+                                    </div>
+                                    <div class="mobile-menu"></div>
                                 </div>
                             </div>
                         </div>

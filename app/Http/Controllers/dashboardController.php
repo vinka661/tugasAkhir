@@ -91,6 +91,16 @@ class dashboardController extends Controller
             ->where('role', '=', 'Bidan Desa')
             ->count();
         return view('dashboard.operator', compact('posyandu','kader','ibubayi','bidan'));
+        $chart1 = Chart::title([
+            'text' => 'Grafik Status Gizi Anak',
+        ])
+        ->chart([
+            'type'     => 'column', // pie , columnt ect
+            'renderTo' => 'chart1', // render the chart into your div with id
+        ])
+        ->colors([
+            '#0c2959'
+        ]);
     }
 
     public function dashboardKaderdanBidan()

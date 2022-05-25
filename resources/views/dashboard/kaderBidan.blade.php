@@ -11,21 +11,19 @@
 
     <title>DIGITASI KMS || POSYANDU</title>
     <!-- Font Awesome Icons -->
-    <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
+  <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
     <link rel="shortcut icon" type="image/x-icon" href="../../assets/favicon2.ico" />
     <!-- Custom fonts for this template-->
     <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
+      <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="../../css/sb-admin-2.min.css" rel="stylesheet">
-    <!-- Custom styles for this page -->
-    <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <link href="../../css/sb-admin-2.css" rel="stylesheet">
+        <!-- Custom styles for this page -->
+        <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Select2 -->
-    <link rel="stylesheet" href="{{ url('assets/plugins/select2/css/select2.min.css') }}">
-    <link rel="stylesheet" href="{{ url('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
+  <link rel="stylesheet" href="{{ url('assets/plugins/select2/css/select2.min.css') }}">
+  <link rel="stylesheet" href="{{ url('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
 </head>
 
 <body id="page-top">
@@ -33,7 +31,7 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
         @php
-            $id = str_replace('@mail.com', '', Auth::user()->email);
+            $id = str_replace('@gmail.com', '', Auth::user()->email);
         @endphp
         <!-- Sidebar -->
         @include('layout.sidebar')
@@ -259,49 +257,67 @@
         </div>
     </div>
 
-    <!-- Bootstrap core JavaScript-->
-    <script src="../../vendor/jquery/jquery.min.js"></script>
-    <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="../../js/sb-admin-2.min.js"></script>
-
-    <!-- Page level plugins -->
-    <script src="../../vendor/chart.js/Chart.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="../../js/demo/chart-area-demo.js"></script>
-    <script src="../../js/demo/chart-pie-demo.js"></script>
-    <!-- jQuery -->
-    <script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>
-    <!-- Bootstrap 4 -->
-    <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <!-- AdminLTE App -->
-    <script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script> -->
-    <!-- Select2 -->
-    <script src="{{ url('assets/plugins/select2/js/select2.full.min.js') }}"></script>
-    <!-- Page script -->
-    <script>
-        $(function() {
-            //Initialize Select2 Elements
-            $('.select2').select2()
-
-            //Initialize Select2 Elements
-            $('.select2bs4').select2({
-                theme: 'bootstrap4'
-            })
-        })
-
-    </script>
-    <!-- Page level plugins -->
-    <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
-    <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
-
-    <!-- Page level custom scripts -->
-    <script src="../../js/demo/datatables-demo.js"></script>
-</body>
-
-</html>
+     <!-- Bootstrap core JavaScript-->
+     <script src="../../vendor/jquery/jquery.min.js"></script>
+     <script src="../../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ 
+     <!-- Core plugin JavaScript-->
+     <script src="../../vendor/jquery-easing/jquery.easing.min.js"></script>
+ 
+     <!-- Custom scripts for all pages-->
+     <script src="../../js/sb-admin-2.min.js"></script>
+ 
+     <!-- Page level plugins -->
+     <script src="../../vendor/chart.js/Chart.min.js"></script>
+ 
+     <!-- Page level custom scripts -->
+     <script src="../../js/demo/chart-area-demo.js"></script>
+     <script src="../../js/demo/chart-pie-demo.js"></script>
+ 
+     <!-- jQuery -->
+ <script src="{{ url('assets/plugins/jquery/jquery.min.js') }}"></script>
+ <!-- Bootstrap 4 -->
+ <script src="{{ url('assets/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+ <!-- AdminLTE App -->
+ <!-- <script src="{{ url('assets/dist/js/adminlte.min.js') }}"></script> -->
+ <!-- Select2 -->
+ <script src="{{ url('assets/plugins/select2/js/select2.full.min.js') }}"></script>
+ <!-- Page script -->
+ <script>
+   $(function () {
+     //Initialize Select2 Elements
+     $('.select2').select2()
+ 
+     //Initialize Select2 Elements
+     $('.select2bs4').select2({
+       theme: 'bootstrap4'
+     })
+   })
+   </script>
+     <script>
+         function myFunction(){
+             var button = document.getElementById("bfinish");
+             var button1 = document.getElementById('bupdate');
+             var ket = document.getElementById('ket_progres');
+             var tgl = document.getElementById('datepicker');
+             
+                 ket.disabled = true;
+                 tgl.disabled = true;
+                 button.disabled = true;
+                 button1.disabled = true;
+         }
+             // button1.disabled = true;
+             // x.disabled = true;
+     </script>
+   
+      <!-- Page level plugins -->
+      <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>
+     <script src="../../vendor/datatables/dataTables.bootstrap4.min.js"></script>
+ 
+     <!-- Page level custom scripts -->
+     <script src="../../js/demo/datatables-demo.js"></script>
+ 
+ 
+ </body>
+ 
+ </html>

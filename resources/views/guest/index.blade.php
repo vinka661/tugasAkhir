@@ -89,10 +89,10 @@
                                 <h5 class="sub-title" data-animation="fadeInUp" data-delay=".1s"
                                     data-duration=".3s">(PLKB Kecamatan Winongan Kabupate Pasuruan)</h5>
                             </h1>
-                            {{-- <div class="hero-buttons">
-                                <a href="{{ route('login') }}" class="site-btn" data-animation="fadeInUp"
+                            <div class="hero-buttons">
+                                <a href="{{ route('login') }}" class="site-btn red" data-animation="fadeInUp"
                                     data-delay=".9s" data-duration=".7s">Login</a>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6 d-none d-lg-block d-xl-block">
@@ -115,10 +115,10 @@
                                 <h5 class="sub-title" data-animation="fadeInUp" data-delay=".1s"
                                     data-duration=".3s">(PLKB Kecamatan Winongan Kabupate Pasuruan)</h5>
                             </h1>
-                            {{-- <div class="hero-buttons">
-                                <a href="service-details.html" class="site-btn" data-animation="fadeInUp"
+                            <div class="hero-buttons">
+                                <a href="{{ route('login') }}" class="site-btn red" data-animation="fadeInUp"
                                     data-delay=".9s" data-duration=".7s">Login</a>
-                            </div> --}}
+                            </div>
                         </div>
                     </div>
                     <div class="col-lg-6 d-none d-xl-block">

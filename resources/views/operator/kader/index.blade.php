@@ -32,7 +32,7 @@
                                             <td>{{ $data->name }}</td>
                                             <td>{{ $data->jenis_kelamin }}</td>
                                             <td>{{ $data->alamat }}</td>
-                                            <td>{{ $data->posyandu->nama_posyandu}}</td>
+                                            <td>{{ $data->nama_posyandu }}</td>
                                             <td>
                                                 <a href="{{ route('editKader', $data->id) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
                                                 <a href="{{ route('deleteKader', $data->id) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a>

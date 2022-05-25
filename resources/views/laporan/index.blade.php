@@ -8,8 +8,8 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Pdf</a>
-                            <a href="" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Excel</a>
+                            <a href="{{ route('cetak_pdf') }}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Pdf</a>
+                            <a href="{{ route('exportLaporan') }}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Excel</a>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
@@ -19,14 +19,32 @@
                                             <th>No</th>
                                             <th>Tanggal</th>
                                             <th>Posyandu</th>
+                                            <th>Kader</th>
+                                            <th>Bayi/Balita</th>
+                                            <th>BB</th>
+                                            <th>TB</th>
+                                            <th>LK</th>
+                                            <th>Status Gizi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         @foreach($laporan as $key => $data)
                                         <tr>
                                             <td>{{ ++$key }}</td>
-                                            <td>{{ $data->tanggal }}</td>
+                                            <td>{{ $data->tgl_timbang }}</td>
                                             <td>{{ $data->nama_posyandu }}</td>
+                                            <td>{{ $data->name }}</td>
+                                            <td>{{ $data->nama_bayi }}</td>
+                                            <td>{{ $data->berat_badan }}</td>
+                                            <td>{{ $data->tinggi_badan }}</td>
+                                            <td>
+                                                @if ($data->lingkar_kepala == NULL)
+                                                    -
+                                                @else
+                                                    {{ $data->lingkar_kepala }}
+                                                @endif
+                                            </td>
+                                            <td>{{ $data->status_gizi }}</td>
                                         </tr>
                                         @endforeach
                                     </tbody>
