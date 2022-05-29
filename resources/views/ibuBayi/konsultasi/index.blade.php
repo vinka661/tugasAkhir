@@ -17,6 +17,9 @@
                 <p>{{ $message }}</p>
             </div>
         @endif
+        @php
+            $id = Auth::id();
+        @endphp
         <div class="card-body">
             <div class="card" style="width: 50rem; background: #A7C0EA; color: black;">
                 <div class="card-body">
@@ -24,8 +27,7 @@
                         Anda.</h4>
                 </div>
                 <div class="col card-header text-left" style="background: #A7C0EA;">
-                    <a href="#pesan" data-toggle="modal" class="btn btn-primary" style="background: #F08080;"><i
-                            class="fas fa-comment"></i> Mulai Konsultasi </a>
+                    <a href="{{ url('konsultasiIbu/createKonsultasi/'. $id  ) }}" class="btn btn-primary" style="background: #F08080;"><i class="fas fa-comment"></i> Mulai Konsultasi </a>
                 </div>
             </div>
         </div>

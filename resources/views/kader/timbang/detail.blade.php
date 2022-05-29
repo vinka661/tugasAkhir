@@ -25,8 +25,7 @@
                                     <div class="card-body">
                                         <div class="form-group">
                                             <label for="nama_bayi"><strong>Nama Bayi/Balita</strong></label><br>
-                                            <input type="text" class="form-control" id="nama_bayi" name="nama_bayi"
-                                                value="{{ $bayiBalita->nama_bayi }}" disabled>
+                                            <input type="text" class="form-control" id="nama_bayi" name="nama_bayi" value="{{ $bayiBalita->nama_bayi }}" disabled>
                                         </div>
                                         <div class="form-group">
                                             <label for="jenis_kelamin"><strong>Jenis Kelamin</strong></label>
@@ -47,10 +46,12 @@
             </div> <br>
             <div class="container-fluid">
                 <h1 class="h3 mb-2 text-gray-800">Data Timbang Bayi/Balita</h1>
+                @php
+                    $id = Auth::id();
+                @endphp
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <a href="{{ route('createTimbang', ['bayiBalita' => $bayiBalita->id_bb]) }}"><button
-                                class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data Timbang</button></a>
+                        <a href="{{ url('timbang/createTimbang/'. $bayiBalita->id_bb . '/' . $id) }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data Timbang</button></a>
                     </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
@@ -64,7 +65,6 @@
                                     <tr>
                                         <th>No</th>
                                             <th>Nama Kader</th>
-                                            <th>Nama Bayi</th>
                                             <th>Tanggal Timbang</th>
                                             <th>BB</th>
                                             <th>TB</th>
@@ -75,10 +75,10 @@
                                 </thead>
                                 <tbody>
                                     @foreach($timbang as $key => $data)
+                                    @if ($data->user->id == Auth::user()->id)
                                     <tr>
                                         <td>{{ ++$key }}</td>
                                         <td>{{ $data->user->name }}</td>
-                                        <td>{{ $data->bayi_balita->nama_bayi }}</td>
                                         <td>{{ $data->tgl_timbang }}</td>
                                         <td>{{ $data->berat_badan}}</td>
                                         <td>{{ $data->tinggi_badan}}</td>
@@ -95,6 +95,7 @@
                                             <a href="{{ route('deleteTimbang', $data->id_timbang) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a>
                                         </td>
                                     </tr>
+                                    @endif
                                     @endforeach
                                 </tbody>
                             </table>

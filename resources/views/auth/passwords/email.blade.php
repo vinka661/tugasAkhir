@@ -28,10 +28,12 @@
     <link rel="stylesheet" href="../assets/css/slick.css">
     <link rel="stylesheet" href="../assets/css/default.css">
     <link rel="stylesheet" href="../assets/css/style.css">
-    <link rel="stylesheet" href="../assets/css/responsive.css"><link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
 
 
 </head>
@@ -92,9 +94,9 @@
                         <ul>
                             <li><a href="index.html">Home</a></li>
                             <li>|</li>
-                            <li>Reset Password</li>
+                            <li>Password</li>
                         </ul>
-                        <h1 class="back-title">Reset Password</h1>
+                        <h1 class="back-title">Password</h1>
                     </div>
                 </div>
             </div>
@@ -109,43 +111,50 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="basic-login">
                         <h3 class="text-center mb-60">Reset Password</h3>
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
+                        <div class="card-body">
+                            @if (session('status'))
+                                <div class="alert alert-success" role="alert">
+                                    {{ session('status') }}
+                                </div>
+                            @endif
+
+                            <form method="POST" action="{{ route('password.email') }}">
+                                @csrf
+
+                                <div class="form-group row">
+                                    <label for="email"
+                                        class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="email" type="email"
+                                            class="form-control form-control-user @error('email') is-invalid @enderror"
+                                            name="email" value="{{ old('email') }}" required autocomplete="email"
+                                            autofocus>
+
+                                        @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
+                                </div>
+
+                                <div class="form-group row mb-0">
+                                    <div class="col-md-6 offset-md-4">
+                                        <button type="submit" class="btn btn-primary">
+                                            {{ __('Send Email ') }}
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                    @endif
-
-                    <form method="POST" action="{{ route('password.email') }}">
-                        @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control form-control-user @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Send Password Reset Link') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <script type="text/javascript">
+            $("#password").password('toggle');
+        </script>
     </section>
     <!-- login Area End-->
     <!-- footer area start -->

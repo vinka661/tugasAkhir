@@ -21,28 +21,14 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="card card-primary card-outline">
-                                <form role="form" action="{{ route('storeTimbang') }}" method="POST"
-                                    enctype="multipart/form-data">
+                                <form role="form" action="{{ route('storeTimbang') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
+                                    @php
+                                        $id = Auth::id();
+                                    @endphp
+                                    <input type="hidden" name="id" value="{{ $id }}">
+                                    <input type="hidden" name="id_bb" value="{{ $bayiBalita->id_bb }}">
                                     <div class="card-body">
-                                        <div class="form-group">
-                                            <label for="id"><strong>Nama Kader</strong></label>
-                                            <select class="form-control select2bs4" name="id" id="id" style="width: 100%;"
-                                                required><br>
-                                                @foreach ($user as $item)
-                                                    <option value="{{ $item->id }}">{{ $item->name }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="id_bb"><strong>Nama Bayi Balita</strong></label>
-                                            <select class="form-control select2bs4" name="id_bb" id="id_bb"
-                                                style="width: 100%;" required><br>
-                                                @foreach ($bayiBalita as $item)
-                                                    <option value="{{ $item->id_bb }}">{{ $item->nama_bayi }}</option>
-                                                @endforeach
-                                            </select>
-                                        </div>
                                         <div class="form-group">
                                             <label for="tgl_timbang"><strong>Tanggal Timbang<strong></label><br>
                                             <input type="date" class="form-control" name="tgl_timbang" id="datepicker"

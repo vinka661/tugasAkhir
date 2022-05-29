@@ -116,23 +116,35 @@ class kaderController extends Controller
     {
         $bayiBalita = BayiBalita::find($id_bb);
         $timbang = Timbang::where('id_bb', '=', $id_bb)->get();
-        return view('kader.timbang.detail', ['bayiBalita' => $bayiBalita, 'timbang' => $timbang ]);
+        // $timbang = DB::table('users')
+        //                     ->join('bayi_balita', 'bayi_balita.id', '=', 'users.id')
+        //                     ->join('timbang', 'timbang.id_bb', '=', 'bayi_balita.id_bb')
+        //                     ->select('bayi_balita.nama_bayi')
+        //                     ->where('users.id', $id)
+        //                     ->where('bayi_balita.id_bb', $id_bb)
+        //                     ->distinct()
+        //                     ->get();
+        return view('kader.timbang.detail', compact('bayiBalita', 'timbang'));
     }
 
 
-    public function createTimbang(BayiBalita $bayiBalita)
+    public function createTimbang($id_bb, $id)
     {
-        $timbang = Timbang::all();
-        $bayiBalita = BayiBalita::all();
-        // $user = User::all();
-        $user = User::where('role', 'Kader')->get();
-        return view('kader.timbang.create', ['timbang' => $timbang, 'bayiBalita' => $bayiBalita, 'user' => $user]);
+        $bayiBalita = BayiBalita::find($id_bb);
+        $timbang = DB::table('users')
+                    ->join('bayi_balita', 'bayi_balita.id', '=', 'users.id')
+                    ->join('timbang', 'timbang.id_bb', '=', 'bayi_balita.id_bb')
+                    ->where('bayi_balita.id_bb', $id_bb)
+                    ->where('users.id', $id)
+                    ->distinct()
+                    ->get();
+        return view('kader.timbang.create', compact('bayiBalita', 'timbang'));
     }
 
     public function storeTimbang(Request $request)
     {
-        $id = $request->get('id_bb');
-        $bayi = BayiBalita::where('id_bb', $id)->first();
+        $id_bb = $request->get('id_bb');
+        $bayi = BayiBalita::find($id_bb);
         $timbang = Timbang::all();
         $jk = $bayi->jk;
         $umur = $bayi->umur;
@@ -1348,7 +1360,7 @@ class kaderController extends Controller
     }
         Timbang::create([
             'id' => $request->id,
-            'id_bb' => $request->id_bb,
+            'id_bb' => $id_bb,
             'tgl_timbang' => $request->tgl_timbang,
             'berat_badan' => $request->berat_badan,
             'tinggi_badan' => $request->tinggi_badan,
@@ -1356,7 +1368,7 @@ class kaderController extends Controller
             'status_gizi' => $q,
             
         ]);
-        return redirect()->route('detailTimbangBayi', ['id' => $request->id, 'id_bb' => $request->id_bb])->with('success','Data Timbang BayiBalita Berhasil Ditambahkan');
+        return redirect()->route('detailTimbangBayi', ['id_bb' => $id_bb])->with('success','Data Timbang BayiBalita Berhasil Ditambahkan');
     }
 
     public function editTimbang($id_timbang)

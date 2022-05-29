@@ -26,34 +26,40 @@ class ibuBayiController extends Controller
         return view('ibuBayi.konsultasi.index', ['konsultasi' => $konsultasi]);
     }
 
-    public function createKonsultasi()
+    public function createKonsultasi($id)
     {
-        return view('ibuBayi.konsultasi.create');
+        $konsultasi = DB::table('users')
+                        ->join('konsultasi', 'konsultasi.id', '=', 'users.id')
+                        ->where('users.id', $id)
+                        ->get();
+        return view('ibuBayi.konsultasi.create', compact('konsultasi'));
     }
 
     public function storeKonsultasi(Request $request)
     {
         Konsultasi::create([
             'konsul' => $request->konsul,
-            'id' => $request->nama_ibu,
+            'id' => $request->id,
         ]);
         return redirect('konsultasiIbu')->with('success','Data konsultasi online berhasil ditambahkan');
     }
 
     public function hasilPerkembangan()
     {
+        $id = Auth::id();
         $date = Carbon::now()->format('m');
         $year = Carbon::now()->format('Y');
         $hasilPerkembangan = DB::table('users')
                             ->join('bayi_balita', 'bayi_balita.id', '=', 'users.id')
                             ->join('timbang', 'timbang.id_bb', '=', 'bayi_balita.id_bb')
+                            ->where('users.id', $id)
                             ->whereMonth('timbang.tgl_timbang', '>=', $date)
                             ->whereYear('timbang.tgl_timbang', '>=', $year)
                             ->distinct()
                             ->get();
         // $hasilPerkembangan = BayiBalita::with('timbang.user')->get();
         // return view('ibuBayi.hasilPerkembangan.index', array('user' => Auth::user()), compact("hasilPerkembangan"), ['hasilPerkembangan' => $hasilPerkembangan]);
-        return view('ibuBayi.hasilPerkembangan.index')->with('hasilPerkembangan', $hasilPerkembangan);
+        return view('ibuBayi.hasilPerkembangan.index', compact('hasilPerkembangan', 'id'));
     }
 
 

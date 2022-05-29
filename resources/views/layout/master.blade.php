@@ -12,15 +12,15 @@
     <title>DIGITASI KMS || POSYANDU</title>
     <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="{{ url('assets/plugins/fontawesome-free/css/all.min.css') }}">
-    <link rel="shortcut icon" type="image/x-icon" href="../../assets/favicon2.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../../assets/favicon2.ico" />
     <!-- Custom fonts for this template-->
-    <link href="../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="../../../vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
       <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <!-- Custom styles for this template-->
-    <link href="../../css/sb-admin-2.css" rel="stylesheet">
+    <link href="../../../css/sb-admin-2.css" rel="stylesheet">
         <!-- Custom styles for this page -->
-        <link href="../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+        <link href="../../../vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
     <!-- Select2 -->
   <link rel="stylesheet" href="{{ url('assets/plugins/select2/css/select2.min.css') }}">
   <link rel="stylesheet" href="{{ url('assets/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">

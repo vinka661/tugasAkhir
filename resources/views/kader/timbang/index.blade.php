@@ -33,6 +33,9 @@
                                     </thead>
                                     <tbody>
                                         @foreach($bayiBalita as $key => $data)
+                                        @php
+                                            $id = Auth::id();
+                                        @endphp
                                         <tr>
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $data->nama_bayi }}</td>
@@ -45,7 +48,7 @@
                                             <td>
                                                 <a href="{{ route('editBB', $data->id_bb) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Edit</button></a>
                                                 <a href="{{ route('deleteBB', $data->id_bb) }}"><button  class="btn btn-danger btn-sm"><i class="fas fa-trash"></i> Hapus</button></a>
-                                                <a href="{{ route('detailTimbangBayi', $data->id_bb) }}"><button  class="btn  btn-success btn-sm"><i class="fas fa-weight"></i> Timbang Bayi</button></a>
+                                                <a href="{{ url('timbang/detailtimbangbayiBalita/'. $data->id_bb ) }}"><button  class="btn  btn-success btn-sm"><i class="fas fa-weight"></i> Timbang Bayi</button></a>
                                               </td>
                                         </tr>
                                         @endforeach

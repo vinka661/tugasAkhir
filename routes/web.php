@@ -132,7 +132,7 @@ Route::get('jenisVaksinImunisasi/delete/{id_vaksin_imunisasi}', 'bidanController
 //jadwal posyandu halaman ibu bayi
 Route::get('jadwalPosyanduibuBayi', 'ibuBayiController@jadwalPosyandu')->name('jadwalPosyanduBayi');
 Route::get('konsultasiIbu', 'ibuBayiController@konsultasi')->name('konsultasiIbu');
-Route::get('konsultasiIbu/createKonsultasi', 'ibuBayiController@createKonsultasi')->name('createKonsultasi');
+Route::get('konsultasiIbu/createKonsultasi/{id}', 'ibuBayiController@createKonsultasi')->name('createKonsultasi');
 Route::post('konsultasiIbu/storeKonsultasi', 'ibuBayiController@storeKonsultasi')->name('storeKonsultasi');
 
 //Konsultasi bidan
@@ -156,8 +156,8 @@ Route::get('kader/deleteBB/{id_bb}', 'kaderController@destroyBB')->name('deleteB
 
 //data timbang
 Route::get('timbang/detailtimbangbayiBalita/{id_bb}', 'kaderController@detailTimbangBayi')->name('detailTimbangBayi');
-Route::get('timbang/createTimbang/{bayiBalita?}', 'kaderController@createTimbang')->name('createTimbang');
-Route::post('timbang/Timbang', 'kaderController@storeTimbang')->name('storeTimbang');
+Route::get('timbang/createTimbang/{id_bb}/{id}', 'kaderController@createTimbang')->name('createTimbang');
+Route::post('timbang/storeTimbang', 'kaderController@storeTimbang')->name('storeTimbang');
 Route::get('timbang/edit/{id_timbang}', 'kaderController@editTimbang')->name('editTimbang');
 Route::post('timbang/update/{id_timbang}', 'kaderController@updateTimbang')->name('updateTimbang');
 Route::get('timbang/delete/{id_timbang}', 'kaderController@destroyTimbang')->name('deleteTimbang');
