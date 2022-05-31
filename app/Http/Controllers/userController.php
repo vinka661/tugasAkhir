@@ -31,6 +31,7 @@ class userController extends Controller
     public function store(Request $request)
     {
         User::create([
+            'nik' => Hash::make($request->password),
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
@@ -48,6 +49,7 @@ class userController extends Controller
     public function update(Request $request, $id)
     {
         $user = User::find($id);
+        $user->password = Hash::make($request->password);
         $user->name = $request->name;
         $user->email = $request->email;
         $user->password = Hash::make($request->password);

@@ -105,8 +105,16 @@
                         <h3 class="text-center mb-60">Register From Here</h3>
                         <form method="POST" action="{{ route('register') }}" class="user">
                             @csrf
+                                <label for="name">{{ __('NIK') }}</label>
+                                <input id="nik" type="text" class="form-control form-control-user @error('nik') is-invalid @enderror" name="nik" value="{{ old('nik') }}" required autocomplete="nik" autofocus>
+                                @error('nik')
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                @enderror
+
                                 <label for="name">{{ __('Name') }}</label>
-                                <input id="name" type="text" class="form-control form-control-user @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                                <input id="name" type="text" class="form-control form-control-user @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name">
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
