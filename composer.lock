@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "87d85e2b41cc6824f1eeb723b4b8c948",
+    "content-hash": "5579d2de518313875d411c68da945d79",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -1587,18 +1587,19 @@
         },
         {
             "name": "muhamadrezaar/highcharts",
-            "version": "2.0.4",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/julles/laravel-highcharts.git",
-                "reference": "efe473406b32e55e8f5eac4f79b6193da0abc013"
+                "reference": "03622a5ffcfb1bc754316012247142c6bf650e87"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/julles/laravel-highcharts/zipball/efe473406b32e55e8f5eac4f79b6193da0abc013",
-                "reference": "efe473406b32e55e8f5eac4f79b6193da0abc013",
+                "url": "https://api.github.com/repos/julles/laravel-highcharts/zipball/03622a5ffcfb1bc754316012247142c6bf650e87",
+                "reference": "03622a5ffcfb1bc754316012247142c6bf650e87",
                 "shasum": ""
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -1635,7 +1636,7 @@
                 "issues": "https://github.com/julles/laravel-highcharts/issues",
                 "source": "https://github.com/julles/laravel-highcharts/tree/master"
             },
-            "time": "2018-10-18T14:54:03+00:00"
+            "time": "2019-10-01T18:16:15+00:00"
         },
         {
             "name": "myclabs/php-enum",
@@ -7768,7 +7769,8 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "intervention/image": 20
+        "intervention/image": 20,
+        "muhamadrezaar/highcharts": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

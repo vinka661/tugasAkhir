@@ -88,6 +88,17 @@
                                     </dd>
                                 </div>
                             </div>
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Nama Posyandu</h6>
+                                </div>
+                                <div class="col-sm-9 text-secondary">
+                                    <dd class="col-sm-8">
+                                       
+                                            {{ $user->_posyandu }}
+                                    </dd>
+                                </div>
+                            </div>
                             <div class="col  text-right">
                                 <a href="{{ route('userIbu.profile.edit', Auth::user()->id) }}"
                                     class="btn btn-primary">Edit</a>

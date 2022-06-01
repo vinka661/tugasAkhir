@@ -5,6 +5,7 @@ use Auth;
 use Validator;
 use App\User;
 use App\BayiBalita;
+use App\Posyandu;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 use DB;
@@ -120,7 +121,10 @@ class profileController extends Controller
 
 public function editProfileIbu($id) {
     $user = User::find($id);
-    return view('profile.editProfileIbu', compact( "user"));
+    $posyandu = DB::table('posyandu')
+                ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
+                ->get();
+    return view('profile.editProfileIbu', compact( "user", "posyandu"));
 }
 
 public function updateProfileIbu(Request $request, $id) {
@@ -174,6 +178,7 @@ public function updateProfileIbu(Request $request, $id) {
     $user->name = $request->name;
     $user->jenis_kelamin = $request->jenis_kelamin;
     $user->alamat = $request->alamat;
+    $user->id_posyandu = $request->posyandu;
     $user->save();
 
     $user1 = User::find($id);
