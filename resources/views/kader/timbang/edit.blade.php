@@ -8,7 +8,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <br>
-            <h2 class="m-0 text-dark"><strong>Edit FDT </strong></h2></br>
+            <h2 class="m-0 text-dark"><strong>Edit Timbang Bayi/Balita</strong></h2></br>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->
@@ -23,20 +23,15 @@
             <div class="card card-primary card-outline">
                 <form role="form" action="{{ route('updateTimbang', $timbang->id_timbang) }}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    @php
+                      $id = Auth::id();
+                    @endphp       
                     <div class="card-body">
                       <div class="form-group">
                         <label for="id_timbang"><strong>ID Timbang<strong></label><br>
                         <input type="text" class="form-control" id="id_timbang" name="id_timbang" value="{{ $timbang->id_timbang }}" disabled>
                       </div>
-                     
-                      <div class="form-group">
-                        <label for="id"><strong>Nama Kader </strong></label>
-                        <select class="form-control select2bs4" name="id" id="id" style="width: 100%;" ><br>
-                          @foreach ($user as $item)
-                          <option value="{{ $item->id }}" {{ $timbang->id == $item->id ? 'selected' : '' }}>{{ $item->name }}</option>
-                          @endforeach
-                        </select>
-                      </div>
+                      <input type="hidden" name="id" value="{{ $id }}">
                       <div class="form-group">
                         <label for="id_bb"><strong>Nama Bayi/Balita</strong></label>
                         <select class="form-control select2bs4" name="id_bb" id="id_bb" style="width: 100%;" ><br>
@@ -54,15 +49,12 @@
                         <input type="text" class="form-control" id="berat_badan" name="berat_badan" value="{{ $timbang->berat_badan }}" >
                       </div>
                       <div class="form-group">
-                        <label for="lingkar_kepala"><strong>Lingkar Kepala<strong></label><br>
-                        <input type="text" class="form-control" id="lingkar_kepala" name="lingkar_kepala" value="{{ $timbang->lingkar_kepala }}" >
+                        <label for="tinggi_badan"><strong>Tinggi Badan<strong></label><br>
+                        <input type="text" class="form-control" id="tinggi_badan" name="tinggi_badan" value="{{ $timbang->tinggi_badan }}" >
                       </div>
                       <div class="form-group">
-                        <label for="status_gizi"><strong>status_gizi<strong></label><br>
-                        <select class="form-control select2bs4" name="status_gizi" id="status_gizi" style="width: 100%;" required></br>
-                          <option value="Baik" {{ $timbang->status_gizi == 'Baik' ? 'selected' : '' }}>Baik</option>
-                          <option value="BGM" {{ $timbang->status_gizi == 'BGM' ? 'selected' : '' }}>BGM</option>
-                        </select>
+                        <label for="lingkar_kepala"><strong>Lingkar Kepala<strong></label><br>
+                        <input type="text" class="form-control" id="lingkar_kepala" name="lingkar_kepala" value="{{ $timbang->lingkar_kepala }}" >
                       </div>
                     </div>
                     <!-- /.card-body -->

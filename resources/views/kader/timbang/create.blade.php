@@ -8,7 +8,7 @@
                     <div class="row mb-2">
                         <div class="col-sm-6">
                             <br>
-                            <h2 class="m-0 text-dark"><strong>Tambah Timbang Bayi Balita</strong></h2></br>
+                            <h2 class="m-0 text-dark"><strong>Tambah Timbang Bayi/Balita</strong></h2></br>
                         </div><!-- /.col -->
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
@@ -42,10 +42,10 @@
                                         <div class="form-group">
                                             <label for="tinggi_badan"><strong>Tinggi Badan<strong></label><br>
                                             <input type="text" class="form-control" id="tinggi_badan" name="tinggi_badan"
-                                                placeholder="Masukkan Tinggi Badan" required>
+                                                placeholder="Masukkan Tinggi Badan">
                                         </div>
                                         <div class="form-group">
-                                            <label for="lingkar_kepala"><strong>lingkar Kepala<strong></label><br>
+                                            <label for="lingkar_kepala"><strong>Lingkar Kepala<strong></label><br>
                                             <input type="text" class="form-control" id="lingkar_kepala"
                                                 name="lingkar_kepala" placeholder="Masukkan lingkar Kepala">
                                         </div>

@@ -61,6 +61,14 @@
                     <label for="nama_ayah"><strong>Nama Ayah<strong></label>
                     <input type="text" class="form-control" id="nama_ayah" name="nama_ayah" placeholder="Masukkan Nama Ayah" required>
                   </div>
+                  <div class="form-group">
+                    <label for="akun"><strong>Akun Ibu</strong></label>
+                    <select class="form-control select2bs4" name="akun" id="akun" style="width: 100%;" required><br>
+                      @foreach ($user as $item)
+                        <option value="{{ $item->id }}">{{ $item->nik }} - {{ $item->name }}</option>
+                     @endforeach
+                    </select>
+                  </div>
                 </div>
                 <!-- /.card-body -->
 

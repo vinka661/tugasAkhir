@@ -51,7 +51,15 @@
                 @endphp
                 <div class="card shadow mb-4">
                     <div class="card-header py-3">
-                        <a href="{{ url('timbang/createTimbang/'. $bayiBalita->id_bb . '/' . $id) }}"><button class="btn btn-primary btn-sm"><i class="fas fa-plus"></i> Tambah Data Timbang</button></a>
+                        @if ($canAdd)
+                            <a href="{{ url('timbang/createTimbang/' . $bayiBalita->id_bb . '/' . $id) }}" class="btn btn-primary btn-sm">
+                                <i class="fas fa-plus"></i> Tambah Data Timbang
+                            </a>
+                        @else
+                            <button type="button" class="btn btn-primary btn-sm" disabled>
+                                <i class="fas fa-plus"></i> Tambah Data Timbang
+                            </button>
+                        @endif
                     </div>
                     @if ($message = Session::get('success'))
                         <div class="alert alert-success">
@@ -64,13 +72,13 @@
                                 <thead>
                                     <tr>
                                         <th>No</th>
-                                            <th>Nama Kader</th>
-                                            <th>Tanggal Timbang</th>
-                                            <th>BB</th>
-                                            <th>TB</th>
-                                            <th>LK</th>
-                                            <th>Status Gizi</th>
-                                            <th>Aksi</th>
+                                        <th>Nama Kader</th>
+                                        <th>Tanggal Timbang</th>
+                                        <th>BB</th>
+                                        <th>TB</th>
+                                        <th>LK</th>
+                                        <th>Status Gizi</th>
+                                        <th>Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -81,7 +89,13 @@
                                         <td>{{ $data->user->name }}</td>
                                         <td>{{ $data->tgl_timbang }}</td>
                                         <td>{{ $data->berat_badan}}</td>
-                                        <td>{{ $data->tinggi_badan}}</td>
+                                        <td>
+                                            @if ($data->tinggi_badan == NULL)
+                                                -
+                                            @else
+                                                {{ $data->tinggi_badan }}
+                                            @endif
+                                        </td>
                                         <td>
                                             @if ($data->lingkar_kepala == NULL)
                                                 -
