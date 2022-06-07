@@ -74,7 +74,6 @@ Route::get('laporan/setuju/', 'laporanController@konfirmasi')->name('laporansetu
 //kepala PLKB
 // data diri profile
 Route::post('/edit-profil','profileController@editprofil')->name('profile');
-Route::post('/edit-profilIbu','profileController@updateProfileIbu')->name('profile');
 Route::group(["middleware" => "auth"], function() {
     Route::get('/user/profile/{user}', 'profileController@indexprofil')->name('user.profile');
     Route::get('/user/penyuluhanKader/{user}', 'kaderController@penyuluhanKader')->name('user.penyuluhanKader');
