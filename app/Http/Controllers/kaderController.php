@@ -20,11 +20,12 @@ class kaderController extends Controller
     
     public function index()
     {
-        $kader = DB::table('posyandu')
-                    ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
-                    ->where('users.role', '=', 'Kader')
-                    ->get();
-        return view('operator.kader.index')->with('kader', $kader);
+        $kader = User::where('role', 'Kader')->get();
+        // $kader = DB::table('posyandu')
+        //             ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
+        //             ->where('users.role', '=', 'Kader')
+        //             ->get();
+        return view('operator.kader.index', compact('kader'));
     }
 
     public function edit($id)

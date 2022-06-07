@@ -28,7 +28,17 @@ class profileController extends Controller
                     ->join('users', 'users.id', '=', 'bayi_balita.id')
                     ->get();
         $namabayi = BayiBalita::with('user')->get();
-    	return view('profile.profileIbu', array('user' => Auth::user()),  compact( "namabayi"), ['namabayi' => $namabayi]);
+        // $id = Auth::id();
+        // $namabayi1 = DB::table('users')
+        //                 ->join('bayi_balita', 'bayi_balita.id', 'users.id')
+        //                 ->where('users.id', $id)
+        //                 ->get();
+        // $namabayi = DB::table('posyandu')
+        //              ->leftjoin('users', 'posyandu.id_posyandu', '=', 'users.id_posyandu')
+        //              ->leftjoin('bayi_balita', 'users.id', '=', 'bayi_balita.id')
+        //              ->where('users.id', $id)
+        //              ->first();
+    	return view('profile.profileIbu', array('user' => Auth::user()), compact('namabayi'));
     }
 
     public function editProfile($id) {
@@ -121,10 +131,8 @@ class profileController extends Controller
 
 public function editProfileIbu($id) {
     $user = User::find($id);
-    $posyandu = DB::table('posyandu')
-                ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
-                ->get();
-    return view('profile.editProfileIbu', compact( "user", "posyandu"));
+    $posyandu = Posyandu::all();
+    return view('profile.editProfileIbu', compact( 'user', 'posyandu'));
 }
 
 public function updateProfileIbu(Request $request, $id) {

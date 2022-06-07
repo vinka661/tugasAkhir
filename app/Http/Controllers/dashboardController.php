@@ -327,6 +327,11 @@ class dashboardController extends Controller
             // $timbang = DB::table('timbang')
             //     ->count();
             $timbang = Timbang::get();
+            //Kosultasi
+            // $konsultasi = Konsultasi::get();
+            $konsultasi = DB::table('konsultasi')
+                ->where('solusi', NULL)
+                ->count();
                //Grafik
         date_default_timezone_set('Asia/Jakarta');
         $nmm = Carbon::now()->format('m'); // Tanggal sekarang bulan
@@ -460,13 +465,18 @@ class dashboardController extends Controller
             }
         }
 
-            return view('dashboard.kaderBidan', compact('bayiBalita','timbang','chart1'));
+            return view('dashboard.kaderBidan', compact('bayiBalita','timbang','konsultasi','chart1'));
         }
         elseif (Auth::user()->role == 'Kader') { // Role kader
             $bayiBalita = BayiBalita::get();
             // $timbang = DB::table('timbang')
             //     ->count();
             $timbang = Timbang::get();
+            //Kosultasi
+            // $konsultasi = Konsultasi::get();
+            $konsultasi = DB::table('konsultasi')
+            ->where('solusi', NULL)
+                ->count();
                //Grafik
         date_default_timezone_set('Asia/Jakarta');
         $nmm = Carbon::now()->format('m'); // Tanggal sekarang bulan
@@ -600,7 +610,7 @@ class dashboardController extends Controller
             }
         }
 
-            return view('dashboard.kaderBidan', compact('bayiBalita','timbang','chart1'));
+            return view('dashboard.kaderBidan', compact('bayiBalita','timbang','konsultasi','chart1'));
         }
         elseif (Auth::user()->role == 'Ibu Bayi') { // Role ibu bayi
             return view('layout.master');
@@ -765,6 +775,12 @@ class dashboardController extends Controller
             // $timbang = DB::table('timbang')
             //     ->count();
             $timbang = Timbang::get();
+            //Kosultasi
+            // $konsultasi = Konsultasi::get();
+            $konsultasi = DB::table('konsultasi')
+                // ->where('solusi', '=', 'NULL')
+                ->where('solusi', NULL)
+                ->count();
                //Grafik
         date_default_timezone_set('Asia/Jakarta');
         $nmm = Carbon::now()->format('m'); // Tanggal sekarang bulan
@@ -898,7 +914,7 @@ class dashboardController extends Controller
             }
         }
 
-            return view('dashboard.kaderBidan', compact('bayiBalita','timbang','chart1'));
+            return view('dashboard.kaderBidan', compact('bayiBalita','timbang','konsultasi','chart1'));
     }
 
     // public function tesdata()

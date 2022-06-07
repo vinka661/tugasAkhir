@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\BayiBalita;
 use App\User;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class bayiBalitaController extends Controller
@@ -47,11 +48,14 @@ class bayiBalitaController extends Controller
 
     public function update(Request $request, $id_bb)
     {
+        $now = Carbon::now();
+        $b_day = Carbon::parse($request->ttl);
+        $age = $b_day->diffInMonths($now);
         $bayiBalita = BayiBalita::find($id_bb);
         $bayiBalita->nama_bayi = $request->nama_bayi;
         $bayiBalita->ttl = $request->ttl;
         $bayiBalita->jk = $request->jenis_kelamin;
-        $bayiBalita->umur = $request->umur;
+        $bayiBalita->umur = $age;
         $bayiBalita->alamat = $request->alamat;
         $bayiBalita->nama_ibu = $request->nama_ibu;
         $bayiBalita->nama_ayah = $request->nama_ayah;

@@ -42,8 +42,7 @@
                     </div>
                 </div>
                 <div class="col card-header text-right" style="background: #A7C0EA;">
-                    <a href="#pesan" data-toggle="modal" class="btn btn-primary" style="background: #F08080;"><i
-                            class="fas fa-comment"></i> Cek Status Gizi </a>
+                    <a href="{{ route('showKms', $data->id_bb) }}" class=" btn btn-primary" data-toggle="tooltip"><i class="fas fa-info"></i> Lihat KMS</a>
                 </div>
                 <div class="modal fade" id="pesan" role="dialog">
                     <div class="modal-dialog">

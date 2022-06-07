@@ -68,6 +68,8 @@ Route::get('bidan/delete/{id}', 'bidanController@destroy')->name('deleteBidan');
 Route::get('laporan', 'laporanController@index')->name('laporan');
 Route::get('laporan/cetak_pdf', 'laporanController@cetak_pdf')->name('cetak_pdf');
 Route::get('laporan/cetak_excel', 'laporanController@exportLaporan')->name('exportLaporan');
+//konfirmasi laporan
+Route::get('laporan/setuju/', 'laporanController@konfirmasi')->name('laporansetuju');
 
 //kepala PLKB
 // data diri profile
@@ -144,6 +146,7 @@ Route::get('konsultasi/delete/{id_kosultasi}', 'bidanController@destroyKonsultas
 
 //Hasil Perkembangan
 Route::get('hasilPerkembangan', 'ibuBayiController@hasilPerkembangan')->name('hasilPerkembangan');
+Route::get('hasilPerkembangan/kms/{id_bb}', 'ibuBayiController@showKms')->name('showKms');
 
 //kader
 //data bayi/balita

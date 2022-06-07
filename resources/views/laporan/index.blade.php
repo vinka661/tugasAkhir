@@ -8,8 +8,22 @@
                     <!-- DataTales Example -->
                     <div class="card shadow mb-4">
                         <div class="card-header py-3">
-                            <a href="{{ route('cetak_pdf') }}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Pdf</a>
-                            <a href="{{ route('exportLaporan') }}" target="_blank" class="btn btn-success btn-sm"><i class="fas fa-print"></i> Cetak Excel</a>
+                            @if ($setuju)
+                                <!-- <input id="search" type="text" name="search"> -->
+                                <!-- {{-- <a href="laporan/cetak_pdf/2022-06-08" target="_blank" class="btn btn-success btn-sm"><i
+                                    class="fas fa-print"></i> Cetak Pdf</a> --}} -->
+                                <!-- {{-- <input type='text' id='search' name='search' placeholder='Enter '>
+                                    <input type='button' value='Search' id='but_search'> --}} -->
+                                <a href="{{ route('cetak_pdf') }}" target="_blank" class="btn btn-success btn-sm"><i
+                                        class="fas fa-print"></i> Cetak Pdf</a>
+                                <a href="{{ route('exportLaporan') }}" target="_blank" class="btn btn-success btn-sm"><i
+                                        class="fas fa-print"></i> Cetak Excel</a>
+                            @else
+                                @can('kepala-plkb')
+                                    <a href="{{ route('laporansetuju') }}" class="btn btn-success btn-sm"><i class="fas fa-check"></i>
+                                        Setujui</a>
+                                @endcan
+                            @endif
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">

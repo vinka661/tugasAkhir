@@ -47,10 +47,6 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="umur">Umur</label>
-                        <input type="number" class="form-control" id="umur" name="umur" value="{{ $bayiBalita->umur }}">
-                      </div>
-                      <div class="form-group">
                         <label for="alamat"><strong>Alamat<strong></label><br>
                           <textarea name="alamat" id="alamat" class="form-control"  value="{{ $bayiBalita->alamat }}">{{ $bayiBalita->alamat }}</textarea>
                       </div>

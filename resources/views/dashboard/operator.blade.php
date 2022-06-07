@@ -316,21 +316,6 @@
             })
         })
     </script>
-    <script>
-        function myFunction() {
-            var button = document.getElementById("bfinish");
-            var button1 = document.getElementById('bupdate');
-            var ket = document.getElementById('ket_progres');
-            var tgl = document.getElementById('datepicker');
-
-            ket.disabled = true;
-            tgl.disabled = true;
-            button.disabled = true;
-            button1.disabled = true;
-        }
-        // button1.disabled = true;
-        // x.disabled = true;
-    </script>
 
     <!-- Page level plugins -->
     <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>

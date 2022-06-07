@@ -22,6 +22,10 @@ class bidanController extends Controller
     public function index()
     {
         $bidan = User::where('role', 'Bidan Desa')->get();
+        // $bidan = DB::table('posyandu')
+        //             ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
+        //             ->where('users.role', '=', 'Bidan Desa')
+        //             ->get();
         return view('operator.bidan.index', ['bidan' => $bidan]);
     }
 
