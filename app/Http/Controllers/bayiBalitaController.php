@@ -29,10 +29,10 @@ class bayiBalitaController extends Controller
     {
         BayiBalita::create([
             'nama_bayi' => $request->nama_bayi,
-            'ttl' => $request->ttl,
+            'tgl_lahir' => $request->tgl_lahir,
             'jk' => $request->jenis_kelamin,
             'umur' => $request->umur,
-            'alamat' => $request->alamat,
+            'tempat_lahir' => $request->tempat_lahir,
             'nama_ibu' => $request->nama_ibu,
             'nama_ayah' => $request->nama_ayah,
         ]);
@@ -49,14 +49,14 @@ class bayiBalitaController extends Controller
     public function update(Request $request, $id_bb)
     {
         $now = Carbon::now();
-        $b_day = Carbon::parse($request->ttl);
+        $b_day = Carbon::parse($request->tgl_lahir);
         $age = $b_day->diffInMonths($now);
         $bayiBalita = BayiBalita::find($id_bb);
         $bayiBalita->nama_bayi = $request->nama_bayi;
-        $bayiBalita->ttl = $request->ttl;
+        $bayiBalita->tgl_lahir = $request->tgl_lahir;
         $bayiBalita->jk = $request->jenis_kelamin;
         $bayiBalita->umur = $age;
-        $bayiBalita->alamat = $request->alamat;
+        $bayiBalita->tempat_lahir = $request->tempat_lahir;
         $bayiBalita->nama_ibu = $request->nama_ibu;
         $bayiBalita->nama_ayah = $request->nama_ayah;
         $bayiBalita->save();

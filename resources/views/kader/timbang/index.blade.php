@@ -22,10 +22,10 @@
                                         <tr>
                                             <th>No</th>
                                             <th>Nama</th>
-                                            <th>TTL</th>
+                                            <th>Tanggal Lahir</th>
                                             <th>Jenis Kelamin</th>
                                             <th>Umur (bln)</th>
-                                            <th>Alamat</th>
+                                            <th>Tempat Lahir</th>
                                             <th>Nama Ibu</th>
                                             <th>Nama Ayah</th>
                                             <th>Aksi</th>
@@ -39,10 +39,10 @@
                                         <tr>
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $data->nama_bayi }}</td>
-                                            <td>{{ $data->ttl }}</td>
+                                            <td>{{ $data->tgl_lahir }}</td>
                                             <td>{{ $data->jk }}</td>
                                             <td>{{ $data->umur }}</td>
-                                            <td>{{ $data->alamat }}</td>
+                                            <td>{{ $data->tempat_lahir }}</td>
                                             <td>{{ $data->nama_ibu }}</td>
                                             <td>{{ $data->nama_ayah }}</td>
                                             <td>

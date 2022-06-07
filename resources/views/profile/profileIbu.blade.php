@@ -12,7 +12,7 @@
                                 </div>
 
                                 @if (Auth::user()->photo == null)
-                                    <img src="{{ url('../assets/dist/img/avatar6.png') }}" alt="Admin"
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin"
                                         class="rounded-circle p-1 bg-primary" width="170">
                                 @else
                                     <img src="{{ Auth::user()->photo }}" alt="Admin"
@@ -22,7 +22,7 @@
                                 <br><label>Ganti Foto</label>
 
                             </div>
-                            <form enctype="multipart/form-data" action="/edit-profil" method="POST">
+                            <form enctype="multipart/form-data" action="{{ route('userIbu.profile.update', Auth::user()->id) }}" method="POST">
 
                                 <input type="file" name="avatar">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

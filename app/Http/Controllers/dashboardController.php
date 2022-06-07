@@ -156,11 +156,11 @@ class dashboardController extends Controller
         )
         ->display();
 
-        $cek_umur = DB::table('bayi_balita')->where('alamat', 0)->get();
+        $cek_umur = DB::table('bayi_balita')->where('tempat_lahir', 0)->get();
         foreach ($cek_umur as $anak) {
             date_default_timezone_set('Asia/Jakarta');
             $now = Carbon::now()->format('Y-m-d'); // Tanggal sekarang
-            $b_day = Carbon::parse($anak->ttl); // Tanggal Lahir
+            $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
                 $edit = Anak::where('id_bb', $anak->id_bb);
@@ -305,11 +305,11 @@ class dashboardController extends Controller
         )
         ->display();
 
-        $cek_umur = DB::table('bayi_balita')->where('alamat', 0)->get();
+        $cek_umur = DB::table('bayi_balita')->where('tempat_lahir', 0)->get();
         foreach ($cek_umur as $anak) {
             date_default_timezone_set('Asia/Jakarta');
             $now = Carbon::now()->format('Y-m-d'); // Tanggal sekarang
-            $b_day = Carbon::parse($anak->ttl); // Tanggal Lahir
+            $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
                 $edit = Anak::where('id_bb', $anak->id_bb);
@@ -453,11 +453,11 @@ class dashboardController extends Controller
         )
         ->display();
 
-        $cek_umur = DB::table('bayi_balita')->where('alamat', 0)->get();
+        $cek_umur = DB::table('bayi_balita')->where('tempat_lahir', 0)->get();
         foreach ($cek_umur as $anak) {
             date_default_timezone_set('Asia/Jakarta');
             $now = Carbon::now()->format('Y-m-d'); // Tanggal sekarang
-            $b_day = Carbon::parse($anak->ttl); // Tanggal Lahir
+            $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
                 $edit = Anak::where('id_bb', $anak->id_bb);
@@ -598,11 +598,11 @@ class dashboardController extends Controller
         )
         ->display();
 
-        $cek_umur = DB::table('bayi_balita')->where('alamat', 0)->get();
+        $cek_umur = DB::table('bayi_balita')->where('tempat_lahir', 0)->get();
         foreach ($cek_umur as $anak) {
             date_default_timezone_set('Asia/Jakarta');
             $now = Carbon::now()->format('Y-m-d'); // Tanggal sekarang
-            $b_day = Carbon::parse($anak->ttl); // Tanggal Lahir
+            $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
                 $edit = Anak::where('id_bb', $anak->id_bb);
@@ -752,11 +752,11 @@ class dashboardController extends Controller
         )
         ->display();
 
-        $cek_umur = DB::table('bayi_balita')->where('alamat', 0)->get();
+        $cek_umur = DB::table('bayi_balita')->where('tempat_lahir', 0)->get();
         foreach ($cek_umur as $anak) {
             date_default_timezone_set('Asia/Jakarta');
             $now = Carbon::now()->format('Y-m-d'); // Tanggal sekarang
-            $b_day = Carbon::parse($anak->ttl); // Tanggal Lahir
+            $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
                 $edit = Anak::where('id_bb', $anak->id_bb);
@@ -902,11 +902,11 @@ class dashboardController extends Controller
         )
         ->display();
 
-        $cek_umur = DB::table('bayi_balita')->where('alamat', 0)->get();
+        $cek_umur = DB::table('bayi_balita')->where('tempat_lahir', 0)->get();
         foreach ($cek_umur as $anak) {
             date_default_timezone_set('Asia/Jakarta');
             $now = Carbon::now()->format('Y-m-d'); // Tanggal sekarang
-            $b_day = Carbon::parse($anak->ttl); // Tanggal Lahir
+            $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
                 $edit = Anak::where('id_bb', $anak->id_bb);

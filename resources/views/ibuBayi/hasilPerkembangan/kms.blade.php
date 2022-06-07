@@ -10,9 +10,14 @@
                     <p class="text-muted text-center">Profile</p>
                     <ul class="list-group list-group-unbordered">
                         <li class="list-group-item">
+                            <b>Tempat Lahir</b> <a class="pull-right">
+                                {{ $data->tempat_lahir }}
+                            </a>
+                        </li>
+                        <li class="list-group-item">
                             <b>Tanggal Lahir</b> <a class="pull-right">
                                 @php
-                                    $date = date("d-m-Y", strtotime($data->ttl))
+                                    $date = date("d-m-Y", strtotime($data->tgl_lahir))
                                 @endphp
                                 {{ $date }}
                             </a>
@@ -25,11 +30,6 @@
                         <li class="list-group-item">
                             <b>Umur</b> <a class="pull-right">
                                 {{ $data->umur }} bulan
-                            </a>
-                        </li>
-                        <li class="list-group-item">
-                            <b>Alamat</b> <a class="pull-right">
-                                {{ $data->alamat }}
                             </a>
                         </li>
                     </ul>

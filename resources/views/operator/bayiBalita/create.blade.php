@@ -29,8 +29,8 @@
                     <input type="text" class="form-control" id="nama_bayi" name="nama_bayi" placeholder="Masukkan Nama Bayi/Balita" required>
                   </div>
                   <div class="form-group">
-                    <label for="ttl"><strong>TTL<strong></label><br>
-                    <input type="date" class="form-control"  name="ttl" id="datepicker" placeholder="Masukkan TTL">
+                    <label for="tgl_lahir"><strong>Tanggal Lahir<strong></label><br>
+                    <input type="date" class="form-control"  name="tgl_lahir" id="datepicker" placeholder="Masukkan Tanggal Lahir">
                   </div>
                   <div class="form-group">
                     <label for="jenis_kelamin">Jenis Kelamin</label>
@@ -50,8 +50,8 @@
                     <input type="number" class="form-control" id="umur" name="umur" placeholder="Masukkan Umur (bln)" required>
                   </div>
                   <div class="form-group">
-                    <label for="alamat"><strong>Alamat<strong></label><br>
-                    <textarea name="alamat" id="alamat" class="form-control" rows="5" placeholder="Masukkan Alamat Bayi/Balita" required></textarea>
+                    <label for="tempat_lahir"><strong>Tempat Lahir<strong></label><br>
+                    <textarea name="tempat_lahir" id="tempat_lahir" class="form-control" rows="5" placeholder="Masukkan Tempat Lahir Bayi/Balita" required></textarea>
                   </div>
                   <div class="form-group">
                     <label for="nama_ibu"><strong>Nama Ibu<strong></label>

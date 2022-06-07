@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class BayiBalita extends Model
 {
     public $table = "bayi_balita";
-    protected $fillable = ['nama_bayi', 'ttl', 'umur', 'alamat', 'nama_ibu' , 'nama_ayah', 'jk', 'id'];
+    protected $fillable = ['nama_bayi', 'tgl_lahir', 'umur', 'tempat_lahir', 'nama_ibu' , 'nama_ayah', 'jk', 'id'];
     protected $primaryKey = 'id_bb';
 
     public function timbang()

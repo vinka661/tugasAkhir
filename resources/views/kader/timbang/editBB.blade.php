@@ -30,8 +30,8 @@
                         <input type="text" class="form-control" id="nama_bayi" name="nama_bayi" value="{{ $bayiBalita->nama_bayi }}">
                       </div>
                       <div class="form-group">
-                        <label for="ttl"><strong>TTL<strong></label><br>
-                        <input type="date" class="form-control" name="ttl" id="datepicker"  value="{{ $bayiBalita->ttl }}">
+                        <label for="tgl_lahir"><strong>Tanggal Lahir<strong></label><br>
+                        <input type="date" class="form-control" name="tgl_lahir" id="datepicker"  value="{{ $bayiBalita->tgl_lahir }}">
                       </div>
                       <div class="form-group">
                         <label for="jenis_kelamin">Jenis Kelamin</label>
@@ -47,8 +47,8 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="alamat"><strong>Alamat<strong></label><br>
-                          <textarea name="alamat" id="alamat" class="form-control"  value="{{ $bayiBalita->alamat }}">{{ $bayiBalita->alamat }}</textarea>
+                        <label for="tempat_lahir"><strong>Tempat Lahir<strong></label><br>
+                          <textarea name="tempat_lahir" id="tempat_lahir" class="form-control"  value="{{ $bayiBalita->tempat_lahir }}">{{ $bayiBalita->tempat_lahir }}</textarea>
                       </div>
                       <div class="form-group">
                         <label for="nama_ibu"><strong>Nama Ibu</strong></label></br>
