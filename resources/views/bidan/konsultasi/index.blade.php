@@ -21,6 +21,7 @@
                                             <th>No</th>
                                             <th>Nama </th>
                                             <th>Konsul</th>
+                                            <th>Terkirim Pada</th>
                                             <th>Solusi</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -31,6 +32,7 @@
                                             <td>{{ ++$key }}</td>
                                             <td>{{ $data->user->name }}</td>
                                             <td>{{ $data->konsul }}</td>
+                                            <td><i>{{ $data->created_at }}</i></td>
                                             <td><i>{{ $data->solusi }}</i></td>
                                             <td>
                                                 <a href="{{ route('balasKonsultasi', $data->id_kosultasi) }}"><button  class="btn btn-warning btn-sm"><i class="fas fa-comment"></i> Balas</button></a>
