@@ -54,7 +54,7 @@ class profileController extends Controller
     		{
 	    		$photo = $request->file('avatar');
 	    		$filename = time() . '.' . $photo->getClientOriginalExtension();
-	    		Image::make($photo)->resize(300, 300)->save( public_path('/img/upload/avatar/' . $filename ) );
+	    		Image::make($photo)->resize(300, 300)->save('/img/upload/avatar/' . $filename ) ;
 
 	    		$user = Auth::user();
 	    		$user->photo = $filename;
@@ -121,7 +121,7 @@ class profileController extends Controller
         if($request->hasFile('avatar')) {
 	    		$photo = $request->file('avatar');
 	    		$filename = time() . '.' . $photo->getClientOriginalExtension();
-	    		Image::make($photo)->resize(300, 300)->save( public_path('/img/upload/avatar/' . $filename ) );
+	    		Image::make($photo)->resize(300, 300)->save ('/img/upload/avatar/' . $filename ) ;
 
 	    		$user1 = Auth::user();
 	    		$user1->photo = $filename;
@@ -138,7 +138,7 @@ public function editprofilIbu(Request $request)
     		{
 	    		$photo = $request->file('avatar');
 	    		$filename = time() . '.' . $photo->getClientOriginalExtension();
-	    		Image::make($photo)->resize(300, 300)->save( public_path('/img/upload/avatar/' . $filename ) );
+	    		Image::make($photo)->resize(300, 300)->save('/img/upload/avatar/' . $filename );
 
 	    		$user = Auth::user();
 	    		$user->photo = $filename;
@@ -212,7 +212,7 @@ public function updateProfileIbu(Request $request, $id) {
     if($request->hasFile('avatar')) {
             $photo = $request->file('avatar');
             $filename = time() . '.' . $photo->getClientOriginalExtension();
-            Image::make($photo)->resize(300, 300)->save( public_path('/img/upload/avatar/' . $filename ) );
+            Image::make($photo)->resize(300, 300)->save('/img/upload/avatar/' . $filename ) ;
 
             $user1 = Auth::user();
             $user1->photo = $filename;
