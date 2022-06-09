@@ -480,8 +480,32 @@
                     button.disabled = true;
                     button1.disabled = true;
                 }
-                // button1.disabled = true;
-                // x.disabled = true;
+            </script>
+            <script>
+                $(document).ready(function () {
+                    $('#akun_id').on('change', function () {
+                        var id = $(this).val();
+                        $.ajax({
+                        type: 'get',
+                        url: "{{url('nik_akun')}}"+"/"+ id,
+                        dataType: 'json',
+                        success: function (data) {
+                            var temp = [];
+                            $.each(data, function (key, value) {
+                                temp.push({
+                                    v: value,
+                                    k: key
+                                });
+                            });
+                            $('#nama_ibu').val(temp[0].v);
+                            // $("#loading").show();
+                        },
+                        error: function (data) {
+                            console.log('Error:', data);
+                        }
+                    });
+                });
+            });
             </script>
             <!-- Page level plugins -->
             <script src="../../vendor/datatables/jquery.dataTables.min.js"></script>

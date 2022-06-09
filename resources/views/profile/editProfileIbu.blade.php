@@ -39,6 +39,10 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label for="email"><strong>Email</strong></label></br>
+                                        <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="alamat">Alamat</label>
                                         <textarea class="form-control" name="alamat" id="alamat" rows="3">{{ $user->alamat }}</textarea>
                                     </div>

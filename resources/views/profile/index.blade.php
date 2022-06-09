@@ -47,10 +47,12 @@
                                     <h6 class="mb-0">Jenis Kelamin</h6>
                                 </div>
                                 <dd class="col-sm-8">
-                                    @if ($user->jenis_kelamin == 'L')
+                                    @if ($user->jenis_kelamin == 'Laki-laki')
                                         Laki - Laki
-                                    @else
+                                    @elseif($user->jenis_kelamin == 'Perempuan')
                                         Perempuan
+                                    @else
+                                        -
                                     @endif
                                 </dd>
                             </div>
@@ -58,18 +60,40 @@
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Email</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <dd class="col-sm-8">{{ $user->email }}</dd>
-                                </div>
+                                <dd class="col-sm-8">{{ $user->email }}</dd>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Alamat</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <dd class="col-sm-8">{{ $user->alamat }}</dd>
-                                </div>
+                                <dd class="col-sm-8">
+                                    @if ($user->alamat == NULL)
+                                        -
+                                    @else
+                                        {{ $user->alamat }}
+                                    @endif
+                                </dd>
                             </div>
+                            @can('kader')
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Nama Posyandu</h6>
+                                </div>
+                                <dd class="col-sm-8">
+                                    {{ !empty($user->posyandu) ? $user->posyandu->nama_posyandu:'' }}
+                                </dd>
+                            </div>
+                            @endcan
+                            @can('bidan-desa')
+                            <div class="row mb-3">
+                                <div class="col-sm-3">
+                                    <h6 class="mb-0">Nama Posyandu</h6>
+                                </div>
+                                <dd class="col-sm-8">
+                                    {{ !empty($user->posyandu) ? $user->posyandu->nama_posyandu:'' }}
+                                </dd>
+                            </div>
+                            @endcan
                             <div class="col  text-right">
                                 <a href="{{ route('user.profile.edit', Auth::user()->id) }}"
                                     class="btn btn-primary">Edit</a>

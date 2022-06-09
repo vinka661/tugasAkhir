@@ -323,10 +323,16 @@ class dashboardController extends Controller
             
         } 
         elseif (Auth::user()->role == 'Bidan Desa') { // Role Bidan
-            $bayiBalita = BayiBalita::get();
+          //  $bayiBalita = User::get();
             // $timbang = DB::table('timbang')
             //     ->count();
-            $timbang = Timbang::get();
+            //Bayi Balita
+            $user = Auth::user();
+            $data_user = User::where('id_posyandu', $user->id_posyandu)->where('role','Ibu Bayi')->pluck('id');
+            // dd($data_user);
+             $bayiBalita = BayiBalita::whereIn('id', $data_user)->get();
+             //Timbang
+            $timbang = Timbang::whereIn('id', $data_user)->get();
             //Kosultasi
             // $konsultasi = Konsultasi::get();
             $konsultasi = DB::table('konsultasi')
@@ -468,10 +474,16 @@ class dashboardController extends Controller
             return view('dashboard.kaderBidan', compact('bayiBalita','timbang','konsultasi','chart1'));
         }
         elseif (Auth::user()->role == 'Kader') { // Role kader
-            $bayiBalita = BayiBalita::get();
-            // $timbang = DB::table('timbang')
-            //     ->count();
-            $timbang = Timbang::get();
+            // $bayiBalita = BayiBalita::get();
+            // // $timbang = DB::table('timbang')
+            // //     ->count();
+            // $timbang = Timbang::get();
+            $user = Auth::user();
+            $data_user = User::where('id_posyandu', $user->id_posyandu)->where('role','Ibu Bayi')->pluck('id');
+            // dd($data_user);
+             $bayiBalita = BayiBalita::whereIn('id', $data_user)->get();
+             //Timbang
+            $timbang = Timbang::whereIn('id', $data_user)->get();
             //Kosultasi
             // $konsultasi = Konsultasi::get();
             $konsultasi = DB::table('konsultasi')
@@ -613,7 +625,7 @@ class dashboardController extends Controller
             return view('dashboard.kaderBidan', compact('bayiBalita','timbang','konsultasi','chart1'));
         }
         elseif (Auth::user()->role == 'Ibu Bayi') { // Role ibu bayi
-            return view('layout.master');
+            return redirect('hasilPerkembangan');
         }
 
     }
@@ -771,10 +783,17 @@ class dashboardController extends Controller
 
     public function dashboardKaderdanBidan()
     {
-        $bayiBalita = BayiBalita::get();
-            // $timbang = DB::table('timbang')
-            //     ->count();
-            $timbang = Timbang::get();
+        // $bayiBalita = BayiBalita::get();
+        //     // $timbang = DB::table('timbang')
+        //     //     ->count();
+        //     $timbang = Timbang::get();
+        //Bayi Balita
+        $user = Auth::user();
+        $data_user = User::where('id_posyandu', $user->id_posyandu)->where('role','Ibu Bayi')->pluck('id');
+        // dd($data_user);
+         $bayiBalita = BayiBalita::whereIn('id', $data_user)->get();
+         //Timbang
+        $timbang = Timbang::whereIn('id', $data_user)->get();
             //Kosultasi
             // $konsultasi = Konsultasi::get();
             $konsultasi = DB::table('konsultasi')

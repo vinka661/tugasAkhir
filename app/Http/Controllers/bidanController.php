@@ -10,7 +10,9 @@ use App\VitaminA;
 use App\JenisVaksinImunisasi;
 use App\Imunisasi;
 use App\Konsultasi;
+use DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class bidanController extends Controller
 {
@@ -62,8 +64,16 @@ class bidanController extends Controller
 
     public function createPenyuluhan()
     {
-        $kader = User::where('role', 'Kader')->get();
-        return view('bidan.penyuluhan.create', ['kader' => $kader]);
+        // $kader = DB::table('posyandu')
+        //                 ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
+        //                 ->join('timbang', 'timbang.id', '=', 'users.id')
+        //                 ->join('bayi_balita', 'bayi_balita.id_bb', '=', 'timbang.id_bb')
+        //                 ->get();
+
+        $user = Auth::user();
+        $kader = User::where('id_posyandu', $user->id_posyandu)->where('role', 'Kader')->get();
+       // dd($kader);
+        return view('bidan.penyuluhan.create', compact('kader'));
     }
 
     public function storePenyuluhan(Request $request)
@@ -110,7 +120,11 @@ class bidanController extends Controller
 
     public function createJadwalPosyandu()
     {
-        $posyandu = Posyandu::all();
+        $id = Auth::id();
+        $posyandu = DB::table('posyandu')
+                        ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
+                        ->where('users.id', $id)
+                        ->get();
         return view('bidan.jadwalPosyandu.create', compact('posyandu'));
     }
 
@@ -164,8 +178,14 @@ class bidanController extends Controller
 
     public function createVitaminA()
     {
-        $bayiBalita = BayiBalita::all();
-        return view('bidan.imunisasiDanvitaminA.vitaminA.create', compact('bayiBalita'));
+        $id = Auth::id();
+        $bayiBalita = DB::table('posyandu')
+                        ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
+                        ->join('timbang', 'timbang.id', '=', 'users.id')
+                        ->join('bayi_balita', 'bayi_balita.id_bb', '=', 'timbang.id_bb')
+                        ->where('users.id', $id)
+                        ->get();
+        return view('bidan.imunisasiDanvitaminA.vitaminA.create', compact('id', 'bayiBalita'));
     }
 
     public function storeVitaminA(Request $request)
@@ -250,9 +270,15 @@ class bidanController extends Controller
 
     public function createImunisasi()
     {
-        $bayiBalita = BayiBalita::all();
+        $id = Auth::id();
+        $bayiBalita = DB::table('posyandu')
+                        ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
+                        ->join('timbang', 'timbang.id', '=', 'users.id')
+                        ->join('bayi_balita', 'bayi_balita.id_bb', '=', 'timbang.id_bb')
+                        ->where('users.id', $id)
+                        ->get();
         $jenisVaksinImunisasi = JenisVaksinImunisasi::all();
-        return view('bidan.imunisasiDanvitaminA.imunisasi.create', compact('bayiBalita','jenisVaksinImunisasi'));
+        return view('bidan.imunisasiDanvitaminA.imunisasi.create', compact('id', 'bayiBalita','jenisVaksinImunisasi'));
     }
 
     public function storeImunisasi(Request $request)
@@ -269,9 +295,15 @@ class bidanController extends Controller
     {
 
         $imunisasi = Imunisasi::find($id_imunisasi);
-        $bayiBalita = BayiBalita::all();
+        $id = Auth::id();
+        $bayiBalita = DB::table('posyandu')
+                        ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
+                        ->join('timbang', 'timbang.id', '=', 'users.id')
+                        ->join('bayi_balita', 'bayi_balita.id_bb', '=', 'timbang.id_bb')
+                        ->where('users.id', $id)
+                        ->get();
         $jenisVaksinImunisasi = JenisVaksinImunisasi::all();
-        return view('bidan.imunisasiDanvitaminA.imunisasi.edit', ['imunisasi' => $imunisasi ,'bayiBalita' => $bayiBalita,'jenisVaksinImunisasi' => $jenisVaksinImunisasi]);
+        return view('bidan.imunisasiDanvitaminA.imunisasi.edit', ['imunisasi' => $imunisasi , 'id' => $id, 'bayiBalita' => $bayiBalita,'jenisVaksinImunisasi' => $jenisVaksinImunisasi]);
     }
 
     public function updateImunisasi(Request $request, $id_imunisasi)

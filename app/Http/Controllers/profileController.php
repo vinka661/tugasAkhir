@@ -43,7 +43,8 @@ class profileController extends Controller
 
     public function editProfile($id) {
         $user = User::find($id);
-        return view('profile.edit', compact( "user"));
+        $posyandu = Posyandu::all();
+        return view('profile.edit', compact( 'user', 'posyandu'));
     }
 
     public function editprofil(Request $request)
@@ -127,6 +128,23 @@ class profileController extends Controller
 	    		$user1->save();
     }
     return redirect(route("user.profile", $user->id))->with(["success" => "User berhasil diupdate!"]);
+}
+
+public function editprofilIbu(Request $request)
+{
+    $namabayi = BayiBalita::with('user')->get();
+    	// Bagian yang mengHandle upload avatar user
+    	if($request->hasFile('avatar'))
+    		{
+	    		$photo = $request->file('avatar');
+	    		$filename = time() . '.' . $photo->getClientOriginalExtension();
+	    		Image::make($photo)->resize(300, 300)->save( public_path('/img/upload/avatar/' . $filename ) );
+
+	    		$user = Auth::user();
+	    		$user->photo = $filename;
+	    		$user->save();
+    		}
+    	return view('profile.profileIbu', array('user' => Auth::user()), compact('namabayi'));
 }
 
 public function editProfileIbu($id) {

@@ -51,20 +51,20 @@
                           <textarea name="tempat_lahir" id="tempat_lahir" class="form-control"  value="{{ $bayiBalita->tempat_lahir }}">{{ $bayiBalita->tempat_lahir }}</textarea>
                       </div>
                       <div class="form-group">
-                        <label for="nama_ibu"><strong>Nama Ibu</strong></label></br>
-                        <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" value="{{ $bayiBalita->nama_ibu }}">
-                      </div>
-                      <div class="form-group">
-                        <label for="nama_ayah"><strong>Nama Ayah</strong></label></br>
-                        <input type="text" class="form-control" id="nama_ayah" name="nama_ayah" value="{{ $bayiBalita->nama_ayah }}">
-                      </div>
-                      <div class="form-group">
                         <label for="akun"><strong>Akun Ibu</strong></label>
-                        <select class="form-control select2bs4" name="akun" id="akun" style="width: 100%;" required><br>
+                        <select class="form-control select2bs4" name="akun" id="akun_id" style="width: 100%;" required><br>
                           @foreach ($user as $item)
                             <option value="{{ $item->id }}" {{ $bayiBalita->id == $item->id ? 'selected' : '' }}>{{ $item->nik }} - {{ $item->name }}</option>
                           @endforeach
                         </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="nama_ibu"><strong>Nama Ibu</strong></label></br>
+                        <input type="text" class="form-control" id="nama_ibu" name="nama_ibu" readonly value="{{ $bayiBalita->nama_ibu }}">
+                      </div>
+                      <div class="form-group">
+                        <label for="nama_ayah"><strong>Nama Ayah</strong></label></br>
+                        <input type="text" class="form-control" id="nama_ayah" name="nama_ayah" value="{{ $bayiBalita->nama_ayah }}">
                       </div>
                     </div>
                     <!-- /.card-body -->

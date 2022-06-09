@@ -56,8 +56,16 @@ class kaderController extends Controller
 // Data bayi dan data timbang 
     public function bayiTimbangIndex()
     {
-        $bayiBalita = BayiBalita::all();
-        return view('kader.timbang.index', ['bayiBalita' => $bayiBalita]);
+        // $id = Auth::id();
+        // $posyandu = Posyandu::all();
+        // $nama = $posyandu->nama_posyandu;
+        $user = Auth::user();
+        //cari role ibu bayi=login kader 
+        $data_user = User::where('id_posyandu', $user->id_posyandu)->where('role','Ibu Bayi')->pluck('id');
+       // dd($data_user);
+        $bayiBalita = BayiBalita::whereIn('id', $data_user)->get(); 
+      //  dd($bayiBalita);
+        return view('kader.timbang.index', compact('bayiBalita'));
     }
 
     public function createBB()
@@ -2654,6 +2662,19 @@ class kaderController extends Controller
       $penyuluhan->video = $request->video;
       $penyuluhan->save();
       return redirect('penyuluhanKader')->with('success','Link video materi penyuluhan berhasil ditambahkan');
-        
   }
+
+  public function getNikAkun($id)
+    {
+        $data = User::find($id);
+       
+        if($data)
+        {
+             $nama = User::find($data->id);
+            return response()->json(['data' => $nama->name]);
+        }else
+        {
+            return response()->json(['data' => 'Mohon Untuk Memilih Guru Dulu!']);
+        }
+    }
 }

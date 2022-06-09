@@ -12,17 +12,17 @@
                                 </div>
 
                                 @if (Auth::user()->photo == null)
-                                    <img src="{{ url('../assets/dist/img/avatar6.png') }}" alt="Admin"
+                                    <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin"
                                         class="rounded-circle p-1 bg-primary" width="170">
                                 @else
-                                    <img src="{{ Auth::user()->photo }}" alt="Admin"
+                                    <img src="{{ url('img/upload/avatar/' . $user->photo) }}" alt="Admin"
                                         class="rounded-circle p-1 bg-primary" width="170">
                                 @endif
 
                                 <br><label>Ganti Foto</label>
 
                             </div>
-                            <form enctype="multipart/form-data" action="/edit-profil" method="POST">
+                            <form enctype="multipart/form-data" action="/edit-profilIbu" method="POST">
 
                                 <input type="file" name="avatar">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -70,34 +70,27 @@
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Email</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <dd class="col-sm-8">{{ $user->email }}</dd>
-                                </div>
+                                <dd class="col-sm-8">{{ $user->email }}</dd>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Alamat</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <dd class="col-sm-8">
-                                        @if ($user->alamat == NULL)
-                                            -
-                                        @else
-                                            {{ $user->alamat }}
-                                        @endif
-                                    </dd>
-                                </div>
+                                <dd class="col-sm-8">
+                                    @if ($user->alamat == NULL)
+                                        -
+                                    @else
+                                        {{ $user->alamat }}
+                                    @endif
+                                </dd>
                             </div>
                             <div class="row mb-3">
                                 <div class="col-sm-3">
                                     <h6 class="mb-0">Nama Posyandu</h6>
                                 </div>
-                                <div class="col-sm-9 text-secondary">
-                                    <dd class="col-sm-8">
-                                       
-                                            {{ $user->_posyandu }}
-                                    </dd>
-                                </div>
+                                <dd class="col-sm-8">
+                                    {{ !empty($user->posyandu) ? $user->posyandu->nama_posyandu:'' }}
+                                </dd>
                             </div>
                             <div class="col  text-right">
                                 <a href="{{ route('userIbu.profile.edit', Auth::user()->id) }}"

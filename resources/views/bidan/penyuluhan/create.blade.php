@@ -28,8 +28,10 @@
                     <label for="kader"><strong>Nama Kader</strong></label>
                     <select class="form-control select2bs4" name="kader" id="kader" style="width: 100%;" required><br>
                       @foreach ($kader as $item)
-                        <option value="{{ $item->id }}">{{ $item->name }}</option>
-                      @endforeach
+                        @if($item->id_posyandu == 4)
+                          <option value="{{ $item->id }}">{{ $item->name }}</option>
+                        @endif
+                       @endforeach
                     </select>
                   </div>
                   <div class="form-group">

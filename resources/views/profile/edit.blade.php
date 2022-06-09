@@ -39,8 +39,20 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
+                                        <label for="email"><strong>Email</strong></label></br>
+                                        <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
+                                    </div>
+                                    <div class="form-group">
                                         <label for="alamat">Alamat</label>
                                         <textarea class="form-control" name="alamat" id="alamat" rows="3">{{ $user->alamat }}</textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="posyandu"><strong>Nama Posyandu</strong></label>
+                                        <select class="form-control select2bs4" name="posyandu" id="posyandu" style="width: 100%;" required><br>
+                                        @foreach ($posyandu as $item)
+                                            <option value="{{ $item->id_posyandu }}" {{ $user->id_posyandu == $item->id_posyandu ? 'selected' : '' }}>{{ $item->nama_posyandu }}</option>
+                                        @endforeach
+                                        </select>
                                     </div>
                                 </div>
                         </div>
