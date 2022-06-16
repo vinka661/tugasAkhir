@@ -16,19 +16,19 @@
     <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="images/x-icon" />
 
     <!--====== CSS Here ======-->
-    <link rel="stylesheet" href="../../assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../assets/css/animate.min.css">
-    <link rel="stylesheet" href="../../assets/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/lightcase.css">
-    <link rel="stylesheet" href="../../assets/css/meanmenu.css">
-    <link rel="stylesheet" href="../../assets/css/nice-select.css">
-    <link rel="stylesheet" href="../../assets/css/owl.carousel.min.css">
-    <link rel="stylesheet" href="../../assets/css/datepicker.min.css">
-    <link rel="stylesheet" href="../../assets/css/jquery-ui.min.css">
-    <link rel="stylesheet" href="../../assets/css/slick.css">
-    <link rel="stylesheet" href="../../assets/css/default.css">
-    <link rel="stylesheet" href="../../assets/css/style.css">
-    <link rel="stylesheet" href="../../assets/css/responsive.css"><link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../../assets/css/animate.min.css">
+    <link rel="stylesheet" href="../../../assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../../assets/css/lightcase.css">
+    <link rel="stylesheet" href="../../../assets/css/meanmenu.css">
+    <link rel="stylesheet" href="../../../assets/css/nice-select.css">
+    <link rel="stylesheet" href="../../../assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="../../../assets/css/datepicker.min.css">
+    <link rel="stylesheet" href="../../../assets/css/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../assets/css/slick.css">
+    <link rel="stylesheet" href="../../../assets/css/default.css">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <link rel="stylesheet" href="../../../assets/css/responsive.css"><link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-show-password/1.0.3/bootstrap-show-password.min.js"></script>
@@ -172,7 +172,7 @@
         <div class="container">
             <div class="col-lg-12 text-center">
                 <div class="copyright-text copyright-text-2">
-                    <p>Copyright By@<span>Example</span> - 2020</p>
+                    <p>Copyright By@<span>SIMDIG KMS</span> - 2022</p>
                 </div>
             </div>
         </div>

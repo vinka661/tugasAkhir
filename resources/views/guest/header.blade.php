@@ -1,7 +1,7 @@
 <!-- header start -->
 <header id="sticky-header" class="site-header-3">
         <a href="index.html" class="site-logo site-logo-2 site-logo-3">
-            <img src="assets/images/logo/bkkbn.png" alt="">
+            <img src="../assets/images/logo/bkkbn.png" alt="">
         </a>
         <div class="site-header-3-right">
             <div class="header-top-area header-top-area-2">
@@ -11,7 +11,7 @@
                             <div class="header-info-wrap">
                                 <div class="header-info-left">
                                     <ul>
-                                        <li><i class="fal fa-envelope"></i> <a href="mailto:info@webmail.com">info@webmail.com</a></li>
+                                        <li><i class="fal fa-envelope"></i> <a href="mailto:plkbkecamatanwinongan@gmail.com">plkbkecamatanwinongan@gmail.com</a></li>
                                         <li><i class="fal fa-phone"></i> <a href="tel:876864764764">+876 864 764 764</a></li>
                                     </ul>
                                 </div>

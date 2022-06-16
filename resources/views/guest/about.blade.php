@@ -114,7 +114,7 @@
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8 text-center">
-                    <div class="section-heading mt-80 mb-35">
+                    <div class="section-heading mt-30 mb-35">
                         <h3 class="sub-title">About US</h3>
                         <h2 class="section-title">Penyuluh Lapangan Keluarga Berencana
                             (PLKB)<span>.</span></h2>
@@ -155,7 +155,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row mt-75">
+            {{-- <div class="row mt-75">
                 <div class="col-lg-6">
                     <div class="service-img big">
                         <img src="assets/images/bg/back-drop-plkb.jpg" alt="">
@@ -170,7 +170,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             {{-- <div class="row">
                 <div class="col-lg-12">
                     <div class="best-service-list pt-75 mt-80">
@@ -271,7 +271,7 @@
     <!-- service carousel area end -->
 
     <!-- our-expert area start -->
-    <section class="our-expert-area our-expert-area-2 our-expert-area-3 our-expert-area-4 pt-80 pb-90">
+    {{-- <section class="our-expert-area our-expert-area-2 our-expert-area-3 our-expert-area-4 pt-80 pb-90">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
@@ -355,14 +355,16 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
+    <br>
+    <br>
     <!-- our-expert area end -->
     <!-- footer area start -->
     <footer class="site-footer site-footer-2 site-footer-3">
         <div class="container">
             <div class="col-lg-12 text-center">
                 <div class="copyright-text copyright-text-2">
-                    <p>Copyright By@<span>Example</span> - 2020</p>
+                    <p>Copyright By@<span>SIMDIG KMS</span> - 2022</p>
                 </div>
             </div>
         </div>

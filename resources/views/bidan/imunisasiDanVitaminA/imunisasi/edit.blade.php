@@ -8,7 +8,7 @@
         <div class="row mb-2">
           <div class="col-sm-6">
             <br>
-            <h2 class="m-0 text-dark"><strong>Edit Jadwal Posyandu </strong></h2></br>
+            <h2 class="m-0 text-dark"><strong>Edit Imunisasi </strong></h2></br>
           </div><!-- /.col -->
         </div><!-- /.row -->
       </div><!-- /.container-fluid -->

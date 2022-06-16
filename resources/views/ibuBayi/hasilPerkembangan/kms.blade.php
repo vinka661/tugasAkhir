@@ -90,6 +90,46 @@
                                 </div>
                             </li>
                             <!-- END timeline item -->
+                            <!-- timeline item -->
+                            <li>
+                                <i class="fa fa-hotel bg-green"></i>
+                                <div class="timeline-item">
+                                    <h3 class="timeline-header no-border">
+                                        <a href="#">Tempat Lahir	 : </a> {{ $data->tempat_lahir	 }}
+                                    </h3>
+                                </div>
+                            </li>
+                            <!-- END timeline item -->
+                            <!-- timeline item -->
+                            <li>
+                                <i class="fa fa-list-ol bg-muted"></i>
+                                <div class="timeline-item">
+                                    <h3 class="timeline-header no-border">
+                                        <a href="#">Tanggal Lahir	 : </a> {{ $data->tgl_lahir	 }}
+                                    </h3>
+                                </div>
+                            </li>
+                            <!-- END timeline item -->
+                            <!-- timeline item -->
+                            <li>
+                                <i class="fa fa-id-card bg-muted"></i>
+                                <div class="timeline-item">
+                                    <h3 class="timeline-header no-border">
+                                        <a href="#">Umur 	 : </a> {{ $data->umur	 }}
+                                    </h3>
+                                </div>
+                            </li>
+                            <!-- END timeline item -->
+                            <!-- timeline item -->
+                            <li>
+                                <i class="fa fa-user-md bg-green"></i>
+                                <div class="timeline-item">
+                                    <h3 class="timeline-header no-border">
+                                        <a href="#">Jenis Kelamin	 : </a> {{ $data->jk	 }}
+                                    </h3>
+                                </div>
+                            </li>
+                            <!-- END timeline item -->
                         </ul>
                     </div>
                 </div>
@@ -205,8 +245,8 @@
 <!-- DataTables -->
 <script src="{!! asset('bower_components/datatables.net/js/jquery.dataTables.min.js') !!}"></script>
 <script src="{!! asset('bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js') !!}"></script>
-<script src="http://code.highcharts.com/highcharts.js"></script>
-<script src="http://code.highcharts.com/modules/exporting.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script type="text/javascript">
     $(function () {
         $('#example1').DataTable();

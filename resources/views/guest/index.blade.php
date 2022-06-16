@@ -109,7 +109,7 @@
                     <div class="col-lg-6 my-auto">
                         <div class="hero-content">
                             <h1 class="title" data-animation="fadeInUp" data-delay=".3s" data-duration=".5s">
-                                Sistem Infromasi Digitasi KMS <br>
+                                Sistem Informasi Digitasi KMS <br>
                                 <h4 class="sub-title" data-animation="fadeInUp" data-delay=".1s"
                                     data-duration=".3s">Untuk Memonitoring Gizi Bayi Balita.</h4>
                                 <h5 class="sub-title" data-animation="fadeInUp" data-delay=".1s"
@@ -255,7 +255,7 @@
     <!-- about area end -->
 
     <!-- department area start -->
-    <section class="department-area department-area-2 bg-2 pt-110 pb-110">
+    {{-- <section class="department-area department-area-2 bg-2 pt-110 pb-110">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6 text-center">
@@ -333,7 +333,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- department area end -->
 
 
@@ -580,7 +580,7 @@
         <div class="container">
             <div class="col-lg-12 text-center">
                 <div class="copyright-text copyright-text-2">
-                    <p>Copyright By@<span>Example</span> - 2020</p>
+                    <p>Copyright By@<span>SIMDIG KMS</span> - 2022</p>
                 </div>
             </div>
         </div>

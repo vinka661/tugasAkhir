@@ -173,7 +173,7 @@ class bidanController extends Controller
     {
         $imunisasi = Imunisasi::all();
         $vitaminA = VitaminA::all();
-        return view('bidan.imunisasiDanvitaminA.index', ['vitaminA' => $vitaminA,'imunisasi' => $imunisasi]);
+        return view('bidan.imunisasiDanVitaminA.index', ['vitaminA' => $vitaminA,'imunisasi' => $imunisasi]);
     }
 
     public function createVitaminA()
@@ -185,6 +185,7 @@ class bidanController extends Controller
                         ->join('bayi_balita', 'bayi_balita.id_bb', '=', 'timbang.id_bb')
                         ->where('users.id', $id)
                         ->get();
+
         return view('bidan.imunisasiDanvitaminA.vitaminA.create', compact('id', 'bayiBalita'));
     }
 
@@ -271,12 +272,18 @@ class bidanController extends Controller
     public function createImunisasi()
     {
         $id = Auth::id();
-        $bayiBalita = DB::table('posyandu')
-                        ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
-                        ->join('timbang', 'timbang.id', '=', 'users.id')
-                        ->join('bayi_balita', 'bayi_balita.id_bb', '=', 'timbang.id_bb')
-                        ->where('users.id', $id)
-                        ->get();
+        // $bayiBalita = DB::table('posyandu')
+        //                 ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
+        //                 ->join('timbang', 'timbang.id', '=', 'users.id')
+        //                 ->join('bayi_balita', 'bayi_balita.id_bb', '=', 'timbang.id_bb')
+        //                 ->where('users.id', $id)
+        //                 ->get();
+    //    $user = Auth::user();
+    //    $bayiBalita = User::where('id_posyandu', $user->id_posyandu)->where('role', 'Bidan Desa')->get();
+        $user = Auth::user();
+        $data_user = User::where('id_posyandu', $user->id_posyandu)->where('role','Ibu Bayi')->pluck('id');
+         $bayiBalita = BayiBalita::whereIn('id', $data_user)->get();
+       // dd($bayiBalita);
         $jenisVaksinImunisasi = JenisVaksinImunisasi::all();
         return view('bidan.imunisasiDanvitaminA.imunisasi.create', compact('id', 'bayiBalita','jenisVaksinImunisasi'));
     }
@@ -296,12 +303,15 @@ class bidanController extends Controller
 
         $imunisasi = Imunisasi::find($id_imunisasi);
         $id = Auth::id();
-        $bayiBalita = DB::table('posyandu')
-                        ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
-                        ->join('timbang', 'timbang.id', '=', 'users.id')
-                        ->join('bayi_balita', 'bayi_balita.id_bb', '=', 'timbang.id_bb')
-                        ->where('users.id', $id)
-                        ->get();
+        // $bayiBalita = DB::table('posyandu')
+        //                 ->join('users', 'users.id_posyandu', '=', 'posyandu.id_posyandu')
+        //                 ->join('timbang', 'timbang.id', '=', 'users.id')
+        //                 ->join('bayi_balita', 'bayi_balita.id_bb', '=', 'timbang.id_bb')
+        //                 ->where('users.id', $id)
+        //                 ->get();
+        $user = Auth::user();
+        $data_user = User::where('id_posyandu', $user->id_posyandu)->where('role','Ibu Bayi')->pluck('id');
+         $bayiBalita = BayiBalita::whereIn('id', $data_user)->get();
         $jenisVaksinImunisasi = JenisVaksinImunisasi::all();
         return view('bidan.imunisasiDanvitaminA.imunisasi.edit', ['imunisasi' => $imunisasi , 'id' => $id, 'bayiBalita' => $bayiBalita,'jenisVaksinImunisasi' => $jenisVaksinImunisasi]);
     }

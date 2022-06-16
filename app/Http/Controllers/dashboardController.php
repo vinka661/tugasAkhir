@@ -163,7 +163,7 @@ class dashboardController extends Controller
             $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
-                $edit = Anak::where('id_bb', $anak->id_bb);
+                $edit = BayiBalita::where('id_bb', $anak->id_bb);
                 $edit->alama = 1;
             }
         }
@@ -312,7 +312,7 @@ class dashboardController extends Controller
             $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
-                $edit = Anak::where('id_bb', $anak->id_bb);
+                $edit = BayiBalita::where('id_bb', $anak->id_bb);
                 $edit->alama = 1;
             }
         }
@@ -466,7 +466,7 @@ class dashboardController extends Controller
             $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
-                $edit = Anak::where('id_bb', $anak->id_bb);
+                $edit = BayiBalita::where('id_bb', $anak->id_bb);
                 $edit->alama = 1;
             }
         }
@@ -483,7 +483,8 @@ class dashboardController extends Controller
             // dd($data_user);
              $bayiBalita = BayiBalita::whereIn('id', $data_user)->get();
              //Timbang
-            $timbang = Timbang::whereIn('id', $data_user)->get();
+             $data_user2 = User::where('id_posyandu', $user->id_posyandu)->where('role','kader')->pluck('id');
+        $timbang = Timbang::whereIn('id', $data_user2)->get();
             //Kosultasi
             // $konsultasi = Konsultasi::get();
             $konsultasi = DB::table('konsultasi')
@@ -617,7 +618,7 @@ class dashboardController extends Controller
             $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
-                $edit = Anak::where('id_bb', $anak->id_bb);
+                $edit = BayiBalita::where('id_bb', $anak->id_bb);
                 $edit->alama = 1;
             }
         }
@@ -771,7 +772,7 @@ class dashboardController extends Controller
             $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
-                $edit = Anak::where('id_bb', $anak->id_bb);
+                $edit = BayiBalita::where('id_bb', $anak->id_bb);
                 $edit->alama = 1;
             }
         }
@@ -793,7 +794,9 @@ class dashboardController extends Controller
         // dd($data_user);
          $bayiBalita = BayiBalita::whereIn('id', $data_user)->get();
          //Timbang
-        $timbang = Timbang::whereIn('id', $data_user)->get();
+        $data_user2 = User::where('id_posyandu', $user->id_posyandu)->where('role','kader')->pluck('id');
+        $timbang = Timbang::whereIn('id', $data_user2)->get();
+        //dd($timbang);
             //Kosultasi
             // $konsultasi = Konsultasi::get();
             $konsultasi = DB::table('konsultasi')
@@ -928,7 +931,7 @@ class dashboardController extends Controller
             $b_day = Carbon::parse($anak->tgl_lahir); // Tanggal Lahir
             $age = $b_day->diffInMonths($now);  // Menghitung umur
             if ($age >= 6) {
-                $edit = Anak::where('id_bb', $anak->id_bb);
+                $edit = BayiBalita::where('id_bb', $anak->id_bb);
                 $edit->alama = 1;
             }
         }

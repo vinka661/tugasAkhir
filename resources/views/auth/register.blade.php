@@ -152,7 +152,7 @@
         <div class="container">
             <div class="col-lg-12 text-center">
                 <div class="copyright-text copyright-text-2">
-                    <p>Copyright By@<span>Example</span> - 2020</p>
+                    <p>Copyright By@<span>SIMDIG KMS</span> - 2022</p>
                 </div>
             </div>
         </div>
